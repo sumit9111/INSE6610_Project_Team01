@@ -1,0 +1,1 @@
+* `src` is for anything source-related of your project touches that, such as Forensic Lucid specifications, code modifications and patches to external tools, any other scripts, etc. Place your code work under `teamX` subdirectory.
