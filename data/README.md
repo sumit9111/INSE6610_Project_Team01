@@ -1,0 +1,1 @@
+* `data` is any sample data set *legally obtained*, *less than 2GB* (bitbucket limit), *does not contain PII, malware, any other illegal or explicit content*. Otherwise, keep your data set separately locally elsewhere.
