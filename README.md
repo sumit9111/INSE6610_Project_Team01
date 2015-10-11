@@ -3,7 +3,7 @@
 ## General structure ##
 
 * `doc` is for documentation, report, etc. Create a dir for your team there, e.g., `teamX`, and initialize the report document there.
-* `src` is for anything source-related of your project touches that, such as Forensic Lucid specifications, code modifications and patches to external tools, any other scripts, etc. Place your code work under `teamX` subdirectoru.
+* `src` is for anything source-related of your project touches that, such as Forensic Lucid specifications, code modifications and patches to external tools, any other scripts, etc. Place your code work under `teamX` subdirectory.
 * `data` is any sample data set *legally obtained*, *less than 2GB* (bitbucket limit), *does not contain PII, malware, any other illegal or explicit content*. Otherwise, keep your data set separately locally elsewhere.
 
 ## Templates ##
