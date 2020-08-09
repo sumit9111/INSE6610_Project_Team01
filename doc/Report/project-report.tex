@@ -1,5 +1,5 @@
-\documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
+\documentclass{easychair}
+%\IEEEoverridecommandlockouts
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsmath}
@@ -14,6 +14,9 @@
 \usepackage{multicol}
 \usepackage{enumerate}
 \usepackage{float}
+
+\usepackage{listings}
+
 %%%%%%%%%%%%%% Self Added %%%%%%%%%%%%%
 \graphicspath{{./images/}}
 \usepackage[utf8]{inputenc}
@@ -45,43 +48,49 @@
 
 \title{DFRWS IoT Forensic Challenge (2018-2019)
 Evidence Analysis Report}
-\author{ali}
-\date{August 2020}
+
 
 \author{
 \IEEEauthorblockN{Ali Wazzan}
 \IEEEauthorblockA{\textit{CIISE}\\
-\textit{Concordia University}\\ Montreal, QC, Canada }
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
 \and
 \IEEEauthorblockN{Abbas Olfat}
 \IEEEauthorblockA{\textit{CIISE}\\
-\textit{Concordia University}\\ Montreal, QC, Canada}
+\textit{Concordia University}\\ Montreal, QC, Canada}\\
+
 \and
 \IEEEauthorblockN{Ghasem Olfat}
 \IEEEauthorblockA{\textit{CIISE}\\
-\textit{Concordia University}\\ Montreal, QC, Canada }
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
 \and
 \IEEEauthorblockN{Isa Abubakar}
 \IEEEauthorblockA{\textit{CIISE}\\
-\textit{Concordia University}\\ Montreal, QC, Canada }
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
 \and
 \IEEEauthorblockN{Meryem Ibnoussina }
 \IEEEauthorblockA{\textit{CIISE}\\
-\textit{Concordia University}\\ Montreal, QC, Canada }
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
 \and
 \IEEEauthorblockN{Favour Emeakama}
 \IEEEauthorblockA{\textit{CIISE}\\
-\textit{Concordia University}\\ Montreal, QC, Canada }
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
 \and
 \IEEEauthorblockN{Sumit Kumar}
 \IEEEauthorblockA{\textit{CIISE}\\
-\textit{Concordia University}\\ Montreal, QC, Canada }
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
 \and
 \IEEEauthorblockN{Parisa Ahmadi}
 \IEEEauthorblockA{\textit{CIISE}\\
-\textit{Concordia University}\\ Montreal, QC, Canada }
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
 }
-
+ 
 
 
 \maketitle
@@ -89,58 +98,879 @@ Evidence Analysis Report}
 \thispagestyle{plain}
 \pagestyle{plain}
 
-
 \begin{abstract}
-Write the abstract
-
+\textbf{The term of IoT means Internets of Things, they are internet connected devices and networks that are used for the sole purpose of automation and monitoring tasks. Technology is growing rapidly and it has became an essential part of our daily life; everyone owns an IoT device that they use for communication which creates and transmit data. This huge amount of data can be  collected and used in a court of law, and this is done by a digital forensic investigators. In this paper, we take on DFRWS IoT Forensic Challenge 2018-2019 challenge and we use efficient approaches that are effectively used for cyber forensics investigations including cloud data, smart things hub, amazon echo devices and automation devices to tackle this challenge.
+\textit{Keywords:} Internet of Things, Digital evidence, Computer forensics, Forensic tools}
 \end{abstract}
 
-\begin{IEEEkeywords}
+%\begin{IEEEkeywords}
 
-\end{IEEEkeywords}
+%\end{IEEEkeywords}
 
 \section{Introduction}
-\label{sect:introduction}
+\label{sect:introduction} This report summarizes the result and process of digital forensic analysis on evidences of DFRWS IoT forensic challenge (2018-2019) scenario.
+
+The report is organized as follows: Chapter 1 presents a general overview of the challenge scenario. Chapter 2 presents the tools used for the forensic analysis and describe them. chapter 3 conduct the forensic analysis and investigate using the tools and the data provided by the Challenger. Chapter 4 summarises the paper and what we learned in the course of the challenge.
 
 
+\subsection{Description of challenge}
+\label{callengescenario} The following is given to us by dfrws:
+On 17 May 2018 at 10:40, the police were alerted that an illegal drug lab was invaded and
+unsuccessfully set on fire. The police respond promptly, and a forensic team is on scene at 10:45,
+including a digital forensic specialist.
+The owner the illegal drug lab, Jessie Pinkman, is nowhere to be found. Police interrogate two of
+Jessie Pinkman’s known associates: D. Pandana and S. Varga. Pandana and Varga admit having
+access to the drug lab’s Wi-Fi network but deny any involvement in the raid. They also say that Jessie
+Pinkman’s had the IoT security systems installed because he feared attacks from a rival gang and
+that Jessie kept the alarm engaged in “Home” mode whenever he was inside the drug lab.
+Within the drug lab the digital forensic specialist observes some IoT devices, including an alarm
+system (iSmartAlarm), three cameras (QBee Camera, Nest Camera and Arlo Pro) as well as a smoke
+detector (Nest Protect). An Amazon Echo and a Wink Hub are also present.
+The digital forensic specialist preserves the diagnostic logs from the iSmartAlarm base station, and
+acquires a copy of the file system of the Wink Hub. He also collects the iSmartAlarm and Arlo base
+stations to perform an in-depth analysis at the forensic laboratory.
+The digital forensic specialist also notices that the a QBee Camera seems to be disabled, so he
+collects a sample of the network traffic.
+Back at the forensic laboratory, the digital forensic specialist uses the bootloader to collect a memory
+image of the two base stations as well as an archive of some folder of interest of the Arlo base station.
+Jessie Pinkman's Samsung Galaxy S6 Edge is found at the scene, likely dropped during the raid.
+The digital forensic specialist acquires a physical image of this Samsung device.
 
-\section{Tools}
-\label{sect:tools}
-
-\begin{figure}[htp]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=5cm]{DFRWS2018-IoT-ForensicChallengeDiagram.png}
-    \caption{Diagram of the drug lab}
-    \label{fig:galaxy}
+    \includegraphics[width=0.45\textwidth]{Img/Drug Lab.JPG}
+    \caption{Drug Lab}
+    \label{fig:Drug Lab}
 \end{figure}
-\bfseries
-\texttt{Autopsy}
 
-\normalfont
-\texttt{ Autopsy is a platform for digital forensics and a graphical interface to The Sleuth Kit and other digital forensics instruments. The law enforcement, military, and corporate examiners use it to determine what has happened on a computer. You can even use this free, fast, easy to use application which is able to analyze all types of mobile devices and digital media [1],[2].}
+\subsection{Challenge Questions}
+The Attorney General needs answers to the following questions:
+\begin{itemize}
+    \item At what time was the illegal drug lab raided?
+\item Could any of the two friends of Jessie Pinkman have been involved in the raid?
+\item If yes: Which friend?
+\item What is the confidence in such hypothesis?
+\item How was the QBee camera disabled?
+\end{itemize}
 
-\section{Introduction}
+\section{Forensic Tools}
+
+\label{FA}In this section we will list and describe the tools used to resolve the challenge.
 
 
-\section{Description of challenge}
+\subsection{Autopsy} Autopsy is a platform for digital forensics and a graphical interface to The Sleuth Kit and other digital forensics instruments. The law enforcement, military, and corporate examiners use it to determine what has happened on a computer. You can even use this free, fast, easy to use application which is able to analyze all types of mobile devices and digital media  \cite{pari_1},\cite{pari_2}
+\newline Autopsy is the leading open source web forensics which was designed to be intuitive from the box. Installation is simple, and wizards direct you every step of the way. All findings are displayed in a single tree. \cite{pari_3}
+\subsubsection{Provided features } 
+
+\begin{itemize}
+	\item Multi-user Cases: Collaborate on large cases with fellow examiners. 
+\item Timeline Analysis: Shows system events to help classify activity in a graphical interface. 
+\item Keyword Search: Modules searched for text extraction and indexing allow you to find files that reference particular words and find patterns of regular expressions
+\item Browser Artifacts: To help distinguish user activity, extracts web data from popular browsers. 
+\item Registry Analysis: Uses RegRipper to classify documents and USB devices which have been recently accessed. 
+\item LNK File Analysis: identifies short cuts and documents which have been accessed 
+\item Email Analysis: Parses messages in MBOX format, like Thunderbird for example.
+\item EXIF: Extracts geo location and camera information from JPEG files. 
+\item Sorting of File Type: Group files by type to find all images or documents. 
+\item Media Playback: Display the application's videos and pictures, which do not need an external screen. 
+\item Thumbnail viewer: Shows image thumbnails to help you view images quickly. 
+\item Robust analysis of the file system: Support for common file systems like NTFS, FAT12/FAT16/FAT32/ExFAT, HFS+, ISO9660 (CD-ROM), Ext2/Ext3/Ext4, Yaffs2, and UFS from The Sleuth Kit.
+\item Hash Set Filtering: Filter out known good files using NSRL and flag known bad files using custom hashsets in HashKeeper, md5sum, and EnCase formats. 
+\item Tags: Tag files with arbitrary tag names, such as 'bookmark' or 'suspicious', and add comments.
+\item Unicode Strings Extraction: Extracts strings from unallocated space and unknown file types in many languages (Arabic, Chinese, Japanese, etc.).
+\item File Type Detection based on signatures and extension mismatch detection.
+\item Interesting Files Module will flag files and folders based on name and path.
+\item Android Support: Extracts data from SMS, call logs, contacts, Tango, Words with Friends, and more. 
+\end{itemize}
+
+\subsubsection{Autopsy Input Formats}
+\begin{itemize}
+
+\item Disk images(in raw/dd or E01 format)
+\item Local drives
+\item Folder of local files
+\end{itemize}
+
+\subsubsection{Autopsy Report Formats}
+
+\begin{itemize}
+\item HTML
+\item Excel
+\item Body
+\end{itemize}
+
+\subsubsection{Autopsy in our case}
+We had different types of data gathered from different devices including the smart phone and base stations. So, we had images which should be browsed and information that should be extracted. 
+
+\subsection{Tool2}
+\subsection{Tool3}
+\subsection{Tool4}
+\subsection{Tool5}
+\subsection{Tool6}
+\subsection{Python}
+Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. \cite{Ali_1} \\
+In our case, pythos was used on jupyter notebook editor \cite{Ali_2} to use the parse tools developed to retrieves the activity records in the database of the devices.
+\subsection{Parser Tools}
+The following are tools that were developed and used to extract and retrieve activities and data from databases or video frames from the videos. \cite{Ali_3}
+\subsubsection{Wink Activity Parser}
+python wink\_activity\_parser.py -d \textless DB path\textgreater to run the tool
+\subsubsection{Nest Video Recovery Tool}
+python nest\_video\_recovery.py -d \textless DB path\textgreater [-o \textless output path\textgreater] [-m] [-a] [-f] to run the tool.
+\subsubsection{iSmartAlarm App Dairy Parser}
+python ismartalarm\_dairy\_parser.py -d \textless DB path\textgreater to run the tool.
+\subsubsection{Server Stream Parser}
+python server\_stream\_parser.py -d \textless DB path\textgreater to run the tool.
+\subsubsection{Amazon Alexa CIFT Tool Parser}
+python alexa\_cift\_parser.py -d \textless DB path\textgreater -t \textless timezone=’UTC+0200’\textgreater to run the tool.
+
+\subsection{Kibana}
+Kibana is an open source data visualization dashboard for Elasticsearch. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data. \cite{Ali_4} \cite{Ali_5} \\ In our case we followed TapiocaPearlo solution in using Kibana after running the python code (parse tools) to visualise, order and classify the data by using to make it readable to the human eye. Using Timelion feature, we were able to filter the unwanted time zones by adjusting the time range. 
+\section{Forensic Analysis of Data}
+
+\subsection{Pinkman's Samsung}
+
+
+
+\subsection{iSmartAlarm Base Station}
+
+
+\subsection{Arlo Base Station}
+
+\subsection{Wink Hub}
+
+
+\subsection{Amazon Echo}
+
+
+\subsection{Network}
+\subsubsection{Entities}
+\subsubsection{Conversation}
 
 
 
 \section{Conclusion}
+\label{sect:conclusion} Write conclusion here.
+
+\section{Appendix}
+
+\subsection{Figures}
+The follow are the figures that supports our report.
+\subsubsection{Kibana Data visualisation}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Img/TimeLion.jpg}
+    \caption{Data Visualisation Using Timelion}
+    \label{fig:Drug Lab}
+\end{figure}
+
+\subsection{Codes}
+The following are the python codes used to extract and retrieve data.
+\subsubsection{Alexa CIFT Database Tool Parser}
 
 
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Alexa CIFT Database Tool Parser}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+from argparse import ArgumentParser
+from datetime import datetime, timezone
+
+from utils.logging.log import Log
+from utils.database.misc import dict_factory
+from utils.time import to_datetime
+from utils.elastic import Elastic
+
+import time
+import sqlite3
+import os
+
+
+class CIFTDatabaseParser(object):
+    """Parser for parse information from cift database."""
+
+    def __init__(self, database, timezone):
+        self.database = database
+        self.timezone = timezone
+
+    def parse(self):
+        """Parse timeline from database."""
+        Log.debug("Extracting activities from database...")
+
+        with sqlite3.connect(self.database) as con:
+            con.row_factory = dict_factory
+            cur = con.cursor()
+
+            cur.execute("SELECT * FROM TIMELINE")
+            activities = cur.fetchall()
+
+        documents = []
+
+        for activity in activities:
+            documents.append({
+                'time': self.convert_time(activity['date'], activity['time']),
+                'user': activity['user'],
+                'short': activity['short'],
+                'desc': activity['desc'],
+                'notes': activity['notes']
+            })
+
+        Log.info("Successfully parsed data from database.")
+
+        self.save(documents)
+
+    def save(self, documents):
+        with Elastic(index='alexa', doc_type='activity') as elastic:
+            elastic.upload(documents, 'time')
+
+        Log.info("Successfully uploaded data into elasticsearch.")
+
+    def convert_time(self, date, _time):
+        """Convert splited time into datetime."""
+        dtime = datetime.strptime(f"{date} {_time} {self.timezone}", "%Y-%m-%d %H:%M:%S.%f %Z%z")
+        
+        # check timestamp is 0
+        if dtime.timestamp() <= 0:
+            return to_datetime(0)
+
+        return dtime.astimezone(timezone.utc)\
+                    .replace(tzinfo=None)
+
+    def __del__(self):
+        del self
+
+
+def main(args):
+    """Main method for parsing activities."""
+    if not os.path.exists(args.database):
+        Log.error("cift_amazon_alexa.db file not found.", trace_exc=False)
+        return
+
+    cdp = CIFTDatabaseParser(args.database, args.timezone)
+    cdp.parse()
+    del cdp
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(description="Amazon Alexa CIFT database parser v1.0")
+    parser.add_argument("-d", "--database", dest="database", type=str, required=True,
+                        help="cift_amazon_alexa.db database file path")
+    parser.add_argument("-t", "--timezone", dest="timezone", type=str, required=True,
+                        help="Timezone which used at Amazon Alexa. ex) UTC+2 -> UTC+0200")
+
+    args = parser.parse_args()
+    main(args)
+
+\end{lstlisting}
+
+
+    
+\subsubsection{iSmartAlarm Dairy Parser}
+
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={iSmartAlarm Dairy Parser}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+from argparse import ArgumentParser
+
+from utils.logging.log import Log
+from utils.database.misc import dict_factory
+from utils.elastic import Elastic
+from utils.time import to_datetime
+
+import sqlite3
+import os
+
+
+class DairyParser(object):
+    """Parser for generating timeline from iSmartAlarm Application."""
+
+    def __init__(self, database):
+        self.database = database  # iSmartAlarm database
+
+    def parse(self):
+        """Parse dairies from database."""
+        Log.debug("Extracting diaries from database...")
+
+        tables = {
+            'CameraDairy': {
+                'name': 'TB_CameraDairy',
+            },
+            'IPUDairy': {
+                'name': 'TB_IPUDairy',
+            },
+            'ISC3Dairy': {
+                'name': 'TB_ISC3Dairy',
+            },
+            'SensorDairy': {
+                'name': 'TB_SensorDairy',
+            }
+        }
+
+        # get dairies from database
+        with sqlite3.connect(self.database) as con:
+            con.row_factory = dict_factory
+            cur = con.cursor()
+
+            for key in tables.keys():
+                name = tables[key]['name']
+                cur.execute(f"SELECT * FROM {name}")
+                tables[key]['data'] = cur.fetchall()
+
+        Log.debug("Successfully parsed data from database.")
+
+        self.save(tables)
+
+    def save(self, tables):
+        """Save history into elasticsearch."""
+        for key in tables.keys():
+            data = tables[key]['data']
+            if data:
+                for i in range(len(data)):
+                    data[i]['date'] = to_datetime(data[i]['date'])
+
+                with Elastic(index=key.lower(), doc_type=key.lower()) as elastic:
+                    elastic.upload(data, 'date')
+                
+                Log.info(f"Successfully uploaded {key} data into elasticsearch.")
+
+    def __del__(self):
+        del self
+
+
+def main(args):
+    """Main method for parsing dairies."""
+    if not os.path.exists(args.database):
+        Log.error("iSmartAlarm.DB file not found.", trace_exc=False)
+        return
+
+    dp = DairyParser(args.database)
+    dp.parse()
+    del dp
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(description="iSmartAlarm dairy parser v1.0")
+    parser.add_argument("-d", "--database", dest="database", type=str, required=True,
+                        help="iSmartAlarm.DB database file path")
+
+    args = parser.parse_args()
+    main(args)
+
+
+\end{lstlisting}
+
+
+
+
+
+\subsubsection{Nest Video Recovery Tool}
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Nest Video Recovery Tool}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+from argparse import ArgumentParser
+from datetime import datetime
+from pathlib import Path
+
+from utils.logging.log import Log
+from utils.elastic import Elastic
+from utils.time import to_datetime
+
+import sqlite3
+import os
+
+
+class VideoExtractor(object):
+    """Extractor for recovering video frame from Nest Application."""
+
+    def __init__(self, database, output):
+        self.database = database
+        self.rawvideos = []  # video file list for convert and merge file
+        self.videotimes = {}  # video recording time
+        self.output = output  # video and log output directory
+
+        # make directory when directory not exist
+        if not os.path.exists(output):
+            os.mkdir(output)
+
+    def _gen_filename(self, timestamp):
+        return datetime.strftime(
+            datetime.utcfromtimestamp(timestamp / 1000 + 7200), "%Y-%m-%d_%H:%M:%S")
+
+    def extract(self, merge, frame, add_timeline):
+        """Extract frames from database."""
+        Log.debug("Extracting videos from database...")
+
+        if frame:
+            with sqlite3.connect(self.database) as con:
+                cur = con.cursor()
+                cur.execute("SELECT frame_time, gop_start_rowid, sps_bytes, pps_bytes, frame_bytes, chunk_complete FROM frame_raw_data_table")
+                rows = cur.fetchall()
+            sps_bytes = None
+            pps_bytes = None
+            videobuf = None
+            count = 0
+
+            timestamps_by_video = {}
+            frames_by_video = {}
+
+            for frame in rows:
+                frame_time, gop_start_rowid, _sps_bytes, _pps_bytes, frame_bytes, chunk_complete = frame
+
+                if gop_start_rowid == -1:
+                    # set new sps and pps bytes
+                    sps_bytes = _sps_bytes
+                    pps_bytes = _pps_bytes
+                    videobuf = pps_bytes + sps_bytes + frame_bytes
+                    timestamps_by_video[count] = [frame_time]
+                else:
+                    videobuf = videobuf + frame_bytes
+                    timestamps_by_video[count].append(frame_time)
+
+                if chunk_complete == 1:
+                    frames_by_video[count] = videobuf
+                    sps_bytes = None
+                    pps_bytes = None
+                    videobuf = None
+                    count += 1
+
+            if videobuf:
+                frames_by_video[count] = videobuf
+
+            for key in frames_by_video.keys():
+                # save h264 file
+                with open(os.path.join(self.output, f'{key}.h264'), 'wb') as f:
+                    f.write(frames_by_video[key])
+
+                i = 0
+                for timestamp in timestamps_by_video[key]:
+                    os.system(f'ffmpeg -i {self.output}/{key}.h264 -c:v libx264 -filter:v "select=gte(n\,{i})" -frames:v 1 -f h264 {self.output}/{key}_{i}.h264')
+                    os.system(f'ffmpeg -i {self.output}/{key}_{i}.h264 -frames:v 1 -f image2 {self.output}/{self._gen_filename(timestamp)}.png')
+                    os.remove(f'{self.output}/{key}_{i}.h264')
+                    i += 1
+
+                os.remove(f'{self.output}/{key}.h264')
+            Log.info(f"Successfully saved image by frame.")
+
+        else:
+            with sqlite3.connect(self.database) as con:
+                cur = con.cursor()
+                cur.execute("SELECT * FROM frame_raw_data_table")
+                rows = cur.fetchall()
+
+            videobuf = ""  # temporary buffer for constructing video
+            videoname = ""  # name of video file
+            count = 0  # video file counter
+
+            for row in rows:
+                if row[4]:
+                    if videoname:
+                        with open(videoname, "wb") as f:
+                            f.write(videobuf)
+                        self.rawvideos.append(videoname)
+
+                    videobuf = row[5]
+                    videobuf += row[4]
+                    videobuf += row[6]
+
+                    videoname = os.path.join(self.output, f"{count}.tmp")
+                    self.videotimes[videoname] = [row[0]]
+
+                    count += 1
+                else:
+                    videobuf = videobuf + row[6]
+
+                    if row[0] not in self.videotimes[videoname]:
+                        self.videotimes[videoname].append(row[0])
+
+            if videobuf:
+                with open(videoname, "wb") as f:
+                    f.write(videobuf)
+                self.rawvideos.append(videoname)
+
+            Log.info(f"Successfully extrated {count} video files.")
+
+            self.save(merge)
+
+            documents = []
+
+            for filename in self.videotimes.keys():
+                runtime = self.videotimes[filename]
+                start, end = to_datetime(runtime[0]), to_datetime(runtime[-1])
+                filename = os.path.basename(filename).replace('tmp', 'mp4')
+
+                documents.append({
+                    'start_time': start,
+                    'end_time': end,
+                    'filename': filename
+                })
+
+            # write history as file
+            with open(os.path.join(self.output, 'video_list.txt'), 'w') as f:
+                for document in documents:
+                    f.write(f"{document['filename']}: {document['start_time']} - {document['end_time']}\n")
+
+            # upload to elasticsearch for add timeline
+            if add_timeline:
+                with Elastic(index='nest', doc_type='video') as elastic:
+                    elastic.upload(documents, 'start_time')
+
+    def save(self, merge, frame):
+        """Convert and save into playable video."""
+        Log.info("Converting video file codec format...")
+
+        for video in self.rawvideos:
+            os.system(f"ffmpeg -f h264 -r 10 -i {video} -c copy {video.split('.')[0]}.mp4")
+
+            # remove original file
+            if os.path.exists(video):
+                os.remove(video)
+
+        Log.info("Successfully convert the video file codec.")
+
+        if merge:
+            Log.info("Merging videos..")
+
+            videos = '|'.join([video.split('.')[0] + ".mp4" for video in self.rawvideos])
+            os.system(f"ffmpeg -f concat -i \"concat:{videos}\" -c copy video.mp4")
+
+            for video in self.rawvideos:
+                os.remove(f"{video.split('.')[0]}.mp4")
+
+            Log.info(f"Successfully merged {len(self.rawvideos)} videos.")
+
+    def __del__(self):
+        del self
+
+def main(args):
+    """Main method for recovering video."""
+    # if frame_database file not found
+    if not os.path.exists(args.database):
+        Log.error("frame_database file not found.", trace_exc=False)
+        return
+
+    ve = VideoExtractor(args.database, args.output)
+    ve.extract(args.merge, args.frame, args.add_timeline)
+    del ve
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser(description="Nest video recovery tool v1.0")
+    parser.add_argument("-d", "--database", dest="database", type=str, required=True,
+                        help="frame_database file path")
+    parser.add_argument("-o", "--output", dest="output", type=str, default="output",
+                        help="extracted video output file directory")
+    parser.add_argument("-m", "--merge", dest="merge", type=bool, default=False,
+                        help="merge all frames extracted from database")
+    parser.add_argument("-a", "--add-timeline", dest="add_timeline", type=bool, default=False,
+                        help="Add recording history at timeline with filename")
+    parser.add_argument("-f", "--frame", dest="frame", type=bool, default=False,
+                        help="Save by frame as a image")
+
+    args = parser.parse_args()
+    main(args)
+
+
+\end{lstlisting}
+
+\subsubsection{Server Stream Parser}
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Server Stream Parser}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+from argparse import ArgumentParser
+from collections import namedtuple
+
+from utils.elastic import Elastic
+from utils.logging.log import Log
+from utils.time import to_datetime
+
+import os
+import json
+import struct
+import sys
+
+class ISADiagnoticsStreamParser:
+    def __init__(self, diagnotics_stream):
+        try:
+            with open(diagnotics_stream, 'rb') as f:
+                self.stream = f.read()
+        except:
+            #alert error. need to logging.
+            sys.exit(-1)
+
+    def get_unstructured_log(self):
+        self.unstructured_stream_parser(self.stream[0x60000:0xE0000])
+        return self.unstructured_log
+
+    def get_sensor_log(self):
+        self.sensor_log_stream_parser(self.stream[0xE0000:])
+        return self.sensor_log
+
+    def sensor_log_stream_parser(self, stream):
+        self.sensor_log = []
+        stream = stream.replace(b'\x00', b'')
+        stream = stream.split(b'$@')
+        for s in stream:
+            if not s:
+                continue
+            _, sign, desc = s.split(b"::")
+            if sign == b'ALARMDOOR' or sign == b'ALARMPIR':
+                try:
+                    data = json.loads(desc)
+                    log = self.__sensor_log_repackager(data)
+                    self.sensor_log.append(log)
+                except:
+                    pass
+
+    def unstructured_stream_parser(self, stream):
+        self.index = 0
+        self.unstructured_log = []
+        while True:
+            self.log = dict()
+            sign = stream.find(b'\x24\x40')
+            if sign != -1:
+                size = struct.unpack("<L", stream[sign+0x2:sign+0x6])[0]
+                parsed_data = stream[sign+0xA:sign+0xA+size]
+                parsed_data = parsed_data.split(b'::')
+                stream = stream[sign+0xA+size:]
+            else:
+                break
+            self.log.update({
+                'idx': self.index,
+                'tag1': parsed_data[1][:2].decode(),
+                'tag2': parsed_data[1][2:].decode(),
+                'size': len(parsed_data[2])
+            })
+            if len(parsed_data[2]) < 16:
+                self.__general_parse(parsed_data[2])
+            else:
+                self.__isa_parse(parsed_data[2])
+            self.__classifier()
+            self.unstructured_log.append(self.log)
+            self.index += 1
+
+    def __sensor_log_repackager(self, log_data):
+        """
+            000A8540: Contact Sensor
+            0006B4E5: PIR Sensor
+        """
+        sensors = {
+            '000A8540': 'Contact',
+            '0006B4E5': 'PIR',
+        }
+        dt_ = to_datetime(log_data['TS'])
+        package = {
+            'datetime': dt_,
+            'sensor': sensors[log_data['SensorID']],
+            'sensor_id': log_data['SensorID'],
+            'event': False,
+            'siren': False,
+            'is_detected': False,
+        }
+        if log_data['MessageType'] == '0':
+            package.update({'event':True})
+        if log_data['MessageType'] == '0' and log_data['ModeId'] == '2':
+            package.update({'siren':True})
+        if log_data['DetectAlarm'] == '1':
+            package.update({'is_detected':True})
+        return package
+
+    def __unpack_to_update(self, data, labels, unpack_tags):
+        pseudo_tag = namedtuple('pseudo_tag', labels)
+        structured = pseudo_tag(*struct.unpack(unpack_tags, data))._asdict()
+        self.log.update(structured)
+
+    def __isa_parse(self, data):
+        data_size = self.log['size'] - 16
+        self.__unpack_to_update(data, 'sign type1 type2 type3 data', '<4sLLL'+str(data_size)+'s')
+        if self.log['sign'].startswith(b'ISA'):
+            self.log.update({'desc': 'isa'})
+        else:
+            self.log.update({'desc': 'general'})
+
+        self.log.update({'sign': self.log['sign'].decode()})
+
+    def __general_parse(self, data):
+        if len(data) % 4 != 0:
+            self.log['desc'] = 'dummy'
+            return
+        self.__unpack_to_update(data, 'type1 type2', '<LL')
+        self.log['desc'] = 'general'
+
+    def __classifier(self):
+        if self.log['desc'] == 'isa':
+            types = [self.log[x] for x in ['type1', 'type2', 'type3']]
+            if types == [21, 1, 10]:
+                self.log.update({
+                    'data_type': 'datetime',
+                    'data': to_datetime(self.log['data'])
+                })
+            else:
+                self.log.update({'data_type':'raw'})
+
+
+def main(args):
+    if not os.path.exists(args.server_stream):
+        Log.error("server_stream file not exist.")
+        return
+
+    Log.info("Start parsing iSmartAlarm diagnotics stream...")
+
+    isap = ISADiagnoticsStreamParser(args.server_stream)
+    unstructured_log = isap.get_unstructured_log()
+    sensor_log = isap.get_sensor_log()
+
+    with Elastic(index='unstructured_log', doc_type='unstructured_log') as elastic:
+        datetime_log = []
+
+        for log in unstructured_log:
+            if 'data_type' in log.keys():
+                if log['data_type'] == 'datetime':
+                    datetime_log.append(log)
+        elastic.upload(datetime_log, 'data')
+
+    with Elastic(index='sensor_log', doc_type='sensor_log') as elastic:
+        elastic.upload(sensor_log, 'datetime')
+
+    Log.info("Successfully upload server_stream data.")
+
+    del isap
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(description="iSmartAlarm diagnotics server stream parser")
+    parser.add_argument('-s', '--server-stream', type=str,
+        help='iSmartAlarm server_stream file path')
+
+    args = parser.parse_args()
+    main(args)
+
+
+\end{lstlisting}
+
+\subsubsection{Wink Activity Parser}
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Wink Activity Parser}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+from argparse import ArgumentParser
+
+from utils.logging.log import Log
+from utils.database.misc import dict_factory
+from utils.elastic import Elastic
+from utils.time import to_datetime
+
+import sqlite3
+import json
+import os
+
+
+class WinkActivityParser(object):
+    """Wink database activity parser."""
+
+    def __init__(self, database):
+        self.database = database
+
+    def parse(self):
+        """Parse activity from database."""
+        Log.debug("Extracting activities from database...")
+
+        with sqlite3.connect(self.database) as con:
+            con.row_factory = dict_factory
+            cur = con.cursor()
+
+            cur.execute("SELECT * FROM Elements WHERE Type='activity'")
+            data = cur.fetchall()
+
+        Log.debug("Successfully parsed activities from database.")
+
+        self.save(data)
+
+    def save(self, data):
+        """Save activity into elasticsearch."""
+        activities = [json.loads(activity['Json']) for activity in data]
+
+        for i in range(len(activities)):
+            activities[i]['created_at'] = to_datetime(activities[i]['created_at'])
+
+        with Elastic(index='wink', doc_type='activity') as elastic:
+            elastic.upload(activities, 'created_at')
+
+        Log.info("Successfully uploaded wink activity data into elasticsearch.")
+
+    def __del__(self):
+        del self
+
+
+def main(args):
+    """Main method for parsing dairies."""
+    if not os.path.exists(args.database):
+        Log.error("persistenceDB file not found.", trace_exc=False)
+        return
+
+    wap = WinkActivityParser(args.database)
+    wap.parse()
+    del wap
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(description="Wink Activity parser v1.0")
+    parser.add_argument("-d", "--database", dest="database", type=str, required=True,
+                        help="persistenceDB database file path")
+
+    args = parser.parse_args()
+    main(args)
+
+\end{lstlisting}
 
 \begin{thebibliography}{1}
 
+\bibitem{pari_1}
+"Autopsy," [Online]. Available: https://www.sleuthkit.org/autopsy/
 
-\bibitem{Ali_1} %1
-Example.
+\bibitem{pari_2}
+"Autopsy Information," [Online]. Available: https://www.autopsy.com/about/
+
+\bibitem{pari_3}
+"Autopsy Provided features, " [Online]. Available: https://www.sleuthkit.org/autopsy/features.php
+
+\bibitem{Ali_1}
+"Python" [Online]. Available: https://en.wikipedia.org/wiki/Python\_(programming\_language)
+
 \bibitem{Ali_2}
-Example.
+"Jupytor notebook" [Online]. Available: https://jupyter.org/
+
+\bibitem{Ali_3}
+"Parse Tools" [Online]. Available: https://github.com/philgeun/TapiocaPearlo
+
+\bibitem{Ali_4}
+"Kibana Definition" [Online]. Available: https://en.wikipedia.org/wiki/Kibana
+
+\bibitem{Ali_5}
+"Elastic" [Online]. Available: https://www.elastic.co/kibana
+
 
 
 
 \end{thebibliography}
-
 
 \end{document}
