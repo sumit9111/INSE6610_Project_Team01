@@ -1,0 +1,7 @@
+\subsubsection{Kibana Data visualisation}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Img/KibanaData.JPG}
+    \caption{Data Visualisation}
+    \label{fig:Drug Lab}
+\end{figure}
