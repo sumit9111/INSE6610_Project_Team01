@@ -1,0 +1,12 @@
+\subsection{Parser Tools}
+The following are tools that were developed and used to extract and retrieve activities and data from databases or video frames from the videos. \cite{Ali_3}
+\subsubsection{Wink Activity Parser}
+python wink\_activity\_parser.py -d \textless DB path\textgreater to run the tool
+\subsubsection{Nest Video Recovery Tool}
+python nest\_video\_recovery.py -d \textless DB path\textgreater [-o \textless output path\textgreater] [-m] [-a] [-f] to run the tool.
+\subsubsection{iSmartAlarm App Dairy Parser}
+python ismartalarm\_dairy\_parser.py -d \textless DB path\textgreater to run the tool.
+\subsubsection{Server Stream Parser}
+python server\_stream\_parser.py -d \textless DB path\textgreater to run the tool.
+\subsubsection{Amazon Alexa CIFT Tool Parser}
+python alexa\_cift\_parser.py -d \textless DB path\textgreater -t \textless timezone=’UTC+0200’\textgreater to run the tool.
