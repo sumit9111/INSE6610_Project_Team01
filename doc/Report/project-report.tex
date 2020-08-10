@@ -200,7 +200,7 @@ The Attorney General needs answers to the following questions:
 \end{itemize}
 
 \subsubsection{Autopsy in our case}
-We had different types of data gathered from different devices including the smart phone and base stations. So, we had images which should be browsed and information that should be extracted. 
+We had different types of data gathered from different devices including the smart phone and base stations. So, we had images which should be browsed and information that should be extracted, and to do so Autopsy was one of our tools.
 
 \subsection{Tool2}
 \subsection{Tool3}
@@ -228,8 +228,16 @@ Kibana is an open source data visualization dashboard for Elasticsearch. It prov
 \section{Forensic Analysis of Data}
 
 \subsection{Pinkman's Samsung}
+ \subsubsection{Autopsy Findings}
+ The Samsung smart phone data was a compressed file which we extracted it with WinRAR application and found 4 files including “blk0\_{sda.bin}”, “blk16\_sdb.bin”, “blk32\_sdc.bin” and “procdata.zip”. 
 
-
+\begin{itemize}
+\item blk0\_sda.bin: This is the largest file in image containing the all user and applications data.
+\item blk16\_sdb.bin: In Autopsy nothing can be found from this file.
+\item blk32\_sdc.bin: In Autopsy nothing can be found from this file.
+\item procdata.zip: Contains some information about device hardware like phone model, CPU and disk information, some information about file systems, mounting volume and partitions, etc. 
+ 
+\end{itemize}
 
 \subsection{iSmartAlarm Base Station}
 
