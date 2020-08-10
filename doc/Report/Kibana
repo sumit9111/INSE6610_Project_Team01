@@ -1,0 +1,3 @@
+
+\subsection{Kibana}
+Kibana is an open source data visualization dashboard for Elasticsearch. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data. \cite{Ali_4} \cite{Ali_5} \\ In our case we followed TapiocaPearlo solution in using Kibana after running the python code (parse tools) to visualise, order and classify the data by using to make it readable to the human eye. Using Timelion feature, we were able to filter the unwanted time zones by adjusting the time range. 
