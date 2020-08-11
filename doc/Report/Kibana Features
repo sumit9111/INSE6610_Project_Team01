@@ -1,0 +1,11 @@
+\subsubsection{Features of Kibana}
+Kibana offers its users the following features:
+
+\begin{itemize}
+\item Visualization : kibana has several way to virtualize data, the most used ones are : vertical bar chart, horizontal bar chart, pie chart, line graph, heat map etc.
+\item Dashboard : After virtualizing data we can place them on one board. Observing different sections together gives us a clear overall idea about what exactly is happening.
+\item Dev Tools : We can add dummy indexes from dev tools and also add, update, delete the data and use the indexes to create visualization.
+\item Reports : we can convert all the data in the form of visualization and dashboard to reports of CSV format, embedded in the form of URLs to be shared with others.
+\item Filters and Search query : We can use the filters and search queries to get the required details for a particular input from a dashboard or visualization tool.
+\item Timelion : it is used for time based data analysis. In order to work with timeline, we need to use simple expression language which helps us to perform calculations on the data to obtain the results we are looking for. It also helps to compare the data of the previous cycle in terms of week , month etc.
+\end{itemize}
