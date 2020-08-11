@@ -1,1 +1,2 @@
-JSON Editor Online is a web-based tool to view, edit, format, transform, and diff JSON documents
+\subsection{Online Json Tool}
+It is a JSON Editor Online used as a web-based tool to view, edit, format, transform, and diff JSON documents.In our case this tool is used to analyse the Json logs of imartAlarm App to be able to answer the challenge questions.
