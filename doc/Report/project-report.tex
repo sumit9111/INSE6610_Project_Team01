@@ -205,7 +205,20 @@ We had different types of data gathered from different devices including the sma
 \subsection{Online Json Tool}
 It is a JSON Editor Online used as a web-based tool to view, edit, format, transform all kind of JSON documents.
 In our case this tool is used to analyse the JSON logs of iSmartAlarm App to be able to answer the challenge questions.
-\subsection{Tool3}
+\subsection{Kibana}
+Kibana is an open source data visualization dashboard for Elasticsearch. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data. \cite{Ali_4} \cite{Ali_5} \\ In our case we followed TapiocaPearlo solution in using Kibana after running the python code (parse tools) to visualise, order and classify the data by using to make it readable to the human eye. Using Timelion feature, we were able to filter the unwanted time zones by adjusting the time range.
+\subsubsection{Features of Kibana}
+Kibana offers its users the following features \cite{Mery_1}:
+
+\begin{itemize}
+\item Visualization : kibana has several way to virtualize data, the most used ones are : vertical bar chart, horizontal bar chart, pie chart, line graph, heat map etc.
+\item Dashboard : After virtualizing data we can place them on one board. Observing different sections together gives us a clear overall idea about what exactly is happening.
+\item Dev Tools : We can add dummy indexes from dev tools and also add, update, delete the data and use the indexes to create visualization.
+\item Reports : we can convert all the data in the form of visualization and dashboard to reports of CSV format, embedded in the form of URLs to be shared with others.
+\item Filters and Search query : We can use the filters and search queries to get the required details for a particular input from a dashboard or visualization tool.
+\item Timelion : it is used for time based data analysis. In order to work with timeline, we need to use simple expression language which helps us to perform calculations on the data to obtain the results we are looking for. It also helps to compare the data of the previous cycle in terms of week , month etc.
+\end{itemize}
+
 \subsection{Tool4}
 \subsection{Tool5}
 \subsection{Tool6}
@@ -1014,7 +1027,9 @@ if __name__ == '__main__':
 \bibitem{Ali_5}
 "Elastic" [Online]. Available: https://www.elastic.co/kibana
 
-
+\bibitem{Mery_1}
+"Kibana Features, " [Online]. Available:
+https://www.tutorialspoint.com/kibana/kibana_overview.htm
 
 
 \end{thebibliography}
