@@ -100,7 +100,7 @@ Evidence Analysis Report}
 
 \begin{abstract}
 \textbf{The term of IoT means Internets of Things, they are internet connected devices and networks that are used for the sole purpose of automation and monitoring tasks. Technology is growing rapidly and it has became an essential part of our daily life; everyone owns an IoT device that they use for communication which creates and transmit data. This huge amount of data can be  collected and used in a court of law, and this is done by a digital forensic investigators. In this paper, we take on DFRWS IoT Forensic Challenge 2018-2019 challenge and we use efficient approaches that are effectively used for cyber forensics investigations including cloud data, smart things hub, amazon echo devices and automation devices to tackle this challenge.
-\textit{Keywords:} Internet of Things, Digital evidence, Computer forensics, Forensic tools}
+\textit{Keywords:} Internet of Things, Digital evidence, Computer forensics, Forensic tools.}
 \end{abstract}
 
 %\begin{IEEEkeywords}
@@ -202,14 +202,20 @@ The Attorney General needs answers to the following questions:
 \subsubsection{Autopsy in our case}
 We had different types of data gathered from different devices including the smart phone and base stations. So, we had images which should be browsed and information that should be extracted, and to do so Autopsy was one of our tools.
 
-\subsection{Tool2}
+\subsection{Online Json Tool}
+It is a JSON Editor Online used as a web-based tool to view, edit, format, transform all kind of JSON documents.
+In our case this tool is used to analyse the JSON logs of iSmartAlarm App to be able to answer the challenge questions.
 \subsection{Tool3}
 \subsection{Tool4}
 \subsection{Tool5}
 \subsection{Tool6}
+
+
 \subsection{Python}
 Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. \cite{Ali_1} \\
-In our case, pythos was used on jupyter notebook editor \cite{Ali_2} to use the parse tools developed to retrieves the activity records in the database of the devices.
+In our case, python was used on jupyter notebook editor \cite{Ali_2} to use the parse tools developed to retrieves the activity records in the database of the devices.
+
+
 \subsection{Parser Tools}
 The following are tools that were developed and used to extract and retrieve activities and data from databases or video frames from the videos. \cite{Ali_3}
 \subsubsection{Wink Activity Parser}
@@ -225,7 +231,13 @@ python alexa\_cift\_parser.py -d \textless DB path\textgreater -t \textless time
 
 \subsection{Kibana}
 Kibana is an open source data visualization dashboard for Elasticsearch. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data. \cite{Ali_4} \cite{Ali_5} \\ In our case we followed TapiocaPearlo solution in using Kibana after running the python code (parse tools) to visualise, order and classify the data by using to make it readable to the human eye. Using Timelion feature, we were able to filter the unwanted time zones by adjusting the time range. 
+
+
+
+
+
 \section{Forensic Analysis of Data}
+
 
 \subsection{Pinkman's Samsung}
  \subsubsection{Autopsy Findings}
@@ -239,19 +251,11 @@ Kibana is an open source data visualization dashboard for Elasticsearch. It prov
  \end{itemize}
  
  “blk0\_sda.bin” file which was known as an image file in Autopsy, and when we introduced this file as a data source to the application we could gain access to the volumes of the phone and see different file types including images, videos, audios, data bases, archives, etc.
- 
- \begin{figure}[h]
-	\centering
-		\includegraphics[width=1.00\textwidth]{autopsy.jpg}
-	\caption{Figure 1: Samsung data exploring using Autopsy}
-	\label{fig:autopsy}
-\end{figure}
-
 There were 20 volumes, 2 Unallocated volumes and 18 other volumes which their names are mentioned in Table 1.
 
 
-\begin{table}[h]
-  \begin{center}
+\begin{table*}
+  \centering
     \caption{Volumes detected in the ‘blk0\_sda.bin’ file}
     \label{tab:table1}
     \begin{tabular}{c|c|c|c|c|c} 
@@ -262,12 +266,16 @@ RECOVERY	& OTA		& RADIO		& TOMBSTONES	& DNT		& HIDDEN\\
   \hline
 PERSISTENT	& STEADY		& PERSDATA	& SBFS		& SYSTEM		& USERDATA\\
   \hline
-    
     \end{tabular}
-  \end{center}
-\end{table}
+\end{table*}
 
 
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=1.00\textwidth]{autopsy.jpg}
+	\caption{Samsung data exploring using Autopsy}
+	\label{fig:autopsy}
+\end{figure}
 
 
 \subsection{iSmartAlarm Base Station}
@@ -279,16 +287,15 @@ PERSISTENT	& STEADY		& PERSDATA	& SBFS		& SYSTEM		& USERDATA\\
 
 
 \subsection{Amazon Echo}
-
-
 \subsection{Network}
 \subsubsection{Entities}
 \subsubsection{Conversation}
 
 
-
 \section{Conclusion}
 \label{sect:conclusion} Write conclusion here.
+
+
 
 \section{Appendix}
 
@@ -990,13 +997,13 @@ if __name__ == '__main__':
 "Autopsy Information," [Online]. Available: https://www.autopsy.com/about/
 
 \bibitem{pari_3}
-"Autopsy Provided features, " [Online]. Available: https://www.sleuthkit.org/autopsy/features.php
+"Autopsy Provided Features, " [Online]. Available: https://www.sleuthkit.org/autopsy/features
 
 \bibitem{Ali_1}
 "Python" [Online]. Available: https://en.wikipedia.org/wiki/Python\_(programming\_language)
 
 \bibitem{Ali_2}
-"Jupytor notebook" [Online]. Available: https://jupyter.org/
+"Jupytor Notebook" [Online]. Available: https://jupyter.org/
 
 \bibitem{Ali_3}
 "Parse Tools" [Online]. Available: https://github.com/philgeun/TapiocaPearlo
