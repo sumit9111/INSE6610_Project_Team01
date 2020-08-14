@@ -290,6 +290,36 @@ PERSISTENT	& STEADY		& PERSDATA	& SBFS		& SYSTEM		& USERDATA\\
 	\label{fig:autopsy}
 \end{figure}
 
+By browsing the stored data in these volumes, we could find some useful information in different types including media files (images, screenshots, videos) and databases containing the data of management applications installed on the smart phone related to devices in the lab. 
+The extracted traces can be categorized in three categories:
+\begin{enumerate}
+\item Databases:\\
+IoT devices in lab have some applications for managing them installed on the phone and they have some databases, and we could find them in the below mentioned paths.\\
+\begin{table}[]
+
+   
+\begin{tabular}{|c|c|m{6cm}|}
+
+\hline
+Device & Database & Path  \\
+\hline
+ iSmartAlarm & iSmartAlarm.DB & /data/iSA.common/databases/\\
+\hline                    
+ Wink Hub & persistenceDB & /data/com.quirky.android.wink.wink /databases/\\
+\hline
+Nest Protect/Camera & frame\_database & /data/com.nest.android/cache /f315c6e2b5434a5381f1f5be6f73b4b3/ \\
+\hline 
+Nest Protect/Camera & cache & /data/data/com.nest.android/databases\\
+\hline
+ Arlo & default.realm & /data/com.netgear.android/files/\\
+\hline
+Amazon echo & map\_data\_storage\_v2.db	& 	/data/com.amazon.dee.app/databases/\\
+\hline 
+\end{tabular}
+ \caption{Extracted DBs from Smart Phone}
+    \label{tab:my_label}
+\end{table}
+
 
 \subsection{iSmartAlarm Base Station}
 
