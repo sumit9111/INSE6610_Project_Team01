@@ -12,7 +12,7 @@ import os
 
 
 class CIFTDatabaseParser(object):
-    """Parser for parse information from cift database."""
+    """Parser for parse information from cift database"""
 
     def __init__(self, database, timezone):
         self.database = database
