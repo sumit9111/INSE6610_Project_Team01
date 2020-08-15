@@ -530,6 +530,29 @@ The ‘wink\_local\_pref\_470654.xml’ , ‘user.xml’ and ‘com.quirky.andro
 \subsection{Amazon Echo}
 Amazon Echo is a hands-free, voice-controlled speaker. To play music, ask questions, make calls, send and receive messages, provide information, news, sports scores, weather, and more, Echo connects to the Alexa Voice Service. Amazon echo is able to use user voice to control compatible smart home devices  such as flipping on the lamp, turning on the coffee maker, or dimming the lights. Echo works with lights, locks, switches, thermostats, and more from WeMo, Philips Hue, ecobee, and Wink\cite{pari_8}.\\
 
+\textbf{Obtained result by using Autopsy:}\\
+
+Databases:\\
+map\_data\_storage\_v2.db database located in the ‘USERDATA/data/com.amazon.dee.app/databases/’ path contains an “account” table containing the lab owner account record.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/amazon Account.jpg}
+    \caption{phoenix.xml file content}
+    \label{fig:my_label}
+\end{figure}
+
+Files:\\
+
+The username and the email of owner were found in the service.identity.xml file in ‘/USERDATA /data/com.amazon.dee.app/shared\_prefs/’ directory.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/amazon AccountXML.jpg}
+    \caption{phoenix.xml file content}
+    \label{fig:my_label}
+\end{figure}
+
 \subsection{Network}
 \subsubsection{Entities}
 \subsubsection{Conversation}
