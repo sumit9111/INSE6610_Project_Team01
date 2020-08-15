@@ -450,7 +450,7 @@ Screenshot_20180502-132904.png & QBee camera & MAC Address & D8:FB:5E:E1:01:92 \
    \label{tab:my_label}
 \end{table}
 
-\subsection{iSmartAlarm Base Station}
+
 \subsection{iSmartAlarm Base Station}
 
 iSmartAlarm is a smart home security device do-it-yourself (DIY), operated with a user's smartphone. iSmartAlarm designs and produces the device and appliances\cite{pari_4}.\\
@@ -458,7 +458,7 @@ This systems consists of a CubeOne which is called the brain of the system by th
 
 \textbf{}
 
-\textbf{Obtained result by using Autopsy:}\\
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
 There are some snapshots found in the smartphone which were taken from the iSmartAlarm application and shows that the application can shows the status of “The Cube”, Sensors or Remote tags.
 
 \begin{figure}[H]
@@ -495,7 +495,7 @@ In the database of the application we found a name by ‘pandadodu’ which was 
 \subsection{Arlo Base Station}
 Arlo Technologies is a company known for home automation, producing wireless surveillance cameras. Before its initial public offering on the New York Stock Exchange in August 2018, Arlo had been considered a brand by Netgear.\\
 
-\textbf{Obtained result by using Autopsy:}\\
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
 
 Databases:\\
 The realm.default is the Arlo database which was on the smart phone in path USERDATA/data/com.netgear.android/files/.\\
@@ -512,7 +512,7 @@ The Phoenix.xml which has been found in the USERDATA/data/com.netgear.android/sh
 \subsection{QBee}
 The QBee Camera lets users watch their phone live. When the motion is detected, users can get an alert, watch real-time footage, and sound the built-in siren of the QBee Camera. The QBee Camera reads out the ambient temperature , humidity, light and noise levels with its integrated sensors \cite{pari_6}.\\
 
-\textbf{Obtained result by using Autopsy:}\\
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
 
 In the /USERDATA/data/com.vestiacom.qbeecamera/shared\_prefs path we can find the com.vestiacom.qbeecamera\_preferences.xml file which contains some encrypted information.\\
 
@@ -530,7 +530,7 @@ The ‘wink\_local\_pref\_470654.xml’ , ‘user.xml’ and ‘com.quirky.andro
 \subsection{Amazon Echo}
 Amazon Echo is a hands-free, voice-controlled speaker. To play music, ask questions, make calls, send and receive messages, provide information, news, sports scores, weather, and more, Echo connects to the Alexa Voice Service. Amazon echo is able to use user voice to control compatible smart home devices  such as flipping on the lamp, turning on the coffee maker, or dimming the lights. Echo works with lights, locks, switches, thermostats, and more from WeMo, Philips Hue, ecobee, and Wink\cite{pari_8}.\\
 
-\textbf{Obtained result by using Autopsy:}\\
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
 
 Databases:\\
 map\_data\_storage\_v2.db database located in the ‘USERDATA/data/com.amazon.dee.app/databases/’ path contains an “account” table containing the lab owner account record.\\
@@ -1285,10 +1285,13 @@ if __name__ == '__main__':
 "Sensors" [online]. Available: https://www.ismartalarm.com/devicesl
 
 \bibitem{pari_6}
-"QBee FAQ" [online]. Available:  https://qbeecam.com/home.html#qbee-app
+"QBee FAQ" [online]. Available:  https://qbeecam.com/home.html\#qbee-app
 
 \bibitem{pari_7}
 "Wink Hub2" [online]. Available: https://www.wink.com/products/wink-hub/
+
+\bibitem{pari_8}
+"What is eho?" [online]. Available:https://www.amazon.ca/Echo-2nd-Generation-speaker-Charcoal/dp/B0749ZSPN7
 
 \bibitem{Ali_1}
 "Python" [Online]. Available: https://en.wikipedia.org/wiki/Python\_(programming\_language)
