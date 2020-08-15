@@ -11,7 +11,7 @@ import os
 
 
 class WinkActivityParser(object):
-    """Wink database activity parser."""
+    """Wink database activity parser"""
 
     def __init__(self, database):
         self.database = database
