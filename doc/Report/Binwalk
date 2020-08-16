@@ -1,6 +1,9 @@
-Binwalk is a tool for searching a given binary image for embedded files and 
-executable code. Specifically, it is designed for identifying files and code embedded inside of firmware images. Binwalk uses the libmagic library, so it is 
-compatible with magic signatures created for the Unix file utility. Binwalk also 
-includes a custom magic signature file which contains improved signatures for 
-files that are commonly found in firmware images such as compressed/archived 
-files, firmware headers, Linux kernels, bootloaders, filesystems, etc.
+Binwalk
+Binwalk, is an open source firmware extraction tool and specifically, designed for identifying and extracting files and code embedded inside of firmware.
+It’s able to scan a firmware image and search for file signatures to identify and extract filesystem images, executable code, compressed archives, bootloader and kernel images, file formats like JPEGs and PDFs[1][2].
+Binwalk is a popular tool to reverse engineer a firmware image to understand how it works and helps to open binaries inside filesystem images to look for vulnerabilities, search for backdoor passwords, digital certificates, hardcoded crypto keys and identify opcodes for a variety of CPU architectures [3].
+Features
+•	Scanning Firmware – Binwalk can scan a firmware image for many different embedded file types and file systems
+•	File Extraction – Can extract any files that it finds in the firmware image
+•	Entropy Analysis – Can help identify interesting sections of data inside a firmware image
+•	String Search – Able to search the specified file(s) for a custom string [4]
