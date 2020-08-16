@@ -1,0 +1,1 @@
+Volatility Framework is an open source framework implemented in Python under the GNU, for Random Access Memory (RAM) analysis for 32bit and 64bit Windows, Linux, Mac and Android systems The extraction techniques are performed completely independent of the system being investigated but offer visibility into the runtime state of the system [1] [2]. 
