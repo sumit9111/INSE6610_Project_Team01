@@ -1,0 +1,7 @@
+In Figure \ref{fig:Timeline of JSon Log} we can see the timeline of the same JSON log.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/mery3.JPG}
+    \caption{Timeline of JSON Log }
+    \label{fig:Timeline of JSon Log}
+\end{figure}
