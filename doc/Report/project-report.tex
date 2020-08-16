@@ -14,7 +14,7 @@
 \usepackage{multicol}
 \usepackage{enumerate}
 \usepackage{float}
-
+\usepackage{tabularx}
 \usepackage{listings}
 
 %%%%%%%%%%%%%% Self Added %%%%%%%%%%%%%
@@ -98,6 +98,8 @@ Evidence Analysis Report}
 \thispagestyle{plain}
 \pagestyle{plain}
 
+
+
 \begin{abstract}
 \textbf{The term of IoT means Internets of Things, they are internet connected devices and networks that are used for the sole purpose of automation and monitoring tasks. Technology is growing rapidly and it has became an essential part of our daily life; everyone owns an IoT device that they use for communication which creates and transmit data. This huge amount of data can be  collected and used in a court of law, and this is done by a digital forensic investigators. In this paper, we take on DFRWS IoT Forensic Challenge 2018-2019 challenge and we use efficient approaches that are effectively used for cyber forensics investigations including cloud data, smart things hub, amazon echo devices and automation devices to tackle this challenge.
 \textit{Keywords:} Internet of Things, Digital evidence, Computer forensics, Forensic tools.}
@@ -136,6 +138,7 @@ image of the two base stations as well as an archive of some folder of interest 
 Jessie Pinkman's Samsung Galaxy S6 Edge is found at the scene, likely dropped during the raid.
 The digital forensic specialist acquires a physical image of this Samsung device.
 
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.45\textwidth]{Img/Drug Lab.JPG}
@@ -158,66 +161,20 @@ The Attorney General needs answers to the following questions:
 \label{FA}In this section we will list and describe the tools used to resolve the challenge.
 
 
-\subsection{Autopsy} Autopsy is a platform for digital forensics and a graphical interface to The Sleuth Kit and other digital forensics instruments. The law enforcement, military, and corporate examiners use it to determine what has happened on a computer. You can even use this free, fast, easy to use application which is able to analyze all types of mobile devices and digital media  \cite{pari_1},\cite{pari_2}
+\subsection{Autopsy} Autopsy is a platform for digital forensics and a graphical interface to The Sleuth Kit and other digital forensics instruments. The law enforcement, military, and corporate examiners use it to determine what has happened on a computer. You can even use this free, fast, easy to use application which is able to analyze all types of mobile devices and digital media.  \cite{pari_1}\cite{pari_2}
 \newline Autopsy is the leading open source web forensics which was designed to be intuitive from the box. Installation is simple, and wizards direct you every step of the way. All findings are displayed in a single tree. \cite{pari_3}
-\subsubsection{Provided features } 
-
-\begin{itemize}
-	\item Multi-user Cases: Collaborate on large cases with fellow examiners. 
-\item Timeline Analysis: Shows system events to help classify activity in a graphical interface. 
-\item Keyword Search: Modules searched for text extraction and indexing allow you to find files that reference particular words and find patterns of regular expressions
-\item Browser Artifacts: To help distinguish user activity, extracts web data from popular browsers. 
-\item Registry Analysis: Uses RegRipper to classify documents and USB devices which have been recently accessed. 
-\item LNK File Analysis: identifies short cuts and documents which have been accessed 
-\item Email Analysis: Parses messages in MBOX format, like Thunderbird for example.
-\item EXIF: Extracts geo location and camera information from JPEG files. 
-\item Sorting of File Type: Group files by type to find all images or documents. 
-\item Media Playback: Display the application's videos and pictures, which do not need an external screen. 
-\item Thumbnail viewer: Shows image thumbnails to help you view images quickly. 
-\item Robust analysis of the file system: Support for common file systems like NTFS, FAT12/FAT16/FAT32/ExFAT, HFS+, ISO9660 (CD-ROM), Ext2/Ext3/Ext4, Yaffs2, and UFS from The Sleuth Kit.
-\item Hash Set Filtering: Filter out known good files using NSRL and flag known bad files using custom hashsets in HashKeeper, md5sum, and EnCase formats. 
-\item Tags: Tag files with arbitrary tag names, such as 'bookmark' or 'suspicious', and add comments.
-\item Unicode Strings Extraction: Extracts strings from unallocated space and unknown file types in many languages (Arabic, Chinese, Japanese, etc.).
-\item File Type Detection based on signatures and extension mismatch detection.
-\item Interesting Files Module will flag files and folders based on name and path.
-\item Android Support: Extracts data from SMS, call logs, contacts, Tango, Words with Friends, and more. 
-\end{itemize}
-
-\subsubsection{Autopsy Input Formats}
-\begin{itemize}
-
-\item Disk images(in raw/dd or E01 format)
-\item Local drives
-\item Folder of local files
-\end{itemize}
-
-\subsubsection{Autopsy Report Formats}
-
-\begin{itemize}
-\item HTML
-\item Excel
-\item Body
-\end{itemize}
-
-\subsubsection{Autopsy in our case}
+\\
 We had different types of data gathered from different devices including the smart phone and base stations. So, we had images which should be browsed and information that should be extracted, and to do so Autopsy was one of our tools.
 
 \subsection{Online Json Tool}
-It is a JSON Editor Online used as a web-based tool to view, edit, format, transform all kind of JSON documents.
-In our case this tool is used to analyse the JSON logs of iSmartAlarm App to be able to answer the challenge questions.
+JSON (Javascript object notation) is an open standard format which uses text to store and transmit data objects consisting of key-value pairs \cite{Mery_1}.  It is a JSON Editor Online used as a web-based tool to view, edit, format, transform all kind of JSON documents. \\
+In this challenge we have data that includes data base files and CSV files extracted from each table of this data base. We find also in the shared drive some JSON files that contain logs and information about voice command data. In our case we used online Json viewer \cite{Mery_2} tool to analyse the JSON logs found in Cloud amazon Database \cite{Mery_3}. in the file echo shared we have All the requests and responses that has been returned via JSON. Figure 1 shows the contents of an Amazon Echo JSON file.
+
+
 \subsection{Kibana}
 Kibana is an open source data visualization dashboard for Elasticsearch. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data. \cite{Ali_4} \cite{Ali_5} \\ In our case we followed TapiocaPearlo solution in using Kibana after running the python code (parse tools) to visualise, order and classify the data by using to make it readable to the human eye. Using Timelion feature, we were able to filter the unwanted time zones by adjusting the time range.
-\subsubsection{Features of Kibana}
-Kibana offers its users the following features \cite{Mery_1}:
 
-\begin{itemize}
-\item Visualization : kibana has several way to virtualize data, the most used ones are : vertical bar chart, horizontal bar chart, pie chart, line graph, heat map etc.
-\item Dashboard : After virtualizing data we can place them on one board. Observing different sections together gives us a clear overall idea about what exactly is happening.
-\item Dev Tools : We can add dummy indexes from dev tools and also add, update, delete the data and use the indexes to create visualization.
-\item Reports : we can convert all the data in the form of visualization and dashboard to reports of CSV format, embedded in the form of URLs to be shared with others.
-\item Filters and Search query : We can use the filters and search queries to get the required details for a particular input from a dashboard or visualization tool.
-\item Timelion : it is used for time based data analysis. In order to work with timeline, we need to use simple expression language which helps us to perform calculations on the data to obtain the results we are looking for. It also helps to compare the data of the previous cycle in terms of week , month etc.
-\end{itemize}
+
 
 \subsection{DB Browser for SQLite}
 DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite. In our case, we used this tool to brows the different databases found in Jessie Pinkman's phone,  Table \ref{tab:DB} is the list of the databases found there. Immense amount of data about Jessie was found, most of them were unrelated to the event but some of them lead us to important evidence that can be used in the case and to track Jessie such as his Amazon account ID, which was found in Amazon databases shown in Figure \ref{fig:Amazon Database} or the name of the operator who disarmed the alarm before the raid happens shown in Figure \ref{fig:ISMD}.
@@ -226,8 +183,11 @@ DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to crea
 This extracts the class of database which contains the record about some camera devices, for an instance, here it extracts the data of Arlo devices.\\
 
 \subsection{FTK imager}
-\subsection{FTK imager}
 FTK imager is a forensic tool which is used for data preview and it is also an imaging tool which allows us to get quick access to the electronic devices so that we can determine the further forensic investigation. The benefit with this tool is that it retrieves the perfect copies (forensic images) from electronics devices without changing the original evidence. FTK uses full of the hardware resources unlike other tools which use partial capacity of it. //  
+	
+\subsection{Wireshark}
+Wireshark is a tool used in digital forensic to capture network traffic and analyze network traffic. These captured network packets are pcap files that when inserted into Wireshark, it is parsed according to traffic packets, packet header information and payload information. Packets captured using Wireshark are saved in .pcap formats ad given for this project.\\
+In many cases, Wireshark is also called a packet sniffer. Consider Wireshark as a mail person who takes packages from clients and can scan each package and determines the nature, shape, words, texture of all contents in the packages. Wireshark is dependent on the principles of network connectivity which is the OSI model. The data available for this investigation is the dfrws\_police.pcap. Using Wireshark, I will take note of the nature of the packets captured over the network which includes the size of packets transmitted (Tx) and Received (Rx) and the time the packets were sent.
 
 
 \subsection{Python}
@@ -251,10 +211,23 @@ python alexa\_cift\_parser.py -d \textless DB path\textgreater -t \textless time
 \subsection{Kibana}
 Kibana is an open source data visualization dashboard for Elasticsearch. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data. \cite{Ali_4} \cite{Ali_5} \\ In our case we followed TapiocaPearlo solution in using Kibana after running the python code (parse tools) to visualise, order and classify the data by using to make it readable to the human eye. Using Timelion feature, we were able to filter the unwanted time zones by adjusting the time range. 
 
+\subsection{Network Miner}
+Network miner (version 1.6.1) is an open source network analysis tool that works very much like Wireshark. It is particularly a Network Forensic Analysis Tool for Windows but has also been extended to work on other operating systems. Network miner displays the data in a manner that simplifies the analysis process which is time saving for a Forensic Investigator. In our case this tool was used along side Wireshark to assist it in analysis the captured network.
+
+\subsection{Jadx-gui}
+jadx-gui is a command line and GUI tools for produce Java source code from Android .apk files. jadx uses dex2jar as a decompiler engine to convert .dex to the  files  which we can review application’s every internal source code structure. It has a built in de-obfuscation plugin with some handy features to convenient analysis such as text search, class search, find function references, etc \cite{Gh_1}  \cite{Gh_2}. 
+\subsection{Ghidra}
+Ghidra is a software reverse engineering (SRE) framework created and maintained by the National Security Agency Research Directorate. This framework includes a suite of full-featured, high-end software analysis tools that enable users to analyze compiled code on a variety of platforms including Windows, macOS, and Linux. Capabilities include disassembly, assembly, decompilation, graphing, and scripting, along with hundreds of other features. Ghidra supports a wide variety of processor instruction sets and executable formats and can be run in both user-interactive and automated modes. Users may also develop their own Ghidra plug-in components and/or scripts using Java or Python. \cite{Gh_3}
+Ghidra supports headless mode, enabling researchers to spin up any number of cloud instances and reverse engineer at scale. Something that would be both technically difficult and very expensive to do in other tools such as IDA Pro. Ghidra can also be deployed in headless mode as a server to enable group collaboration when reverse engineering large binaries. \cite{Gh_4}\cite{Gh_5}
+
+\subsection{Binwalk}
+Binwalk, is an open source firmware extraction tool and specifically, designed for identifying and extracting files and code embedded inside of firmware. It’s able to scan a firmware image and search for file signatures to identify and extract filesystem images, executable code, compressed archives, bootloader and kernel images, file formats like JPEGs and PDFs\cite{Ab_1}\cite{Ab_2}. Binwalk is a popular tool to reverse engineer a firmware image to understand how it works and helps to open binaries inside filesystem images to look for vulnerabilities, search for backdoor passwords, digital certificates, hardcoded crypto keys and identify opcodes for a variety of CPU architectures \cite{Ab_3}. In our case binwalk was used for looking into the framework image of iSmartAlarm to find anything important related to the incident, also to find diagnostic  logs related to the door opening and closing before the raid.
+
+\subsection{Volatility}
+Volatility Framework is an open source framework implemented in Python under the GNU, for Random Access Memory (RAM) analysis for 32bit and 64bit Windows, Linux, Mac and Android systems The extraction techniques are performed completely independent of the system being investigated but offer visibility into the runtime state of the system \cite{Ab_4}\cite{Ab_5}. Volatility is a single, cohesive framework analyzes RAM dumps from 32- and 64-bit windows, linux, mac, and android systems. It’s Open Source GPLv2, which means you can read it, learn from it, and extend it. it's unparalleled feature sets based on reverse engineering and specialized research. It's comprehensive coverage of file formats – volatility can analyze raw dumps, crash dumps, hibernation files, VMware .vmem, VMware saved state and suspended files (.vmss/.vmsn), VirtualBox core dumps, LiME (Linux Memory Extractor), expert witness (EWF), and direct physical memory over Firewire. Finally and most importantly to our use it is Forensics/IR/malware focus – Volatility was designed by forensics, incident response, and malware experts to focus on the types of tasks these analysts typically form. \\ We used it to analyze Arlo Camera data set that consisted of memory dump image fileNVRAM settings and the TAR archive of the folder /tmp/media/nand.
 
 
-
-
+\newpage
 \section{Forensic Analysis of Data}
 
 
@@ -263,6 +236,7 @@ Kibana is an open source data visualization dashboard for Elasticsearch. It prov
  The Samsung smart phone data was a compressed file which we extracted it with WinRAR application and found 4 files including “blk0\_{sda.bin}”, “blk16\_sdb.bin”, “blk32\_sdc.bin” and “procdata.zip”. 
 
 \begin{itemize}
+\itemsep-1.9em
 \item blk0\_sda.bin: This is the largest file in image containing the all user and applications data.
 \item blk16\_sdb.bin: In Autopsy nothing can be found from this file.
 \item blk32\_sdc.bin: In Autopsy nothing can be found from this file.
@@ -270,14 +244,14 @@ Kibana is an open source data visualization dashboard for Elasticsearch. It prov
  \end{itemize}
  
  “blk0\_sda.bin” file which was known as an image file in Autopsy, and when we introduced this file as a data source to the application we could gain access to the volumes of the phone and see different file types including images, videos, audios, data bases, archives, etc.
-There were 20 volumes, 2 Unallocated volumes and 18 other volumes which their names are mentioned in Table 1.
+There were 20 volumes, 2 unallocated volumes and 18 other volumes which their names are mentioned in Table 1.
 
 
-\begin{table*}
+\begin{table}[h]
   \centering
     \caption{Volumes detected in the ‘blk0\_sda.bin’ file}
     \label{tab:table1}
-    \begin{tabular}{c|c|c|c|c|c} 
+    \begin{tabular}{|c|c|c|c|c|c|} 
       \hline
 BOTA0		& BOTA1		& EFS		& PARAM		& BOOT		& CACHE\\
  \hline
@@ -286,10 +260,10 @@ RECOVERY	& OTA		& RADIO		& TOMBSTONES	& DNT		& HIDDEN\\
 PERSISTENT	& STEADY		& PERSDATA	& SBFS		& SYSTEM		& USERDATA\\
   \hline
     \end{tabular}
-\end{table*}
+\end{table}
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 		\includegraphics[width=1.00\textwidth]{autopsy.jpg}
 	\caption{Samsung data exploring using Autopsy}
@@ -301,7 +275,7 @@ The extracted traces can be categorized in three categories:
 \begin{enumerate}
 \item Databases:\\
 IoT devices in lab have some applications for managing them installed on the phone and they have some databases, and we could find them in the below mentioned paths.\\
-\begin{table}[]
+\begin{table}[h]
 
    
 \begin{tabular}{|c|c|m{6cm}|}
@@ -323,19 +297,21 @@ Amazon echo & map\_data\_storage\_v2.db	& 	/data/com.amazon.dee.app/databases/\\
 \hline 
 \end{tabular}
  \caption{Extracted DBs from Smart Phone}
-    \label{tab:my_label}
+    \label{tab:DB}
 \end{table}
+
 \item Files:\\
 In addition to data bases there are some other format of files like XML or json, etc. which may contain some information which we could extract them from the application folder on the smart phone.\\
 
+
    
-\begin{table}[]
+\begin{table}[h]
    
 \begin{tabular}{|c|m{5cm}|m{6.3cm}|}
 \hline
-Device & File & path\\
+Device & File & Path\\
 \hline
-iSmartAlarm & iSmartAlermData.xml & 	/USERDATA/data/iSA.common
+iSmartAlarm & iSmartAlarmData.xml & 	/USERDATA/data/iSA.common
 /shared\_prefs/\\
 \hline
 Wink Hub & wink\_local\_pref\_470654.xml & 	/USERDATA/data/
@@ -373,6 +349,7 @@ Nest Protect/Camera	& cache-1332523362.json & /USERDATA/data/com.nest.android
 Amazon echo & service.identity.xml & /USERDATA/data/com.amazon.dee.app
 /shared\_prefs/\\
 \hline
+
 \end{tabular}
  \caption{Extracted Files from Smart Phone}
    \label{tab:my_label}
@@ -403,12 +380,13 @@ com.netgear.android/cache/http/\\
  \caption{Extracted Media from Smart Phone}
    \label{tab:my_label}
 \end{table}
+\end{enumerate}
 
-\textbf{Obtained results and evidences:}\\
+\textbf{Obtained Results and Evidences:}\\
 Finding from Databases and Files would be analyzed in each device section in following. In media part we could find some pictures taken by the user which were related to IoT devices and could give us some information about those devices like their MAC address or serial numbers. These photographs have been stored in ‘USERDATA/media/0/DCIM/Camera’ path as mentioned in Table 4 and gave us the device specification as mentioned below.\\
 
 
-\begin{table}[]
+\begin{table}[h]
 \begin{tabular}{|c|c|c|c|}							 
 \hline
 Pic number	& Device &	Info type &	Info\\
@@ -439,88 +417,242 @@ Pic number	& Device &	Info type &	Info\\
 \hline
 \end{tabular}
  \caption{Obtained Devices Information from Images in Phone}
-   \label{tab:my_label}
-\end{table}\\
-There were also some screenshots taken from the application which gave us some information about other devices:\\
+   \label{tab:my_pari1}
+\end{table}
 
-\begin{table}[]
+There were also some screenshots taken from the application which gave us some information about other devices as Table \ref{tab:mssdfs} and \ref{tab:my_pari1} illustrates. 
+\begin{table}[H]
 \begin{tabular}{|c|c|c|c|}							 
 \hline
-Pic number	& Device &	Info type &	Info\\
+Picture Name	& Device &	Information Type &	Info\\
 \hline
-Screenshot_20180502-132904.png & QBee camera & MAC Address & D8:FB:5E:E1:01:92 \\
+Screenshot\_20180502-132904.png & QBee camera & MAC Address & D8:FB:5E:E1:01:92 \\
 \hline
 \end{tabular}
  \caption{Obtained Devices Information from Screenshots in Phone}
-   \label{tab:my_label}
+   \label{tab:mssdfs}
 \end{table}
 
-
+\newpage
 \subsection{iSmartAlarm Base Station}
+iSmartAlarm is a smart home security device do-it-yourself (DIY), operated with a user's smartphone. iSmartAlarm designs and produces the device and appliances.\cite{pari_4}\\
+This systems consists of a CubeOne which is called the brain of the system by the company and customers can add different number of Contact Sensors, Motion Sensor or Remote Tags.Contact Sensors can be placed (battery-operated and attached with double-sided tape) at door or window to make customer sure know when someone enters or leaves.\cite{pari_5}\\   
+\subsubsection{Memory Image}
+\textbf{Obtained result by using Binwalker:}\\
+There are two memory image files, 'ismart\_00.img' and 'ismart\_80.img', the two files have the same SHA256 hash value and the 'Compare Files' function in 010 Editor results in all bytes being identical when compared on byte-by-byte basis, they are same file as Figure \ref{fig:ab1} shows. Therefore, the analysis was conducted for ‘ismart\_00.img’ only. 
 
-iSmartAlarm is a smart home security device do-it-yourself (DIY), operated with a user's smartphone. iSmartAlarm designs and produces the device and appliances\cite{pari_4}.\\
-This systems consists of a CubeOne which is called the brain of the system by the company and customers can add different number of Contact Sensors, Motion Sensor or Remote Tags.Contact Sensors can be placed (battery-operated and attached with double-sided tape) at door or window to make customer sure know when someone enters or leaves\cite{pari_5}.\\   
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{Img/Ab1.JPG}
+    \caption{Images Hash Values Comparison}
+    \label{fig:ab1}
+\end{figure}
+\newpage
+The result of executing the memory image using the tool is summarized in the following table.
+\begin{center}
 
-\textbf{}
+\begin{tabular}{ | m{9cm} | m{4cm}| } 
 
+\hline
+PATH & FINDINGS \\ 
+\hline
+etc\_ro/rcS & gateway : 192.168.1.1,
+ethernet : 192.168.1.68
+ \\ 
+\hline
+etc\_ro/Wireless/RT2860AP/RT2860\_default\_vlan
+etc\_ro/Wireless/RT2860AP/RT2860\_default\_novlan
+ & HostName:ralink 
+Login:admin 
+Password:admin 
+wan\_ip addr:10.10.10.254 
+wan\_netmask:255.255.255.0 
+wan\_gateway:10.10.10.253 
+ \\ 
+\hline
+sbin/iSmartAlarm.cer & Certificate file
+ \\ 
+\hline
+sbin/log\_pubkey.pem & Public key file
+ \\ 
+\hline
+sbin/logpubkey.pem & Public key file
+ \\ 
+\hline
+usr/share/default\_config & IP Address:192.168.1.68
+subnetmark:255.255.255.0
+IP Gateway:192.168.1.1
+IP DDns:202.99.96.68
+
+ \\ 
+\hline
+
+\end{tabular}
+\end{center}
+\textbf{Diagnostics log:}
+There is Diagnostics log file named ‘server\_stream’. the file type is unknown and seemed it’s a custom format file used in iSmartAlarm devices and contains the records between the server and device. By using strings, a tool in linux we extracted all the string records as Figure \ref{fig:ab3} shows.
+Sensor Log contains a record of contact sensor and motion sensor. Event classification for each sensor is available in ‘Data Type’ field. When an event occurs, it is stored in the log as ‘ALARMDOOR’ (contact sensor) and ‘ALARMPIR’ (motion sensor), respectively. Value in the ‘Data’ field can be general text or JSON format data. For general text, it is simply used to record the current event, and JSON data is used to send POST request to the cloud service of iSmartAlarm.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{Img/ab3.JPG}
+    \caption{Communication Records Between Server and Alarm}
+    \label{fig:ab3}
+\end{figure}
+\newpage
+The following Table \ref{tab:'ALARMDOOR’ and ‘ALARMPIR’ } shows the description of the ‘Data’ field in records with ‘ALARMDOOR’ and ‘ALARMPIR’ data type.
+
+\begin{table}[h]
+\begin{tabular}{|c|c| m{4cm}|}							 
+\hline
+Data Type	& Event & Value \\
+\hline
+ALARMDOOR (Contact Sensor) & F1: Door Open, 
+F2: Door Closed
+ & F1: door is open, and send to cloud, F2: door is closed, and send to cloud \\
+\hline
+ALARMPIR (Motion Sensor) & Motion Detected & pir is triggered, and send to cloud \\
+\hline
+
+\end{tabular}
+ \caption{'ALARMDOOR’ and ‘ALARMPIR’}
+   \label{tab:'ALARMDOOR’ and ‘ALARMPIR’ }
+\end{table}
+
+The following Table \ref{tab:Diagnostics Log} summarizes only the relevant information on 2018-05-17, the day of the incident. It shows Sensor ID, Device ID, alarm for door, Siren operation, Message and what mode was used.
+\begin{table}[h]
+\begin{tabular}{|c|c| m{10cm}|}							 
+\hline
+Time	& SensorID & Description \\
+\hline
+09:44:53 &000A8540 & one sensor trigger, door is open and send to cloud.
+ \\
+\hline
+09:45:22 & 0006B4E5 & set status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+09:47:18 &000A8540  & set status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+10:09:57 &000A8540  & set status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+10:22:27 & 000A9474 & set status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+ 10:34:15 &000A8540  & set status to home and door is closed.
+ \\
+\hline
+10:34:19 & 000A9474 & the current alarm sensor is disable in child process, disarm and change the LED to white breathe.
+ \\
+\hline
+10:34:31 & 004D3209D9E4 & receive the command to stop all the resend and alarm command.
+ \\
+\hline
+10:34:36 & 000A8540 & door is open and all the siren need doorbell.
+ \\
+\hline
+10:37:52 & 004D3209D9E4 & receive the command to stop all the resend and alarm command.
+
+ \\
+\hline
+
+\end{tabular}
+ \caption{Diagnostics Log}
+   \label{tab:Diagnostics Log}
+\end{table}
+
+\newpage
 \textbf{Obtained result by using Autopsy and DB Browser:}\\
 There are some snapshots found in the smartphone which were taken from the iSmartAlarm application and shows that the application can shows the status of “The Cube”, Sensors or Remote tags.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \includegraphics[width=5cm]{Img/Screenshot20180330203354.png}
     \caption{iSmartAlarm screenshot}
     \label{fig:my_label}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \includegraphics[width=5cm]{Img/Screenshot20180330203515.png}
-    \caption{iSmartAlarm sensors' status}
+    \caption{iSmartAlarm Sensors' Status}
     \label{fig:my_label}
 \end{figure}
 
- Like other IoT devices this solution has an application installed on the smart phone which stored data on databases and some XML files.
- 
-\begin{figure}[H]
+Like other IoT devices this solution has an application installed on the smart phone which stored data on databases and some XML files.
+\begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{Img/xml.jpg}
     \caption{ID and Password stored in iSmartAlarm.xml file}
     \label{fig:my_label}
 \end{figure}
+
 \subsubsection{Database}
+iSmartAlarm database got extracted form ‘/data/iSA.common/databases/’ and then browsed by using DB Browser. According to manual of this device and regarding the status found in the TB\_IPUDiary table in thie database there are four different modes for the iSmartAlarm system including, Arm, Disarm, Panic and Home.\\
 
-iSmartAlarm database got extracted form ‘/data/iSA.common/databases/’ and then browsed by using DB Browser. According to manual of this device and regarding the status found in the TB\_IPUDiary table in thie database there are 4 different modes for the iSmartAlarm system including, Arm, Disarm, Panic and Home.\\
-
-Arm:\\
+\textbf{Arm:}\\
 All devices are armed by either Remote Tag or through the App. After the “Arm” is pushed, it takes 90 seconds to allow user(s) to walk out of the premises before the iSmartAlarm system takes effect\cite{pari_9}.\\
 
-Disarm:\\
+\textbf{Disarm:}\\
 All devices are disarmed by either Remote Tag or through the App. It allows up to 60 seconds to disarm the system before the siren begins to go off\cite{pari_9}.\\
 
-Home: \\
+\textbf{Home:} \\
 The contact sensors are armed, and the motion detector is disarmed. After the “Home” is enabled (turned on), it takes 90 seconds to allow user to walk out of the premise before the iSmartAlarm system takes effect\cite{pari_9}.\\
 
-Panic:\\
+\textbf{Panic:}\\
  A siren is sounded (located in the CubeOne™) at 100dB\cite{pari_9}.\\
 
-In the TB\_IPUDiary table we found a name by ‘pandadodu’ which was the operator who deactivated the alarm system shortly before the man entered the tabletting room at 10:34 on the day of the incident. The nickname 'pandadodu' is probably a combination of the first and last names of him which is D. Pandana.
+In the TB\_IPUDiary table we found a name by ‘pandadodu’ which was the operator who deactivated the alarm system shortly before the man entered the tabletting room at 10:34 on the day of the incident as Figure \ref{fig:ISMD} shows. The nickname 'pandadodu' is probably a combination of the first and last names of him which is D. Pandana.
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{Img/iSmartAlarm.JPG}
     \caption{Evidence Found in iSmartDatabase Database}
     \label{fig:ISMD}
 \end{figure}
- 
+
+
 \subsection{Arlo Base Station}
+
 Arlo Technologies is a company known for home automation, producing wireless surveillance cameras. Before its initial public offering on the New York Stock Exchange in August 2018, Arlo had been considered a brand by Netgear.\\
+
+\textbf{Obtained result by using Volatility:}\\
+Figure \ref{fig:VD} shows the result of getting info of the image file and we can see here that the image file is not the standard memory dump file and can’t be recognized by Volatility version 2.6.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{Img/Abb2.JPG}
+    \caption{Volatility Output }
+    \label{fig:VD}
+\end{figure}
+
+Therefore we decided to open it with Hex Editor Neo to see the inside, At offset 0x180FCCC, we found a command line string, that contains the name of the memory image file and seems to be used for physical memory acquisition, as shown in Figure \ref{fig:INA}.  The command could be executed in active system by shell interface. Terminal protocol like telnet or SSH or serial interface approached from UART port.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/abb3.JPG}
+    \caption{Image Name Appearance }
+    \label{fig:INA}
+\end{figure}
+
+The memory image seems to be the concatenation of the flash memory and the RAM and many bits of the image seem to be flipped by unknown reason also most area are null-filled or 0xFF-filled have irregularly set bits or unset bits.  We couldn’t find any malicious process which attached in device’s memory.\\\\
+\textbf{NAND TAR Archive:}\\
+The file ‘arlo\_nand.tar.gz’ contains '/tmp/media/nand' directory of the base station’s active file system. Most are JSON files which contain information about policies, configuration and camera device information and no significant information related to the incident was found in the archive.\\
+\textbf{Nvram.log:}\\
+This file shows settings of the base station saved in NVRAM and is acquired from the output of command ‘nvram show’ executed by active system and contains various items related to network, user, system parameter, etc., the items are in the form of ‘[key]=[value]’. As Figure \ref{fig:nvram.log} shows.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{Img/abb4.JPG}
+    \caption{nvram.log }
+    \label{fig:nvram.log}
+\end{figure}
+
 
 \textbf{Obtained result by using Autopsy and DB Browser:}\\
 
-Databases:\\
+\textbf{Databases:}\\
 The realm.default is the Arlo database which was on the smart phone in path USERDATA/data/com.netgear.android/files/.\\
 
-Files:\\
+\textbf{Files:}\\
 The Phoenix.xml which has been found in the USERDATA/data/com.netgear.android/shared\_prefs/ directory contains some information line User Id and the email of the user.
 \begin{figure}[H]
     \centering
@@ -530,29 +662,88 @@ The Phoenix.xml which has been found in the USERDATA/data/com.netgear.android/sh
 \end{figure}
 
 \subsection{QBee}
-The QBee Camera lets users watch their phone live. When the motion is detected, users can get an alert, watch real-time footage, and sound the built-in siren of the QBee Camera. The QBee Camera reads out the ambient temperature , humidity, light and noise levels with its integrated sensors \cite{pari_6}.\\
+The QBee Camera lets users watch their phone live. When the motion is detected, users can get an alert, watch real-time footage, and sound the built-in siren of the QBee Camera. The QBee Camera reads out the ambient temperature , humidity, light and noise levels with its integrated sensors. \cite{pari_6}\\
 
 \textbf{Obtained result by using Autopsy and DB Browser:}\\
 
 In the /USERDATA/data/com.vestiacom.qbeecamera/shared\_prefs path we can find the com.vestiacom.qbeecamera\_preferences.xml file which contains some encrypted information.\\
 
+QBee cameras are known to have several vulnerabilities. We have experimented directly with the vulnerability CVE-2018-16223 \cite{Gh_6}, which Insecure Cryptographic Storage of credentials in com.vestiacom.qbeecamera\_preferences.xml in the QBee Cam application through 1.0.5 for Android allows an attacker to retrieve the username and password in Figure \ref{fig:Encrypted QBee Account Information}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/Gh1.JPG}
+    \caption{Encrypted QBee Account Information}
+    \label{fig:Encrypted QBee Account Information}
+\end{figure}
+
+In order to protect user credentials, the application uses the Secure Preferences library to enhance the confidentiality of the storage with the Shared Preferences format. But because of the customization of the library, the data used for encryption can be obtained from the application source. This can be confirmed directly by decompiling the APK by the tools that we’ve mentioned in \ref{fig:Qbee Application APK File}, Figure \ref{fig:Decompile APK with Ghidra and String Search Feature Looking for Password and References} and Figure \ref{fig:Decompile APK with Jadx and String Search Feature Looking for Password and References}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/Gh2.JPG}
+    \caption{Qbee Application APK File}
+    \label{fig:Qbee Application APK File}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/Gh3.JPG}
+    \caption{Decompile APK with Ghidra and String Search Feature Looking for Password and References}
+    \label{fig:Decompile APK with Ghidra and String Search Feature Looking for Password and References}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/Gh4.JPG}
+    \caption{Decompile APK with Jadx and String Search Feature Looking for Password and References}
+    \label{fig:Decompile APK with Jadx and String Search Feature Looking for Password and References}
+\end{figure}
+
+\textbf{Three steps of key generation algorithm:}\\
+First Getting a “preference key” in Shared preference file (first string value) then divide it into half and put “a!k@ES2,g86AX&D8vn2]” string between them and finally hashing the result with SHA256 hash algorithm, as it's shown in Figure \ref{fig:Key Generation Method in ‘QBee Cam’ Application}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{Img/gh5.JPG}
+    \caption{Key Generation Method in ‘QBee Cam’ Application}
+    \label{fig:Key Generation Method in ‘QBee Cam’ Application}
+\end{figure}
+
+\textbf{Decryption process:}\\
+Encrypted data in Shared preference file need to be decoded using Base64. Then decoded data and the key generated from pervious algorithm are used as input parameters into AES-256-ECB to decrypt username and password. As shown in Figure \ref{fig:Decrypted account information} decrypted QBee camera setting information was obtained by our own experiments. The user name of the QBee camera is “JPinkman” and the password is “Esc\_ioT\_2018”.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/gh6.JPG}
+    \caption{Decrypted Account Information}
+    \label{fig:Decrypted account information}
+\end{figure}
+
+It was possible to access QBee cloud storage with this ID and password, password, but there was no record of the incident. The following figure shows the cloud storage accessed with the Pinkman’s user account in Figure \ref{fig: QBee Cam application access with the Pinkman’s user account}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/gh7.JPG}
+    \caption{QBee Cam Application Access with Pinkman’s User Account}
+    \label{fig: QBee Cam application access with the Pinkman’s user account}
+\end{figure}
+
 \subsection{Wink Hub}
-\subsection{Wink Hub}
-The Wink Hub allows your vast range of smart products to speak the same wireless language, so you can conveniently monitor them from the Wink app — and customise their interaction\cite{pari_7}.\\
-\textbf{Obtained result by using Autopsy:}\\
-
-Databases:\\
-Persistence DB in ‘/data/com.quirky.android.wink.wink/databases/’ directory belong to Wink Hub and has 2 table which ‘Elements’ tables contains data about the items and events related to Wink Hub and in json format.\\
-
-Files:\\
-The ‘wink\_local\_pref\_470654.xml’ , ‘user.xml’ and ‘com.quirky.android.wink.wink\_preferences.xml’ files in path ‘/USERDATA /data/com.quirky.android.wink.wink/shared\_prefs/’ path respectively contains some information about devices connected to Hub and mobile ID and gmail address.\\
-
-\subsection{Amazon Echo}
-Amazon Echo is a hands-free, voice-controlled speaker. To play music, ask questions, make calls, send and receive messages, provide information, news, sports scores, weather, and more, Echo connects to the Alexa Voice Service. Amazon echo is able to use user voice to control compatible smart home devices  such as flipping on the lamp, turning on the coffee maker, or dimming the lights. Echo works with lights, locks, switches, thermostats, and more from WeMo, Philips Hue, ecobee, and Wink\cite{pari_8}.\\
+The Wink Hub allows your vast range of smart products to speak the same wireless language, so you can conveniently monitor them from the Wink app — and customise their interaction. \cite{pari_7}\\
 
 \textbf{Obtained result by using Autopsy and DB Browser:}\\
 
-Databases:\\
+\textbf{Databases:}\\
+Persistence DB in ‘/data/com.quirky.android.wink.wink/databases/’ directory belong to Wink Hub and has 2 table which ‘Elements’ tables contains data about the items and events related to Wink Hub and in json format.\\
+
+\textbf{Files:}\\
+The ‘wink\_local\_pref\_470654.xml’ , ‘user.xml’ and ‘com.quirky.android.wink.wink\_preferences.xml’ files in path ‘/USERDATA /data/com.quirky.android.wink.wink/shared\_prefs/’ path respectively contains some information about devices connected to Hub and mobile ID and gmail address.\\
+
+
+\subsection{Amazon Echo}
+
+Amazon Echo is a hands-free, voice-controlled speaker. To play music, ask questions, make calls, send and receive messages, provide information, news, sports scores, weather, and more, Echo connects to the Alexa Voice Service. Amazon echo is able to use user voice to control compatible smart home devices  such as flipping on the lamp, turning on the coffee maker, or dimming the lights. Echo works with lights, locks, switches, thermostats, and more from WeMo, Philips Hue, ecobee, and Wink.\cite{pari_8}\\
+
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
+
+\textbf{Databases:}\\
 map\_data\_storage\_v2.db database located in the ‘USERDATA/data/com.amazon.dee.app/databases/’ path contains an “account” table containing the lab owner account record.\\
 
 \begin{figure}[H]
@@ -562,7 +753,7 @@ map\_data\_storage\_v2.db database located in the ‘USERDATA/data/com.amazon.de
     \label{fig:my_label}
 \end{figure}
 
-Files:\\
+\textbf{Files:}\\
 
 The username and the email of owner were found in the service.identity.xml file in ‘/USERDATA /data/com.amazon.dee.app/shared\_prefs/’ directory.\\
 
@@ -587,6 +778,7 @@ In PKStorage DB Browser by DB Browser changing the mode of the iSmartAlarm syste
     \label{fig:my_label}
 \end{figure}
 
+
 \subsection{Nest Camera and Nest Protect}
 
 The security camera Nest Cam Indoor is a camera for people to keep an eye on what matters, with 24/7 live streaming, a magnetic stand, individual notifications with Nest Aware and one app for all Nest products which make having access from anywhere\cite{pari_10}.\\
@@ -604,26 +796,121 @@ In com.nest.android.preferences.xml file in '/data/com.nest.android/shared\_pref
 \end{figure}
 
 \subsection{Network}
-\subsubsection{Entities}
-\subsubsection{Conversation}
+In this section, we captured the network traffic using wireshark and network minor the we parse the data specifically according to the behaviour of each device on the network. We looked for the IP addresses with the most interactions between each other and the kind of Layer4 and Layer3 communications used. 
+\\
+But first, we created a Table of information for the IP addresses, their corresponding MAC addresses. Using the Statistics Option  we took note of the total number of packets to and from each IP address (transmitted and received) and the total number of bytes corresponding to the MAC address.
+We noticed that when checking the number of total packets received using the IP address instead of the MAC address, the packets were short by one or two packets. Therefore, the Total Number of Packets in Table \ref{tab:Device Information} are deduced from the wireshark analysis from the MAC address. The next image \ref{fig:wireshark1} shows the number of packets from the statistical analysis of the IP addresses. 
+
+\begin{table}[]
+\begin{tabular}{|c|c|c|c|c|}							 
+\hline
+
+Device Name	& Device MAC Address &	IP Address & Number of Packets & Bytes\\
+\hline
+
+Pinkman’s  SamsungE\_73:e3:78 & 
+AC:5F:3E:73:E3:78 & 10.20.30.21 & 129 & 18 \\
+\hline
+Router - Rasberr\_0e:3b:45 & B8:27:EB:0E:3B:45 & 10.20.30.1 & 4237 & 1642\\
+\hline
+QBeeCamera & D8:FB:5E:E:1:01:92 & 10.20.30.15	& 115 & 14\\
+\hline
+Nest Cam – NestLabs\_61:c9:ef & I8:B4:30:61:C9:EF & 10.20.30.13 & 3,924 & 1593\\
+\hline
+Amazon Echo &  74:75:48:96:23:24 &  10.20.30.23 & 34 &  4977\\
+\hline
+Nest Labs & 18:B4:30:99:9F:85 & 10.20.30.19 & 6 & 884\\
+\hline
+\end{tabular}
+ \caption{Device Information}
+   \label{tab:Device Information}
+\end{table}
+\textbf{Based on Table \ref{tab:Device Information} - Device Information, the following information can be deduced:} 
+\begin{itemize}
+\itemsep-0.6em
+\item The Router had the most number of packets. It is a reasonable observation being that there are several devices connected to the wifi device, especially IoT devices, as seen in the yellow highlights.
+\item The Amazon Echo device has an outrageous amount of total bytes (4977) comparing it to its total number of packets (34) as seen in the red highlights.
+\item Most of the communication IP addresses) correspondence with the router are IP addresses within the 10.20.30.0/24 subnet. This means that the devices are within the internal network.
+\item The Nest Cam NestLabs device had the second most number of packets as seen in the orange highlights.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/wireshark.JPG}
+    \caption{com.nest.android.preferences.xml file content}
+    \label{fig:wireshark1}
+\end{figure}
+
+\textbf{Overall analysis of the dfrw police.pcap file using Network Miner:}
+\begin{itemize}
+\item There are a total of 29 hosts active on the network at the time of this traffic capture.
+\item Two files were found. Filenames google-analytics.com.cer and Google Internet Authority .cer. They both had the same source host [216.58.205.174] and destination host [10.20.30.21] using TLS certificate protocol. 
+\item There were no images found on this pcap file.
+\item No messages (in cleartext) were found.
+\item No credentials were found.
+\item No signature-based anomalies (according to NetworkMiner) were found.
+\item 17 DNS queries were found.
+\item There are 13 sessions (most of which are ssl) in this packet, 10 of which are from Pinkman’s Samsung Phone.
+\end{itemize}
+
+The following Figure \ref{fig:Network Miner’s analysis of Sessions} illustrates the network miner analysis of the sessions captured from the network.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/Networkminer.JPG}
+    \caption{NetworkMiner’s analysis of Sessions}
+    \label{fig:Network Miner’s analysis of Sessions}
+\end{figure}
+
+
 
 
 \section{Conclusion}
 \label{sect:conclusion} Write conclusion here.
 
 
-
+\newpage
 \section{Appendix}
 
 \subsection{Figures}
 The follow are the figures that supports our report.
 \subsubsection{Kibana Data visualisation}
+The following Figure \ref{fig:Kibana Data visualisation}, shows the timeline activities of the data taken from the applications.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.92\textwidth]{Img/TimeLion.jpg}
-    \caption{Data Visualisation Using Timelion}
-    \label{fig:Drug Lab}
+    \caption{Kibana Data visualisation}
+    \label{fig:Kibana Data visualisation}
 \end{figure}
+\subsubsection{Databases}
+The following Figure \ref{fig:Amazon Database}, shows Jessie Pinkman's Amazon ID, this ID can be used to track Jessie's activities.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.52\textwidth]{Img/JPID.JPG}
+    \caption{Amazon Database}
+    \label{fig:Amazon Database}
+\end{figure}
+\newpage
+\subsubsection{QBee}
+The following Figure \ref{fig:QBee Network}, shows that on QBee Camera, the TCP 15700 port was opened from which the GET /verifyHTTP request was sent. Addition to that, the highest number of packets were sent between QBee and the router. And the second highest was between QBee and Pinkman’s Samsung Phone.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Img/Minor2.JPG}
+    \caption{QBee Network}
+    \label{fig:QBee Network}
+\end{figure}
+\subsubsection{Amazon Echo JSON Log}
+The following Figure \ref{fig:Amazon Echo JSON Log Details} illustrates Amazon echo log.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.00\textwidth]{Img/Mery1.JPG}
+    \caption{Amazon Echo JSON Log Details}
+    \label{fig:Amazon Echo JSON Log Details}
+\end{figure}
+\newpage
+
+
+
 
 \subsection{Codes}
 The following are the python codes used to extract and retrieve data.
@@ -826,10 +1113,6 @@ if __name__ == '__main__':
 
 
 \end{lstlisting}
-
-
-
-
 
 \subsubsection{Nest Video Recovery Tool}
 
@@ -1325,10 +1608,21 @@ if __name__ == '__main__':
 "QBee FAQ" [online]. Available:  https://qbeecam.com/home.html\#qbee-app
 
 \bibitem{pari_7}
-"Wink Hub2" [online]. Available: https://www.wink.com/products/wink-hub/
+"Wink Hub2" [online]. Available: https://www.wink.com/products/wink\-hub/
 
 \bibitem{pari_8}
 "What is eho?" [online]. Available:https://www.amazon.ca/Echo-2nd-Generation-speaker-Charcoal/dp/B0749ZSPN7
+
+\bibitem{pari_9}
+"iSmartAlarm owner manual" [online]. Available: https://images-na.ssl-images-amazon.com/images/I/B1-GfwNmEkS.pdf
+
+\bibitem{pari_10}
+"Nest Camera" [online]. Available: https://store.google.com/ca/product/nest\_cam
+
+\bibitem{pari_11}
+"Nest Smoke Detector" [online].
+https://nest.com/support/images/misc-assets/Nest-Protect-(Wired-120V)-User-s-Guide.pdf
+
 
 \bibitem{Ali_1}
 "Python" [Online]. Available: https://en.wikipedia.org/wiki/Python\_(programming\_language)
@@ -1346,9 +1640,36 @@ if __name__ == '__main__':
 "Elastic" [Online]. Available: https://www.elastic.co/kibana
 
 \bibitem{Mery_1}
-"Kibana Features, " [Online]. Available:
-https://www.tutorialspoint.com/kibana/kibana_overview.htm
+"JASON " [Online]. Available: https://en.wikipedia.org/wiki/JSON
+\bibitem{Mery_2}
+"JASON Viewer" [Online]. Available:  http://jsonviewer.stack.hu/
+\bibitem{Mery_3}
+"Amazon Database" [Online]. Available:  https://drive.google.com/drive/folders/1aXX\_CMR2vY5Vw9f\_naQ0-8bxU\_WZp0Pp
 
+
+\bibitem{Gh_1}
+“Jadx-gui” [online]. Available: https://github.com/skylot/jadx
+\bibitem{Gh_2}
+”Reverse Engineering Android .apk using Jadx” [online]. Available:   http://nestedif.com/android-security/1-reverse-engineering-android-apk-using-jadx/
+\bibitem{Gh_3}
+“Ghidra” [online]. Available:  https://github.com/NationalSecurityAgency/ghidra
+\bibitem{Gh_4}
+“Intro to Reverse Engineering with Ghidra” [online]. Available:  https://medium.com/swlh/intro-to-reverse-engineering-45b38370384
+\bibitem{Gh_5}
+“Ghidra: Android APK” [online]. Available:  https://www.youtube.com/watch?v=At\_T6riSb9A
+\bibitem{Gh_6}
+“CVE-2018-16223 Detail” [online]. Available:  https://nvd.nist.gov/vuln/detail/CVE-2018-16223
+
+\bibitem{Ab_1}
+“Binwalk” [online]. Available: https://github.com/ReFirmLabs/binwalk 
+\bibitem{Ab_2}
+“Forensic Binwalk” [online]. Available: https://tools.kali.org/forensics/binwalk
+\bibitem{Ab_3}
+“Reverse Engineering router Firmware With Binwalk” [online]. Available: https://embeddedbits.org/reverse-engineering-router-firmware-with-binwalk/
+\bibitem{Ab_4}
+“Firmware Security Analysis Extraction Tool” [online]. Available: https://www.darknet.org.uk/2020/04/binwalk-firmware-security-analysis-extraction-tool/
+\bibitem{Ab_5}
+“Volatility” [online]. Available: https://github.com/volatilityfoundation/volatility/wiki
 
 \end{thebibliography}
 
