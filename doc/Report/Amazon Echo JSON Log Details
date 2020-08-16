@@ -1,0 +1,9 @@
+\subsubsection{Amazon Echo JSON Log}
+The following Figure \ref{fig:Amazon Echo JSON Log Details} illustrates Amazon echo log.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.00\textwidth]{Img/Mery1.JPG}
+    \caption{Amazon Echo JSON Log Details}
+    \label{fig:Amazon Echo JSON Log Details}
+\end{figure}
+\newpage
