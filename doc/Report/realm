@@ -1,0 +1,24 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}							 
+\hline
+Device ID & RD3B75A1EC9 \\
+\hline
+Device type & 	Base station\\ 
+\hline
+Device name & Superlab GW\\
+\hline
+Firmware version & 	1.10.0.4\_20963\\
+\hline
+Modelled & VMB4000\\
+\hline
+Date created & 1526289276194(2018-05-15 09:14:36.194 UTC\\
+\hline
+Properties:hwVersion & 	VMB4000r3 \\
+\hline
+ Connectivity:Type & Ethernet\\
+\hline
+\end{tabular}
+ \caption{Arlo Base Station}
+   \label{tab:Arlo Base Station}
+\end{table}
