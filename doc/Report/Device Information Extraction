@@ -1,0 +1,12 @@
+\textbf{Based on Table \ref{tab:Device Information} - Device Information, the following information can be deduced:} 
+
+\begin{itemize}
+
+\item The Router had the most number of packets. It is a reasonable observation being that there are several devices connected to the wifi device, especially IoT devices, as seen in the yellow highlights.
+
+
+\item The Amazon Echo device has an outrageous amount of total bytes (4977) comparing it to its total number of packets (34) as seen in the red highlights.
+
+\item Most of the communication IP addresses) correspondence with the router are IP addresses within the 10.20.30.0/24 subnet. This means that the devices are within the internal network.
+\item The Nest Cam NestLabs device had the second most number of packets as seen in the orange highlights.
+\end{itemize}
