@@ -1,0 +1,9 @@
+\newpage
+\subsubsection{QBee}
+The following Figure \ref{fig:QBee Network}, shows that on QBee Camera, the TCP 15700 port was opened from which the GET /verifyHTTP request was sent. Addition to that, the highest number of packets were sent between QBee and the router. And the second highest was between QBee and Pinkman’s Samsung Phone.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Img/Minor2.JPG}
+    \caption{QBee Network}
+    \label{fig:QBee Network}
+\end{figure}
