@@ -1,1 +1,18 @@
-test
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}							 
+\hline
+Device ID & 4RD37B75A1EC9 \\
+\hline
+Device type & 	Siren\\
+\hline
+Device name & Superlab GW\\
+\hline
+Modelled &	VMB4000\-SIREN\\
+\hline
+Date created & Date created	1526289276189(2018-05-15 09:14:36. 189 UTC\\
+\hline
+\end{tabular}
+ \caption{Arlo Siren}
+   \label{tab:Arlo Siren}
+\end{table}
