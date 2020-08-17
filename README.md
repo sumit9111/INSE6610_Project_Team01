@@ -1,3 +1,38 @@
-\subsection{Wireshark}
-Wireshark is a tool used in digital forensic to capture network traffic and analyze network traffic. These captured network packets are pcap files that when inserted into Wireshark, it is parsed according to traffic packets, packet header information and payload information. Packets captured using Wireshark are saved in .pcap formats ad given for this project.\\
-In many cases, Wireshark is also called a packet sniffer. Consider Wireshark as a mail person who takes packages from clients and can scan each package and determines the nature, shape, words, texture of all contents in the packages. Wireshark is dependent on the principles of network connectivity which is the OSI model. The data available for this investigation is the dfrws\_police.pcap. Using Wireshark, I will take note of the nature of the packets captured over the network which includes the size of packets transmitted (Tx) and Received (Rx) and the time the packets were sent.
+\ ## Templates ##
+ 
+ * **LaTeX use is strongly preferred**
+
+ * `doc/templates/report-latex-easychair` is the most documented example template in LaTeX, single column, more readable. To be able to compile LaTeX report, install and configure [MiKTeX](http://miktex.org) first (LaTeX backend compiler and styles and packages), then [TeXnicCenter](http://texniccenter.org) (GUI front-end to MikTeX, it will find MikTeX installation when installed after MikTeX). Open `project-report.tcp` project file for TeXnicCenter and compile it using F7 3 times; F5 to preview the PDF.
+ * `doc/templates/report-latex-ieee` two-column IEEE LaTeX template (the instructions here are pretty much the same as for easychair) 
+ * `doc/templates/report-word-ieee` two-column IEEE Word template
+ * `doc/templates/peer-evaluation-form.rtf` to use if there are disputes within teams
+ 
+ ## FYI: below is a boilerplate README from BitBucket ##
+ 
+ This README would normally document whatever steps are necessary to get your application up and running.
+ 
+ ### What is this repository for? ###
+ 
+ * Quick summary
+ * Version
+ * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+ 
+ ### How do I get set up? ###
+ 
+ * Summary of set up
+ * Configuration
+ * Dependencies
+ * Database configuration
+ * How to run tests
+ * Deployment instructions
+ 
+ ### Contribution guidelines ###
+ 
+ * Writing tests
+ * Code review
+ * Other guidelines
+ 
+ ### Who do I talk to? ###
+ 
+ * Serguei
+ * Other community or team contact
