@@ -1,0 +1,8 @@
+The following Figure \ref{fig:NetworkMiner’s analysis of Sessions} illustrates the network miner analysis of the sessions captured from the network.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/Networkminer.JPG}
+    \caption{NetworkMiner’s analysis of Sessions}
+    \label{fig:Network Miner’s analysis of Sessions}
+\end{figure}
