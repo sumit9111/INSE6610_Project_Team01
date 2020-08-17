@@ -1,0 +1,23 @@
+\textbf{Three steps of key generation algorithm:}\\
+First Getting a “preference key” in Shared preference file (first string value) then divide it into half and put “a!k@ES2,g86AX&D8vn2]” string between them and finally hashing the result with SHA256 hash algorithm \ref{fig:Key Generation Method in ‘QBee Cam’ Application}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/gh5.JPG}
+    \caption{Key Generation Method in ‘QBee Cam’ Application}
+    \label{fig:Key Generation Method in ‘QBee Cam’ Application}
+\end{figure}
+\textbf{Decryption process:}\\
+Encrypted data in Shared preference file need to be decoded using Base64. Then decoded data and the key generated from pervious algorithm are used as input parameters into AES-256-ECB to decrypt username and password. As shown in Figure \ref{fig:Decrypted account information} decrypted QBee camera setting information was obtained by our own experiments. The user name of the QBee camera is “JPinkman” and the password is “Esc\_ioT\_2018”.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/gh6.JPG}
+    \caption{Decrypted Account Information}
+    \label{fig:Decrypted account information}
+\end{figure}
+It was possible to access QBee cloud storage with this ID and password, password, but there was no record of the incident. The following figure shows the cloud storage accessed with the Pinkman’s user account in Figure \ref{fig: QBee Cam application access with the Pinkman’s user account}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/gh7.JPG}
+    \caption{QBee Cam Application Access with Pinkman’s User Account}
+    \label{fig: QBee Cam application access with the Pinkman’s user account}
+\end{figure}
