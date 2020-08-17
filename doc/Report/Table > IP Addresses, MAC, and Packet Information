@@ -1,0 +1,24 @@
+\begin{table}[]
+\begin{tabular}{|c|c|c|c|c|}							 
+\hline
+
+Device Name	& Device MAC Address &	IP Address & Total Number of Packets & Total number of Bytes\\
+\hline
+
+Pinkman’s  SamsungE\_73:e3:78 & 
+AC:5F:3E:73:E3:78 & 10.20.30.21 & 129 & 18 \\
+\hline
+Router - Rasberr\_0e:3b:45 & B8:27:EB:0E:3B:45 & 10.20.30.1 & 4237 & 1642\\
+\hline
+QBeeCamera & D8:FB:5E:E:1:01:92 & 10.20.30.15	& 115 & 14\\
+\hline
+Nest Cam – NestLabs\_61:c9:ef & I8:B4:30:61:C9:EF & 10.20.30.13 & 3,924 & 1593\\
+\hline
+Amazon Echo &  74:75:48:96:23:24 &  10.20.30.23 & 34 &  4977\\
+\hline
+Nest Labs & 18:B4:30:99:9F:85 & 10.20.30.19 & 6 & 884\\
+\hline
+\end{tabular}
+ \caption{Device Information}
+   \label{tab:Device Information}
+\end{table}
