@@ -1,0 +1,2 @@
+\subsection{Network Miner}
+Network miner (version 1.6.1) is an open source network analysis tool that works very much like Wireshark. It is particularly a Network Forensic Analysis Tool for Windows but has also been extended to work on other operating systems. Network miner displays the data in a manner that simplifies the analysis process which is time saving for a Forensic Investigator. In our case this tool was used along side Wireshark to assist it in analysis the captured network.
