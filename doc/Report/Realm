@@ -1,18 +1,2 @@
-\begin{table}[h]
-\centering
-\begin{tabular}{|c|c|}							 
-\hline
-Device ID & 4RD37B75A1EC9 \\
-\hline
-Device type & 	Siren\\
-\hline
-Device name & Superlab GW\\
-\hline
-Modelled &	VMB4000\-SIREN\\
-\hline
-Date created & Date created	1526289276189(2018-05-15 09:14:36. 189 UTC\\
-\hline
-\end{tabular}
- \caption{Arlo Siren}
-   \label{tab:Arlo Siren}
-\end{table}
+\subsection{Realm Studio}
+Realm Studio is a developer tool for easily managing the Realm Database and Realm Platform. With Realm Studio, you can open and edit local and synced Realms, and administer any Realm Object Server instance. With Studio, you can perform basic tasks such as connecting to your instance, browsing data, and viewing logs.\\
