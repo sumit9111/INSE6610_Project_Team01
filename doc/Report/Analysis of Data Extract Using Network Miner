@@ -1,0 +1,11 @@
+\textbf{Overall analysis of the dfrw police.pcap file using Network Miner:}
+\begin{itemize}
+\item There are a total of 29 hosts active on the network at the time of this traffic capture.
+\item Two files were found. Filenames google-analytics.com.cer and Google Internet Authority .cer. They both had the same source host [216.58.205.174] and destination host [10.20.30.21] using TLS certificate protocol. 
+\item There were no images found on this pcap file.
+\item No messages (in cleartext) were found.
+\item No credentials were found.
+\item No signature-based anomalies (according to NetworkMiner) were found.
+\item 17 DNS queries were found.
+\item There are 13 sessions (most of which are ssl) in this packet, 10 of which are from Pinkman’s Samsung Phone.
+\end{itemize}
