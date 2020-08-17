@@ -1,0 +1,31 @@
+\subsection{Arlo Base Station}
+
+Arlo Technologies is a company known for home automation, producing wireless surveillance cameras. Before its initial public offering on the New York Stock Exchange in August 2018, Arlo had been considered a brand by Netgear.\\
+
+\textbf{Obtained result by using Volatility:}\\
+Figure \ref{fig:VD} shows the result of getting info of the image file and we can see here that the image file is not the standard memory dump file and can’t be recognized by Volatility version 2.6.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{Img/Abb2.JPG}
+    \caption{Volatility Output }
+    \label{fig:VD}
+\end{figure}
+Therefore we decided to open it with Hex Editor Neo to see the inside, At offset 0x180FCCC, we found a command line string, that contains the name of the memory image file and seems to be used for physical memory acquisition, as shown in Figure \ref{fig:INA}.  The command could be executed in active system by shell interface. Terminal protocol like telnet or SSH or serial interface approached from UART port.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/abb3.JPG}
+    \caption{Image Name Appearance }
+    \label{fig:INA}
+\end{figure}
+The memory image seems to be the concatenation of the flash memory and the RAM and many bits of the image seem to be flipped by unknown reason also most area are null-filled or 0xFF-filled have irregularly set bits or unset bits.  We couldn’t find any malicious process which attached in device’s memory.\\\\
+\textbf{NAND TAR Archive:}\\
+The file ‘arlo\_nand.tar.gz’ contains '/tmp/media/nand' directory of the base station’s active file system. Most are JSON files which contain information about policies, configuration and camera device information and no significant information related to the incident was found in the archive.\\
+\textbf{Nvram.log:}\\
+This file shows settings of the base station saved in NVRAM and is acquired from the output of command ‘nvram show’ executed by active system and contains various items related to network, user, system parameter, etc., the items are in the form of ‘[key]=[value]’. As Figure \ref{fig:nvram.log} shows.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{Img/abb4.JPG}
+    \caption{nvram.log }
+    \label{fig:nvram.log}
+\end{figure}
