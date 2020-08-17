@@ -1,0 +1,63 @@
+\textbf{Diagnostics log:}
+There is Diagnostics log file named ‘server\_stream’. the file type is unknown and seemed it’s a custom format file used in iSmartAlarm devices and contains the records between the server and device. By using strings, a tool in linux we extracted all the string records as Figure \ref{fig:ab3} shows.
+Sensor Log contains a record of contact sensor and motion sensor. Event classification for each sensor is available in ‘Data Type’ field. When an event occurs, it is stored in the log as ‘ALARMDOOR’ (contact sensor) and ‘ALARMPIR’ (motion sensor), respectively. Value in the ‘Data’ field can be general text or JSON format data. For general text, it is simply used to record the current event, and JSON data is used to send POST request to the cloud service of iSmartAlarm.
+The following Table \ref{tab:'ALARMDOOR’ and ‘ALARMPIR’ } shows the description of the ‘Data’ field in records with ‘ALARMDOOR’ and ‘ALARMPIR’ data type.
+
+\begin{table}[h]
+\begin{tabular}{|c|c| m{4cm}|}							 
+\hline
+Data Type	& Event & Value \\
+\hline
+ALARMDOOR (Contact Sensor) & F1: Door Open, 
+F2: Door Closed
+ & F1: door is open, and send to cloud, F2: door is closed, and send to cloud \\
+\hline
+ALARMPIR (Motion Sensor) & Motion Detected & pir is triggered, and send to cloud \\
+\hline
+
+\end{tabular}
+ \caption{'ALARMDOOR’ and ‘ALARMPIR’}
+   \label{tab:'ALARMDOOR’ and ‘ALARMPIR’ }
+\end{table}
+The following Table \ref{tab:Diagnostics Log} summarizes only the relevant information on 2018-05-17, the day of the incident. It shows Sensor ID, Device ID, alarm for door, Siren operation, Message and what mode was used.
+\begin{table}[h]
+\begin{tabular}{|c|c| m{10cm}|}							 
+\hline
+Time	& SensorID & Description \\
+\hline
+09:44:53 &000A8540 & one sensor trigger, door is open and send to cloud.
+ \\
+\hline
+09:45:22 & 0006B4E5 & set Status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+09:47:18 &000A8540  & set Status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+10:09:57 &000A8540  & set Status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+10:22:27 & 000A9474 & set Status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+ 10:34:15 &000A8540  & set Status to home and door is closed
+ \\
+\hline
+10:34:19 & 000A9474 & the current alarm sensor is disable in child process, disarm and change the LED to white breathe.
+ \\
+\hline
+10:34:31 & 004D3209D9E4 & receive the command to stop all the resend and alarm command
+ \\
+\hline
+10:34:36 & 000A8540 & door is open and all the siren need doorbell
+ \\
+\hline
+10:37:52 & 004D3209D9E4 & receive the command to stop all the resend and alarm command
+
+ \\
+\hline
+
+\end{tabular}
+ \caption{Diagnostics Log}
+   \label{tab:Diagnostics Log}
+\end{table}
