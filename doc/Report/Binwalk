@@ -1,9 +1,58 @@
-Binwalk
-Binwalk, is an open source firmware extraction tool and specifically, designed for identifying and extracting files and code embedded inside of firmware.
-It’s able to scan a firmware image and search for file signatures to identify and extract filesystem images, executable code, compressed archives, bootloader and kernel images, file formats like JPEGs and PDFs[1][2].
-Binwalk is a popular tool to reverse engineer a firmware image to understand how it works and helps to open binaries inside filesystem images to look for vulnerabilities, search for backdoor passwords, digital certificates, hardcoded crypto keys and identify opcodes for a variety of CPU architectures [3].
-Features
-•	Scanning Firmware – Binwalk can scan a firmware image for many different embedded file types and file systems
-•	File Extraction – Can extract any files that it finds in the firmware image
-•	Entropy Analysis – Can help identify interesting sections of data inside a firmware image
-•	String Search – Able to search the specified file(s) for a custom string [4]
+\subsection{Binwalk}
+Binwalk, is an open source firmware extraction tool and specifically, designed for identifying and extracting files and code embedded inside of firmware. It’s able to scan a firmware image and search for file signatures to identify and extract filesystem images, executable code, compressed archives, bootloader and kernel images, file formats like JPEGs and PDFs\cite{Ab_1}\cite{Ab_2}. Binwalk is a popular tool to reverse engineer a firmware image to understand how it works and helps to open binaries inside filesystem images to look for vulnerabilities, search for backdoor passwords, digital certificates, hardcoded crypto keys and identify opcodes for a variety of CPU architectures \cite{Ab_3}. In our case binwalk was used for looking into the framework image of iSmartAlarm to find anything important related to the incident, also to find diagnostic  logs related to the door opening and closing before the raid.
+he result of executing the memory image using the tool is summarized in the following Table 
+\begin{center}
+\begin{tabular}{ | m{9cm} | m{4cm}| } 
+\hline
+PATH & FINDINGS \\ 
+\hline
+etc\_ro/rcS & gateway : 192.168.1.1,
+ethernet : 192.168.1.68
+ \\ 
+\hline
+etc\_ro/Wireless/RT2860AP/RT2860\_default\_vlan
+etc\_ro/Wireless/RT2860AP/RT2860\_default\_novlan
+ & HostName:ralink 
+Login:admin 
+Password:admin 
+wan\_ip addr:10.10.10.254 
+wan\_netmask:255.255.255.0 
+wan\_gateway:10.10.10.253 
+ \\ 
+\hline
+sbin/iSmartAlarm.cer & Certificate file
+ \\ 
+\hline
+sbin/log\_pubkey.pem & Public key file
+ \\ 
+\hline
+sbin/logpubkey.pem & Public key file
+ \\ 
+\hline
+usr/share/default\_config & IP Address:192.168.1.68
+subnetmark:255.255.255.0
+IP Gateway:192.168.1.1
+IP DDns:202.99.96.68
+
+ \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Obtained result by using Binwalker:}\\
+There are two memory image files, 'ismart\_00.img' and 'ismart\_80.img', the two files have the same SHA256 hash value and the 'Compare Files' function in 010 Editor results in all bytes being identical when compared on byte-by-byte basis, they are same file as Figure \ref{fig:ab1} shows. Therefore, the analysis was conducted for ‘ismart\_00.img’ only. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{Img/Ab1.JPG}
+    \caption{Images Hash Values Comparison}
+    \label{fig:ab1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{Img/ab3.JPG}
+    \caption{Communication Records Between Server and Alarm}
+    \label{fig:ab3}
+\end{figure}
+
