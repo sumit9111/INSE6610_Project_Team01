@@ -1,8 +1,0 @@
-\subsubsection{Databases}
-The following Figure \ref{fig:Amazon Database}, shows Jessie Pinkman's Amazon ID, this ID can be used to track Jessie's activities.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.62\textwidth]{Img/JPID.JPG}
-    \caption{Amazon Database}
-    \label{fig:Amazon Database}
-\end{figure}
