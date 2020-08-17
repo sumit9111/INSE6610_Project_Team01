@@ -1,0 +1,5 @@
+\subsection{Network}
+In this section, we captured the network traffic using wireshark and network minor the we parse the data specifically according to the behaviour of each device on the network. We looked for the IP addresses with the most interactions between each other and the kind of Layer4 and Layer3 communications used. 
+
+\\But first, we created a Table of information for the IP addresses, their corresponding MAC addresses. Using the Statistics Option  we took note of the total number of packets to and from each IP address (transmitted and received) and the total number of bytes corresponding to the MAC address.
+We noticed that when checking the number of total packets received using the IP address instead of the MAC address, the packets were short by one or two packets. Therefore, the Total Number of Packets in Table \ref{tab:Device Information} are deduced from the wireshark analysis from the MAC address. The next image [F2] shows the number of packets from the statistical analysis of the IP addresses.
