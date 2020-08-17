@@ -1,0 +1,6 @@
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/wireshark.JPG}
+    \caption{com.nest.android.preferences.xml file content}
+    \label{fig:wireshark1}
+\end{figure}
