@@ -1,0 +1,2 @@
+\textbf{Obtained result by using Realm Studio:}\\
+This extracts the class of database which contains the record about some camera devices. We extracted records of Database Model Devices Data and  from the Arlo devices. The following Tables \ref{tab:Arlo Base Station}, \ref{tab:Arlo Siren} and \ref{tab:Arlo Pro} describes Arlo Base Station, Siren and Pro.
