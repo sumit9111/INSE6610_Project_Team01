@@ -5,3 +5,20 @@ We created a report module for Autopsy Forensic Tool which is useful for encodin
 •	Result Viewers: These modules show information about a set of files. These modules are in the upper right of the interface. The platform comes with viewers to view the set of files in a table and thumbnails. 
 According to the developer’s guide [2] we can write just ingest and report modules in Python language for the rest it must be java.
 Every Python module in Autopsy gets its own folder. This reduces naming collisions between modules. By launching Autopsy and choose the Tools -> Python Plugins menu item. That will open a folder in AppData folder, such as "C:\Users\JDoe\AppData\Roaming\Autopsy \python_modules"[3].we made a folder inside of there to store our module in Figure 1 and Figure 2.
+To create a report module, start off by creating a new Java or Python (Jython) class and implementing (Java) or inheriting (Jython) from org.sleuthkit.autopsy.report.GeneralReportModule. It needs to override multiple methods including the following [4]:
+•	org.sleuthkit.autopsy.report.ReportModule.getName()
+•	org.sleuthkit.autopsy.report.ReportModule.getDescription()
+•	org.sleuthkit.autopsy.report.ReportModule.getRelativeFilePath()
+•	org.sleuthkit.autopsy.report.GeneralReportModule.generateReport(String reportPath, ReportProgressPanel progressPanel)
+For general report modules, Autopsy will simply call the generateReport(String reportPath, ReportProgressPanel progressPanel) method and leave it up to the module to aquire and report data in its desired format. The only requirements are that the module saves to the given report path and updates the org.sleuthkit.autopsy.report.ReportProgressPanel as the report progresses [4].
+We started by one python module files from the autopsy GitHub source (reportmodule.py) [5] as a template and build our module. 
+Our report generate list of all .jpg files from two days before the date of incident (date of incident is 17 may 2018) and encode output to Forensic Lucid observation format [6][7]:
+
+
+1.	First of all we define getName(), getDescription(),getRelativeFilePath() Figure 3
+2.	Define a main function generateReport() Figure 3
+3.	Access to the case by calling Case.getCurrentCase() and getSleuthkitCase() Figure 3
+4.	Open the report file Figure 3
+5.	Query for the files. In our case, we want all of the files, but can skip the directories by calling SleuthkitCase.findAllFilesWhere() Figure 4
+6.	Loop through the file list and print out, just jpg files which created time is greater than two days before incident. Figure 4
+
