@@ -890,7 +890,89 @@ For working on this part, we have a set of observation sequences from the databa
     \label{fig:iSmartAlarm State Machine}
 \end{figure}
 
+\lstset{language=Lucid}
+\lstset{frame=lines}
+\lstset{caption={Contact Sensor Lucid Encoding}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
 
+observation sequence sensor =
+	{
+		sensor_o_1 ,
+		sensor_o_2 ,
+		sensor_o_3 ,
+		// ...
+		sensor_o_22
+	};			    
+observation sensor_o_1	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526290387832", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_2	= ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526291071976", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_3	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526375425600", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_4	= ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526377143115", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_5	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526388088946", IsAlarm :"1", fileGroup :"0", ProfileId :"0",
+	ModeId :"0", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_6	= ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526389497550", IsAlarm :"1", fileGroup :"0", ProfileId :"1",
+	ModeId :"1", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_7	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526389499217", IsAlarm :"1", fileGroup :"0", ProfileId :"1",
+	ModeId :"1", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_8	= ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526389865350", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_9	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526389866297", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_10 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526389866825", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_11 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526477537403", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_12 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526477635447", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_13 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526477685719", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_14 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526478437139", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_15 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526478439855", IsAlarm :"1", fileGroup :"0", ProfileId :"1",
+	ModeId :"1", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_16 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526478730823", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_17 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526543093343", IsAlarm :"1", fileGroup :"0", ProfileId :"0",
+	ModeId :"0", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_18 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526543238967", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_19 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526544592771", IsAlarm :"1", fileGroup :"0", ProfileId :"0",
+	ModeId :"0", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_20 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526544592771", IsAlarm :"1", fileGroup :"0", ProfileId :"0",
+	ModeId :"0", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_21 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526546055471", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_22 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526546076051", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+
+\end{lstlisting}
 
 \section{Conclusion}
 \label{sect:conclusion} Write conclusion here.
