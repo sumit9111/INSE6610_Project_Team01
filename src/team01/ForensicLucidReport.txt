@@ -1,0 +1,2067 @@
+Autopsy_FronsicLucid_6610
+where
+observation sequence jpg_files =
+{
+file_o_1
+,file_o_2
+,file_o_3
+,file_o_4
+,file_o_5
+,file_o_6
+,file_o_7
+,file_o_8
+,file_o_9
+,file_o_10
+,file_o_11
+,file_o_12
+,file_o_13
+,file_o_14
+,file_o_15
+,file_o_16
+,file_o_17
+,file_o_18
+,file_o_19
+,file_o_20
+,file_o_21
+,file_o_22
+,file_o_23
+,file_o_24
+,file_o_25
+,file_o_26
+,file_o_27
+,file_o_28
+,file_o_29
+,file_o_30
+,file_o_31
+,file_o_32
+,file_o_33
+,file_o_34
+,file_o_35
+,file_o_36
+,file_o_37
+,file_o_38
+,file_o_39
+,file_o_40
+,file_o_41
+,file_o_42
+,file_o_43
+,file_o_44
+,file_o_45
+,file_o_46
+,file_o_47
+,file_o_48
+,file_o_49
+,file_o_50
+,file_o_51
+,file_o_52
+,file_o_53
+,file_o_54
+,file_o_55
+,file_o_56
+,file_o_57
+,file_o_58
+,file_o_59
+,file_o_60
+,file_o_61
+,file_o_62
+,file_o_63
+,file_o_64
+,file_o_65
+,file_o_66
+,file_o_67
+,file_o_68
+,file_o_69
+,file_o_70
+,file_o_71
+,file_o_72
+,file_o_73
+,file_o_74
+,file_o_75
+,file_o_76
+,file_o_77
+,file_o_78
+,file_o_79
+,file_o_80
+,file_o_81
+,file_o_82
+,file_o_83
+,file_o_84
+,file_o_85
+,file_o_86
+,file_o_87
+,file_o_88
+,file_o_89
+,file_o_90
+,file_o_91
+,file_o_92
+,file_o_93
+,file_o_94
+,file_o_95
+,file_o_96
+,file_o_97
+,file_o_98
+,file_o_99
+,file_o_100
+,file_o_101
+,file_o_102
+,file_o_103
+,file_o_104
+,file_o_105
+,file_o_106
+,file_o_107
+,file_o_108
+,file_o_109
+,file_o_110
+,file_o_111
+,file_o_112
+,file_o_113
+,file_o_114
+,file_o_115
+,file_o_116
+,file_o_117
+,file_o_118
+,file_o_119
+,file_o_120
+,file_o_121
+,file_o_122
+,file_o_123
+,file_o_124
+,file_o_125
+,file_o_126
+,file_o_127
+,file_o_128
+,file_o_129
+,file_o_130
+,file_o_131
+,file_o_132
+,file_o_133
+,file_o_134
+,file_o_135
+,file_o_136
+,file_o_137
+,file_o_138
+,file_o_139
+,file_o_140
+,file_o_141
+,file_o_142
+,file_o_143
+,file_o_144
+,file_o_145
+,file_o_146
+,file_o_147
+,file_o_148
+,file_o_149
+,file_o_150
+,file_o_151
+,file_o_152
+,file_o_153
+,file_o_154
+,file_o_155
+,file_o_156
+,file_o_157
+,file_o_158
+,file_o_159
+,file_o_160
+,file_o_161
+,file_o_162
+,file_o_163
+,file_o_164
+,file_o_165
+,file_o_166
+,file_o_167
+,file_o_168
+,file_o_169
+,file_o_170
+,file_o_171
+,file_o_172
+,file_o_173
+,file_o_174
+,file_o_175
+,file_o_176
+,file_o_177
+,file_o_178
+,file_o_179
+,file_o_180
+,file_o_181
+,file_o_182
+,file_o_183
+,file_o_184
+,file_o_185
+,file_o_186
+,file_o_187
+,file_o_188
+,file_o_189
+,file_o_190
+,file_o_191
+,file_o_192
+,file_o_193
+,file_o_194
+,file_o_195
+,file_o_196
+,file_o_197
+,file_o_198
+,file_o_199
+,file_o_200
+,file_o_201
+,file_o_202
+,file_o_203
+,file_o_204
+,file_o_205
+,file_o_206
+,file_o_207
+,file_o_208
+,file_o_209
+,file_o_210
+,file_o_211
+,file_o_212
+,file_o_213
+,file_o_214
+,file_o_215
+,file_o_216
+,file_o_217
+,file_o_218
+,file_o_219
+,file_o_220
+,file_o_221
+,file_o_222
+,file_o_223
+,file_o_224
+,file_o_225
+,file_o_226
+,file_o_227
+,file_o_228
+,file_o_229
+};
+observation file_o_1=(
+[Filename:"273199.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_2=(
+[Filename:"260399.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_3=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_4=(
+[Filename:"221999.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_5=(
+[Filename:"234799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_6=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_7=(
+[Filename:"196399.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_8=(
+[Filename:"183599.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_9=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_10=(
+[Filename:"209199.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_11=(
+[Filename:"247599.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/624800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_12=(
+[Filename:"119599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/548000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_13=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/548000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_14=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/548000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_15=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/548000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_16=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/548000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_17=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/573600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_18=(
+[Filename:"119599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/573600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_19=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/573600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_20=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/573600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_21=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/573600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_22=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/560800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_23=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/560800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_24=(
+[Filename:"119599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/560800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_25=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/560800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_26=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/560800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_27=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/612000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_28=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/612000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_29=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/612000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_30=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_31=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_32=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_33=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/586400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_34=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/586400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_35=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/586400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_36=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/586400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_37=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/535200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_38=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/535200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_39=(
+[Filename:"119599.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/535200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_40=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/535200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_41=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/535200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_42=(
+[Filename:"119599.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/522400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_43=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/522400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_44=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/522400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_45=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/522400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_46=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/522400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_47=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/496800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_48=(
+[Filename:"119599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/496800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_49=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/496800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_50=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/496800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_51=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/496800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_52=(
+[Filename:"119599.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/484000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_53=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/484000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_54=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/484000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_55=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/484000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_56=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/484000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_57=(
+[Filename:"132399.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/509600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_58=(
+[Filename:"119599.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/509600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_59=(
+[Filename:"145199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/509600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_60=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/509600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_61=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/509600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_62=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/688800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_63=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/688800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_64=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/663200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_65=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/663200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_66=(
+[Filename:"196399.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_67=(
+[Filename:"260399.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_68=(
+[Filename:"273199.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_69=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_70=(
+[Filename:"247599.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_71=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_72=(
+[Filename:"234799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_73=(
+[Filename:"221999.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_74=(
+[Filename:"183599.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_75=(
+[Filename:"209199.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/637600/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_76=(
+[Filename:"273199.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_77=(
+[Filename:"247599.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_78=(
+[Filename:"260399.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_79=(
+[Filename:"221999.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_80=(
+[Filename:"196399.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_81=(
+[Filename:"183599.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_82=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_83=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_84=(
+[Filename:"234799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_85=(
+[Filename:"209199.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/650400/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_86=(
+[Filename:"170799.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/676000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_87=(
+[Filename:"157999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/676000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_88=(
+[Filename:"298799.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_89=(
+[Filename:"221999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_90=(
+[Filename:"209199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_91=(
+[Filename:"196399.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_92=(
+[Filename:"234799.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_93=(
+[Filename:"183599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_94=(
+[Filename:"285999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_95=(
+[Filename:"273199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_96=(
+[Filename:"260399.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_97=(
+[Filename:"247599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/752800/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_98=(
+[Filename:"273199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_99=(
+[Filename:"196399.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_100=(
+[Filename:"298799.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_101=(
+[Filename:"285999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_102=(
+[Filename:"183599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_103=(
+[Filename:"247599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_104=(
+[Filename:"260399.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_105=(
+[Filename:"209199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_106=(
+[Filename:"234799.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_107=(
+[Filename:"221999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/727200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_108=(
+[Filename:"285999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_109=(
+[Filename:"183599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_110=(
+[Filename:"196399.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_111=(
+[Filename:"298799.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_112=(
+[Filename:"209199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_113=(
+[Filename:"221999.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_114=(
+[Filename:"273199.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_115=(
+[Filename:"260399.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_116=(
+[Filename:"247599.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_117=(
+[Filename:"234799.jpg",
+DateTime:"2018-05-15 04:57:52 EDT",
+LastAccessed:"2018-05-15 04:57:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/500000/740000/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_118=(
+[Filename:"211759.jpg",
+DateTime:"2018-05-15 04:28:06 EDT",
+LastAccessed:"2018-05-15 04:28:06 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/200000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_119=(
+[Filename:"193839.jpg",
+DateTime:"2018-05-15 04:54:26 EDT",
+LastAccessed:"2018-05-15 04:54:26 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/100000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_120=(
+[Filename:"211759.jpg",
+DateTime:"2018-05-15 04:32:45 EDT",
+LastAccessed:"2018-05-15 04:32:45 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/100000/596640/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_121=(
+[Filename:"193839.jpg",
+DateTime:"2018-05-15 04:28:34 EDT",
+LastAccessed:"2018-05-15 04:28:34 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/100000/594080/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_122=(
+[Filename:"206639.jpg",
+DateTime:"2018-05-15 05:00:20 EDT",
+LastAccessed:"2018-05-15 05:00:20 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/50000/595360/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_123=(
+[Filename:"206639.jpg",
+DateTime:"2018-05-15 04:28:52 EDT",
+LastAccessed:"2018-05-15 04:28:52 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/50000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_124=(
+[Filename:"202159.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_125=(
+[Filename:"199599.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_126=(
+[Filename:"201519.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_127=(
+[Filename:"202799.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_128=(
+[Filename:"200239.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_129=(
+[Filename:"198319.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_130=(
+[Filename:"197679.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_131=(
+[Filename:"203439.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_132=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_133=(
+[Filename:"200879.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597280/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_134=(
+[Filename:"197679.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_135=(
+[Filename:"202159.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_136=(
+[Filename:"198319.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_137=(
+[Filename:"203439.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_138=(
+[Filename:"199599.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_139=(
+[Filename:"202799.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_140=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_141=(
+[Filename:"201519.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_142=(
+[Filename:"200879.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_143=(
+[Filename:"200239.jpg",
+DateTime:"2018-05-15 04:57:55 EDT",
+LastAccessed:"2018-05-15 04:57:55 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/597920/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_144=(
+[Filename:"197679.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_145=(
+[Filename:"201519.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_146=(
+[Filename:"198319.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_147=(
+[Filename:"202159.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_148=(
+[Filename:"203439.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_149=(
+[Filename:"199599.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_150=(
+[Filename:"202799.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_151=(
+[Filename:"200239.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_152=(
+[Filename:"200879.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_153=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601760/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_154=(
+[Filename:"201519.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_155=(
+[Filename:"197679.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_156=(
+[Filename:"198319.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_157=(
+[Filename:"203439.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_158=(
+[Filename:"202159.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_159=(
+[Filename:"202799.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_160=(
+[Filename:"200879.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_161=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_162=(
+[Filename:"200239.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_163=(
+[Filename:"199599.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/598560/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_164=(
+[Filename:"198319.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_165=(
+[Filename:"197679.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_166=(
+[Filename:"202159.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_167=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_168=(
+[Filename:"199599.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_169=(
+[Filename:"203439.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_170=(
+[Filename:"200239.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_171=(
+[Filename:"200879.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_172=(
+[Filename:"202799.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_173=(
+[Filename:"201519.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/601120/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_174=(
+[Filename:"201519.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_175=(
+[Filename:"202799.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_176=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_177=(
+[Filename:"198319.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_178=(
+[Filename:"200239.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_179=(
+[Filename:"197679.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_180=(
+[Filename:"203439.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_181=(
+[Filename:"199599.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_182=(
+[Filename:"202159.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_183=(
+[Filename:"200879.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599200/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_184=(
+[Filename:"197679.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_185=(
+[Filename:"198319.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_186=(
+[Filename:"203439.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_187=(
+[Filename:"200879.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_188=(
+[Filename:"199599.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_189=(
+[Filename:"200239.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_190=(
+[Filename:"202799.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_191=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_192=(
+[Filename:"201519.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_193=(
+[Filename:"202159.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/600480/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_194=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 04:57:51 EDT",
+LastAccessed:"2018-05-15 04:57:51 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_195=(
+[Filename:"197679.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_196=(
+[Filename:"203439.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_197=(
+[Filename:"200879.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_198=(
+[Filename:"200239.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_199=(
+[Filename:"202159.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_200=(
+[Filename:"198319.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_201=(
+[Filename:"202799.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_202=(
+[Filename:"199599.jpg",
+DateTime:"2018-05-15 04:57:53 EDT",
+LastAccessed:"2018-05-15 04:57:53 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_203=(
+[Filename:"201519.jpg",
+DateTime:"2018-05-15 04:57:54 EDT",
+LastAccessed:"2018-05-15 04:57:54 EDT",
+Path:"/media/0/Android/data/com.garzotto.smma/files/bgdi/ch.swisstopo.pixelkarte-farbe/25000/599840/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_204=(
+[Filename:"1525269028098.jpg",
+DateTime:"2018-05-17 13:29:33 EDT",
+LastAccessed:"2018-05-17 13:29:33 EDT",
+Path:"/media/0/DCIM/.thumbnails/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_205=(
+[Filename:"1520270937968.jpg",
+DateTime:"2018-05-15 08:09:26 EDT",
+LastAccessed:"2018-05-15 08:09:26 EDT",
+Path:"/media/0/DCIM/.thumbnails/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_206=(
+[Filename:"1520271173733.jpg",
+DateTime:"2018-05-15 08:20:33 EDT",
+LastAccessed:"2018-05-15 08:20:33 EDT",
+Path:"/media/0/DCIM/.thumbnails/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_207=(
+[Filename:"1520271901644.jpg",
+DateTime:"2018-05-15 08:09:25 EDT",
+LastAccessed:"2018-05-15 08:09:25 EDT",
+Path:"/media/0/DCIM/.thumbnails/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_208=(
+[Filename:"1520272600049.jpg",
+DateTime:"2018-05-17 13:29:37 EDT",
+LastAccessed:"2018-05-17 13:29:37 EDT",
+Path:"/media/0/DCIM/.thumbnails/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_209=(
+[Filename:"1520273621187.jpg",
+DateTime:"2018-05-15 08:09:25 EDT",
+LastAccessed:"2018-05-15 08:09:25 EDT",
+Path:"/media/0/DCIM/.thumbnails/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_210=(
+[Filename:"227119.jpg",
+DateTime:"2018-05-15 04:32:26 EDT",
+LastAccessed:"2018-05-15 04:32:26 EDT",
+Path:"/media/0/MovieMakerLib/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_211=(
+[Filename:"175919.jpg",
+DateTime:"2018-05-15 04:28:28 EDT",
+LastAccessed:"2018-05-15 04:28:28 EDT",
+Path:"/media/0/MovieMakerLib/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_212=(
+[Filename:"196399.jpg",
+DateTime:"2018-05-15 05:00:04 EDT",
+LastAccessed:"2018-05-15 05:00:04 EDT",
+Path:"/media/0/RW_LIB/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_213=(
+[Filename:"186159.jpg",
+DateTime:"2018-05-15 04:45:00 EDT",
+LastAccessed:"2018-05-15 04:45:00 EDT",
+Path:"/media/0/RW_LIB/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_214=(
+[Filename:"209199.jpg",
+DateTime:"2018-05-15 04:28:46 EDT",
+LastAccessed:"2018-05-15 04:28:46 EDT",
+Path:"/media/0/.vefullrawdir/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_215=(
+[Filename:"204079.jpg",
+DateTime:"2018-05-15 04:29:09 EDT",
+LastAccessed:"2018-05-15 04:29:09 EDT",
+Path:"/media/0/.vefullrawdir/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_216=(
+[Filename:"198959.jpg",
+DateTime:"2018-05-15 05:00:05 EDT",
+LastAccessed:"2018-05-15 05:00:05 EDT",
+Path:"/media/0/.vefullrawdir/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_217=(
+[Filename:"211759.jpg",
+DateTime:"2018-05-15 04:54:25 EDT",
+LastAccessed:"2018-05-15 04:54:25 EDT",
+Path:"/media/0/.vefullrawdir/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_218=(
+[Filename:"OriginalBlurImage.jpg",
+DateTime:"2018-05-15 08:04:11 EDT",
+LastAccessed:"2018-05-15 08:04:11 EDT",
+Path:"/data/com.sec.android.app.music/custom_image/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_219=(
+[Filename:"CustomStartingWindowImage_port.jpg",
+DateTime:"2018-05-15 08:04:11 EDT",
+LastAccessed:"2018-05-15 08:04:11 EDT",
+Path:"/data/com.sec.android.app.music/custom_image/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_220=(
+[Filename:"CustomStartingWindowImage_land.jpg",
+DateTime:"2018-05-15 08:04:11 EDT",
+LastAccessed:"2018-05-15 08:04:11 EDT",
+Path:"/data/com.sec.android.app.music/custom_image/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_221=(
+[Filename:"8386_1_1_0_tcab51bf2c-3140-4444-adab-59b22d139ff8.jpg",
+DateTime:"2018-05-15 05:45:14 EDT",
+LastAccessed:"2018-05-15 05:45:14 EDT",
+Path:"/data/com.samsung.android.voicewakeup/files/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_222=(
+[Filename:"8206_1_1_0_74f9b01a08-2823-4a4e-bf7c-c83665679c81.jpg",
+DateTime:"2018-05-17 14:13:59 EDT",
+LastAccessed:"2018-05-17 14:13:59 EDT",
+Path:"/data/com.samsung.android.voicewakeup/files/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_223=(
+[Filename:"Kellergeschoss-offline0.jpg",
+DateTime:"2018-05-15 06:53:08 EDT",
+LastAccessed:"2018-05-15 06:53:08 EDT",
+Path:"/data/com.google.android.gm/cache/jpinkman2018@gmail.com/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_224=(
+[Filename:"Kellergeschoss-offline0-1.jpg",
+DateTime:"2018-05-15 06:53:10 EDT",
+LastAccessed:"2018-05-15 06:53:10 EDT",
+Path:"/data/com.google.android.gm/cache/jpinkman2018@gmail.com/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_225=(
+[Filename:"^7D7E0BBB58B8F045E8B147312157455AC45E6AEA4B0E075CFB^pimgt1_distr.jpg",
+DateTime:"2018-05-15 07:09:44 EDT",
+LastAccessed:"2033-10-14 10:50:48 EDT",
+Path:"/app/com.nest.android-1/",
+MD5Hash:"19b2528be074322b06a0c34683c0e468"],
+1,0,1.0
+);
+observation file_o_226=(
+[Filename:"add_sparkles1.jpg",
+DateTime:"2018-05-15 08:15:08 EDT",
+LastAccessed:"2033-10-14 10:50:08 EDT",
+Path:"/app/com.skype.raider-1/oat/arm/",
+MD5Hash:""],
+1,0,1.0
+);
+observation file_o_227=(
+[Filename:"Resource56.jpg",
+DateTime:"2018-05-17 09:35:35 EDT",
+LastAccessed:"2033-10-14 10:50:00 EDT",
+Path:"/app/com.google.android.gm-1/oat/",
+MD5Hash:"93ab0b783a5220af8bff22c4feea9095"],
+1,0,1.0
+);
+observation file_o_228=(
+[Filename:"CustomStartingWindowImage.jpg",
+DateTime:"2018-05-15 08:04:11 EDT",
+LastAccessed:"2018-05-15 08:04:11 EDT",
+Path:"/custom_image/0/com.sec.android.app.music/",
+MD5Hash:"0f3a07e88931efaeff1284ec2d8c3f90"],
+1,0,1.0
+);
+observation file_o_229=(
+[Filename:"CustomStartingWindowImage_rotated.jpg",
+DateTime:"2018-05-15 08:04:11 EDT",
+LastAccessed:"2018-05-15 08:04:11 EDT",
+Path:"/custom_image/0/com.sec.android.app.music/",
+MD5Hash:"a167fc965dc2fe86fd6397161ff0540c"],
+1,0,1.0
+);
+end
