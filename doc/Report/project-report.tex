@@ -974,6 +974,69 @@ observation sensor_o_22 = ([ SensorID:"000A8540", MessageType :"0",
 
 \end{lstlisting}
 
+\lstset{language=Lucid}
+\lstset{frame=lines}
+\lstset{caption={iSmartAlarm Lucid Encoding}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+observation sequence ismartalarm =
+	{	
+		alarm_o_1 ,
+		alarm_o_2 ,
+		alarm_o_3 ,
+		// ...
+		alaram_o_22
+	};
+observation ismartalarm_o_1	 = ([ time: "1526389427", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_2	 = ([ time: "1526389483", IPUID: "004D3209D9E4",
+	logType: "2", operator: "pandadodu", profileid: "1", profileName: "HOME], 1, 0, 1.0);
+observation ismartalarm_o_3	 = ([ time: "1526389527", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_4	 = ([ time: "1526478434", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "3", profileName: "PANIC], 1, 0, 1.0);
+observation ismartalarm_o_5	 = ([ time: "1526478435", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "3", profileName: "PANIC], 1, 0, 1.0);
+observation ismartalarm_o_6	 = ([ time: "1526478438", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "1", profileName: "HOME], 1, 0, 1.0);
+observation ismartalarm_o_7	 = ([ time: "1526478453", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_8	 = ([ time: "1526478460", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_9	 = ([ time: "1526478790", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "1", profileName: "HOME], 1, 0, 1.0);
+observation ismartalarm_o_10 = ([ time: "1526478811", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "0", profileName: "ARM], 1, 0, 1.0);
+observation ismartalarm_o_11 = ([ time: "1526478907", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_12 = ([ time: "1526478911", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_13 = ([ time: "1526478917", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_14 = ([ time: "1526478927", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "0", profileName: "ARM], 1, 0, 1.0);
+observation ismartalarm_o_15 = ([ time: "1526543122", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss " profileid: "2",  profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_16 = ([ time: "1526543270", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "0", profileName: "ARM], 1, 0, 1.0);
+observation ismartalarm_o_17 = ([ time: "1526544597", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", 	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_18 = ([ time: "1526545342", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "0", profileName: "ARM], 1, 0, 1.0);
+observation ismartalarm_o_19 = ([ time: "1526545350", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_20 = ([ time: "1526546057", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "1", profileName: "HOME], 1, 0, 1.0);
+observation ismartalarm_o_21 = ([ time: "1526546071", IPUID: "004D3209D9E4",
+	logType: "2", operator: "pandadodu", profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_22 = ([ time: "1526546272", IPUID: "004D3209D9E4",
+	logType: "2", operator: "pandadodu", profileid: "2", profileName: "DISARM], 1, 0, 1.0);
+// ...
+
+\end{lstlisting}
+
 \section{Conclusion}
 \label{sect:conclusion} Write conclusion here.
 
