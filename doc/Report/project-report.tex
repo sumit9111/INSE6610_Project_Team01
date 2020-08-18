@@ -879,6 +879,16 @@ The following Figure \ref{fig:Network Miner’s analysis of Sessions} illustrate
     \label{fig:Network Miner’s analysis of Sessions}
 \end{figure}
 
+\subsection{Lucid Encoding and State Machine}
+One of the asked questions in the challenge was about the probability if being involved someone from inside in this raid and according to the evidences the answer is that Dr. Pandana could be the one who was involved. Because logs in the "TB\_IPUDiary" table of iSmartAlarm table shows that Dr. Pandana was the one who changed the mode of alarm to Disarm before the time that door was opened by raider, which its log was obtained from "server\_stream" file of iSmartAlarm. 
+For working on this part, we have a set of observation sequences from the database and another set of observation sequences from the "server\_stream" file and the statemachine for the iSmartAlarm system.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{Img/ismartalarm state machine.jpg}
+    \caption{iSmartAlarm State Machine}
+    \label{fig:iSmartAlarm State Machine}
+\end{figure}
 
 
 
