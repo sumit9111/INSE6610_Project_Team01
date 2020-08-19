@@ -1,0 +1,44 @@
+\subsection{Forensic Lucid Extension}
+SQLite has the ability to load extensions (including new application-defined SQL functions, collating sequences, virtual tables, and VFSes) at run-time. This feature allows the code for extensions to be developed and tested separately from the application and then loaded on an as-needed basis. \cite{Abc}
+We created a shared dll (dynamic link library) extension for DB Browser for SQLite Tool which is useful for encoding digital evidences in Forensic Lucid. As we know the DB Browser for SQLite uses SQLite engine to work with databases therefor a SQLite extension can load by user and run in SQL command window. 
+The extension must be written by C programming language and export the functions which called by user. Here we used Microsoft Visual Studio 2019 C++ Compiler and named our function ForensicLucid. It takes one parameter as string value which is the name of the table to generate the Lucid syntax. 
+For loading the extension first we have to select and open the database file, then from the Tools menu select Load Extension and choose the extension file. Figure \ref{fig:Select Database File} to \ref{fig:Extension Loaded Successfully}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{Img/ex1.JPG}
+    \caption{Select Database File}
+    \label{fig:Select Database File}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{Img/ex2.JPG}
+    \caption{Load Extension menu }
+    \label{fig:Load Extension menu}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{Img/ex3.JPG}
+    \caption{Select the Extension File}
+    \label{fig:Select the Extension File}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4cm]{Img/ex4.JPG}
+    \caption{Extension Loaded Successfully}
+    \label{fig:Extension Loaded Successfully}
+\end{figure}
+Then we run the function by select ForensicLucid() and pass the name of table to it. as Figure \ref{fig:Run the Extension Function by using SQL Command} illustrates. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/ex5.JPG}
+    \caption{Run the Extension Function by using SQL Command}
+    \label{fig:Run the Extension Function by using SQL Command}
+\end{figure}
+\newpage
+The following Figure \ref{fig:Extension Output} shows the output of the extension based on ForensicLucid.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{Img/ex6.JPG}
+    \caption{Extension Output}
+    \label{fig:Extension Output}
+\end{figure}
