@@ -1,0 +1,13 @@
+\section{Conclusion}
+\label{sect:conclusion} In conclusion, the team was able to fulfill the project requirements and challenges. This reports illustrates how to solve the DFRWS-2018 challenge by presenting the the tools used, the forensic analysis of the data gathered from the IoT devices found in Jessie Pinkman's drug lab and finally the forensic lucid encoding, decoding and modeling of the evidence. \\ To sum it up, the following are the answers for the questions asked at the beginning of the challenge.
+\begin{itemize}
+\item A1: When we look at what happened on the day of the incident, it can be assumed that the raid
+occurred between 10:34:52, the time that the tabletting room was empty, and 10:36:06
+when Nest Protect sensed the smoke. Therefore, we assume it will be approximately 10:35. 
+\item A2: Yes D. Pandana could have, because the operator ‘pandadodu’ deactivated
+the alarm system shortly before the man entered the tabletting room at 10:34 on the day
+of the incident. The nickname 'pandadodu' is probably a combination of the first and last
+names of him.
+\item A3: A vulnerability of the camera could be used to disable the camera without
+permission. Based on A2, D. Pandana could have been the one who turned it off, also since he admitted of having access to the network. He could have sniffed the network, to exploit the vulnerability and to make the camera disabled.
+\end{itemize}
