@@ -1,8 +1,0 @@
-\subsubsection{Realm Studio Database Records}
-The following Figure \ref{fig:Arlo Database Records} illustrates the database records found in Arlo.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.60\textwidth]{Img/sss.JPG}
-    \caption{Arlo Database Records}
-    \label{fig:Arlo Database Records}
-\end{figure}
