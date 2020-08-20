@@ -1,0 +1,2352 @@
+\documentclass{easychair}
+%\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath}
+\usepackage{algorithmic}
+\usepackage{graphicx, caption}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tabu}
+\usepackage{doc}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{listings}
+
+%%%%%%%%%%%%%% Self Added %%%%%%%%%%%%%
+\graphicspath{{./images/}}
+\usepackage[utf8]{inputenc}
+% \usepackage[english]{babel}
+
+\usepackage{stfloats}
+%\usepackage{rsfso}
+\usepackage{amsthm}
+\usepackage{color,soul}
+\newtheorem{lemma}{Lemma}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 0.2pt\hskip\tabcolsep}}
+
+\usepackage{makecell}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BibTeX{{\rm B\kern-.05em{\sci\kern-.025emb}\kern-.08emT\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{DFRWS IoT Forensic Challenge (2018-2019)
+Evidence Analysis Report}
+
+
+\author{
+\IEEEauthorblockN{Ali Wazzan}
+\IEEEauthorblockA{\textit{CIISE}\\
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
+\and
+\IEEEauthorblockN{Abbas Olfat}
+\IEEEauthorblockA{\textit{CIISE}\\
+\textit{Concordia University}\\ Montreal, QC, Canada}\\
+
+\and
+\IEEEauthorblockN{Ghasem Olfat}
+\IEEEauthorblockA{\textit{CIISE}\\
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
+\and
+\IEEEauthorblockN{Isa Abubakar}
+\IEEEauthorblockA{\textit{CIISE}\\
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
+\and
+\IEEEauthorblockN{Meryem Ibnoussina }
+\IEEEauthorblockA{\textit{CIISE}\\
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
+\and
+\IEEEauthorblockN{Favour Emeakama}
+\IEEEauthorblockA{\textit{CIISE}\\
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
+\and
+\IEEEauthorblockN{Sumit Kumar}
+\IEEEauthorblockA{\textit{CIISE}\\
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+
+\and
+\IEEEauthorblockN{Parisa Ahmadi}
+\IEEEauthorblockA{\textit{CIISE}\\
+\textit{Concordia University}\\ Montreal, QC, Canada }\\
+}
+ 
+
+
+\maketitle
+% add page number
+\thispagestyle{plain}
+\pagestyle{plain}
+
+
+
+\begin{abstract}
+\textbf{The term of IoT means Internets of Things, they are internet connected devices and networks that are used for the sole purpose of automation and monitoring tasks. Technology is growing rapidly, and it has become an essential part of our daily life; everyone owns an IoT device that they use for communication which creates and transmits data. This huge amount of data can be collected and used in a court of law, and this is done by a digital forensic investigators. In this paper, we take on DFRWS IoT Forensic Challenge 2018-2019 challenge and we use efficient approaches that are effectively used for cyber forensics investigations including cloud data, smart things hub, amazon echo devices and automation devices to tackle this challenge.\\
+\textit{Keywords:} Internet of Things, Digital evidence, Computer forensics, Forensic tools.}
+\end{abstract}
+\thispagestyle{empty}
+%\begin{IEEEkeywords}
+
+%\end{IEEEkeywords}
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\section{Introduction}
+\label{sect:introduction} This report summarizes the result and process of digital forensic analysis on evidences of DFRWS IoT forensic challenge (2018-2019) scenario.
+
+The report is organized as follows: Chapter 1 presents a general overview of the challenge scenario. Chapter 2 presents the tools used for the forensic analysis and describe them. Chapter 3 conducts the forensic analysis and investigates using the tools and the data provided by the Challenger. Chapter 4 illustrates our findings using Forensic Lucid. Chapter 5 summarises the paper, gives the answers of the challenge mentions what we learned during the challenge.
+
+
+\subsection{Description of challenge}
+\label{callengescenario} The following is given to us by DFRWS:\\
+On 17 May 2018 at 10:40, the police were alerted that an illegal drug lab was invaded and
+unsuccessfully set on fire. The police respond promptly, and a forensic team is on scene at 10:45,
+including a digital forensic specialist.
+The owner of the illegal drug lab, Jessie Pinkman, is nowhere to be found. Police interrogate two of
+Jessie Pinkman’s known associates: D. Pandana and S. Varga. Pandana and Varga admit having
+access to the drug lab’s Wi-Fi network but deny any involvement in the raid. They also say that Jessie
+Pinkman’s had the IoT security systems installed because he feared attacks from a rival gang and
+that Jessie kept the alarm engaged in “Home” mode whenever he was inside the drug lab.
+Within the drug lab the digital forensic specialist observes some IoT devices, including an alarm
+system (iSmartAlarm), three cameras (QBee Camera, Nest Camera and Arlo Pro) as well as a smoke
+detector (Nest Protect). An Amazon Echo and a Wink Hub are also present.
+The digital forensic specialist preserves the diagnostic logs from the iSmartAlarm base station, and
+acquires a copy of the file system of the Wink Hub. He also collects the iSmartAlarm and Arlo base
+stations to perform an in-depth analysis at the forensic laboratory.
+The digital forensic specialist also notices that the a QBee Camera seems to be disabled, so he
+collects a sample of the network traffic.
+Back at the forensic laboratory, the digital forensic specialist uses the bootloader to collect a memory
+image of the two base stations as well as an archive of some folder of interest of the Arlo base station.
+Jessie Pinkman's Samsung Galaxy S6 Edge is found at the scene, likely dropped during the raid.
+The digital forensic specialist acquires a physical image of this Samsung device.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Img/Drug Lab.JPG}
+    \caption{Drug Lab}
+    \label{fig:Drug Lab}
+\end{figure}
+
+\subsection{Challenge Questions}
+The Attorney General needs answers to the following questions:
+\begin{itemize}
+    \item At what time was the illegal drug lab raided?
+\item Could any of the two friends of Jessie Pinkman have been involved in the raid?
+\item If yes: Which friend?
+\item What is the confidence in such hypothesis?
+\item How was the QBee camera disabled?
+\end{itemize}
+
+\section{Forensic Tools}
+
+\label{FA}In this section we will list and describe the tools used to resolve the challenge.
+
+
+\subsection{Autopsy} Autopsy is a platform for digital forensics and a graphical interface to The Sleuth Kit and other digital forensics instruments. The law enforcement, military, and corporate examiners use it to determine what has happened on a computer. You can even use this free, fast, easy to use application which is able to analyze all types of mobile devices and digital media.  \cite{pari_1}\cite{pari_2}
+\newline Autopsy is the leading open source web forensics which was designed to be intuitive from the box. Installation is simple, and wizards direct you every step of the way. All findings are displayed in a single tree. \cite{pari_3}
+\\
+We had different types of data gathered from different devices including the smart phone and base stations. So, we had images which should be browsed and information that should be extracted, and to do so Autopsy was one of our tools.
+
+\subsection{Online Json Tool}
+JSON (Javascript object notation) is an open standard format which uses text to store and transmit data objects consisting of key-value pairs \cite{Mery_1}.  It is a JSON Editor Online used as a web-based tool to view, edit, format, transform all kind of JSON documents. \\
+In this challenge we have data that includes data base files and CSV files extracted from each table of this data base. We find also in the shared drive some JSON files that contain logs and information about voice command data. In our case we used online Json viewer \cite{Mery_2} tool to analyse the JSON logs found in cloud Amazon database \cite{Mery_3}. in the file echo shared we have all the requests and responses that has been returned via JSON. Figure \ref{fig:Amazon Echo JSON Log Details} shows the contents of an Amazon Echo JSON file.
+
+
+\subsection{DB Browser for SQLite}
+DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite. In our case, we used this tool to brows the different databases found in Jessie Pinkman's phone, Table \ref{tab:DB} is the list of the databases found there. Immense amount of data about Jessie was found, most of them were unrelated to the event but some of them lead us to important evidence that can be used in the case and to track Jessie such as his Amazon account ID, which was found in Amazon databases shown in Figure \ref{fig:Amazon Database} or the name of the operator who disarmed the alarm before the raid happens shown in Figure \ref{fig:ISMD}.
+
+\subsection{Realm Studio}
+Realm Studio is a developer tool for easily managing the Realm Database and Realm Platform. With Realm Studio, you can open and edit local and synced Realms, and administer any Realm Object Server instance. With Studio, you can perform basic tasks such as connecting to your instance, browsing data, and viewing logs \cite{sum_1}. We will use it to analyze the records taken from Arlo database. 
+
+\subsection{FTK imager}
+FTK imager is a forensic tool which is used for data preview and it is also an imaging tool which allows us to get quick access to the electronic devices so that we can determine the further forensic investigation. The benefit with this tool is that it retrieves the perfect copies (forensic images) from electronics devices without changing the original evidence. FTK uses full of the hardware resources unlike other tools which use partial capacity of it.   
+	
+\subsection{Wireshark}
+Wireshark is a tool used in digital forensic to capture network traffic and analyze network traffic. These captured network packets are pcap files that when inserted into Wireshark, it is parsed according to traffic packets, packet header information and payload information. Packets captured using Wireshark are saved in .pcap formats ad given for this project.\\
+In many cases, Wireshark is also called a packet sniffer. Consider Wireshark as a mail person who takes packages from clients and can scan each package and determines the nature, shape, words, texture of all contents in the packages. Wireshark is dependent on the principles of network connectivity which is the OSI model. The data available for this investigation is the dfrws\_police.pcap. Using Wireshark, we will take note of the nature of the packets captured over the network which includes the size of packets transmitted (Tx) and Received (Rx) and the time the packets were sent.
+
+
+\subsection{Python}
+Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. \cite{Ali_1} \\
+In our case, python was used on Jupyter notebook editor \cite{Ali_2} to use the parse tools developed to retrieves the activity records in the database of the devices.
+
+
+\subsection{Parser Tools}
+The following are tools that were developed and used to extract and retrieve activities and data from databases or video frames from the videos. \cite{Ali_3}
+\subsubsection{Wink Activity Parser}
+python wink\_activity\_parser.py -d \textless DB path\textgreater to run the tool
+\subsubsection{Nest Video Recovery Tool}
+python nest\_video\_recovery.py -d \textless DB path\textgreater [-o \textless output path\textgreater] [-m] [-a] [-f] to run the tool.
+\subsubsection{iSmartAlarm App Dairy Parser}
+python ismartalarm\_dairy\_parser.py -d \textless DB path\textgreater to run the tool.
+\subsubsection{Server Stream Parser}
+python server\_stream\_parser.py -d \textless DB path\textgreater to run the tool.
+\subsubsection{Amazon Alexa CIFT Tool Parser}
+python alexa\_cift\_parser.py -d \textless DB path\textgreater -t \textless timezone=’UTC+0200’\textgreater to run the tool.
+
+\subsection{Kibana}
+Kibana is an open source data visualization dashboard for Elasticsearch. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data. \cite{Ali_4} \cite{Ali_5} \\ In our case we followed TapiocaPearlo solution in using Kibana after running the python code (parse tools) to visualise, order and classify the data by using to make it readable to the human eye. Using Timelion feature, we were able to filter the unwanted time zones by adjusting the time range. 
+
+\subsection{Network Miner}
+Network miner (version 1.6.1) is an open source network analysis tool that works very much like Wireshark. It is particularly a Network Forensic Analysis Tool for Windows but has also been extended to work on other operating systems. Network miner displays the data in a manner that simplifies the analysis process which is time saving for a Forensic Investigator. In our case this tool was used alongside Wireshark to assist it in analysis the captured network.
+
+\subsection{Jadx-gui}
+Jadx-gui is a command line and GUI tools for produce Java source code from Android .apk files. Jadx uses dex2jar as a decompiler engine to convert .dex to the files  which we can review application’s every internal source code structure. It has a built in de-obfuscation plugin with some handy features to convenient analysis such as text search, class search, find function references, etc \cite{Gh_1}  \cite{Gh_2}. \\ Based on the our case, Jessie Pinkman's smartphone (the owner of the drug lab) discovered at the Drug Lab which is an Android operating system based smartphone, there are some installed android applications like ‘QBee Cam’ and Amazon Alexa app, iSmartAlarm App on this device to control the IoT devices. We started to the common vulnerability analysis of those installed android applications like ‘QBee Cam’ by different Android Security assessment tools to find out is it possible to disable them without permission and answer the important question “How was the QBee camera disabled”. In our experiment two important tools Jadx-gui and Ghidra are used to decompile installed “.apk” files and their related data and inspect them.
+\newpage
+\subsection{Ghidra}
+Ghidra is a software reverse engineering (SRE) framework created and maintained by the National Security Agency Research Directorate. This framework includes a suite of full-featured, high-end software analysis tools that enable users to analyze compiled code on a variety of platforms including Windows, macOS, and Linux. Capabilities include disassembly, assembly, decompilation, graphing, and scripting, along with hundreds of other features. Ghidra supports a wide variety of processor instruction sets and executable formats and can be run in both user-interactive and automated modes. Users may also develop their own Ghidra plug-in components and/or scripts using Java or Python. \cite{Gh_3}\\
+Ghidra supports headless mode, enabling researchers to spin up any number of cloud instances and reverse engineer at scale. Something that would be both technically difficult and very expensive to do in other tools such as IDA Pro. Ghidra can also be deployed in headless mode as a server to enable group collaboration when reverse engineering large binaries. \cite{Gh_4}\cite{Gh_5}
+
+\subsection{Binwalk}
+Binwalk, is an open source firmware extraction tool and specifically, designed for identifying and extracting files and code embedded inside of firmware. It’s able to scan a firmware image and search for file signatures to identify and extract filesystem images, executable code, compressed archives, bootloader and kernel images, file formats like JPEGs and PDFs\cite{Ab_1}\cite{Ab_2}. Binwalk is a popular tool to reverse engineer a firmware image to understand how it works and helps to open binaries inside filesystem images to look for vulnerabilities, search for backdoor passwords, digital certificates, hard coded crypto keys and identify opcodes for a variety of CPU architectures \cite{Ab_3}. In our case binwalk was used for looking into the framework image of iSmartAlarm to find anything important related to the incident, also to find diagnostic logs related to the door opening and closing before the raid.
+
+\subsection{Volatility}
+Volatility Framework is an open source framework implemented in Python under the GNU, for Random Access Memory (RAM) analysis. The extraction techniques are performed completely independent of the system being investigated but offer visibility into the runtime state of the system \cite{Ab_4}\cite{Ab_5}.  It's comprehensive coverage of file formats – volatility can analyze raw dumps, crash dumps, hibernation files, VMware .vmem, VMware saved state and suspended files (.vmss/.vmsn), VirtualBox core dumps, LiME (Linux Memory Extractor), expert witness (EWF), and direct physical memory over Firewire. Finally and most importantly to our use it is Forensics/IR/malware focus – Volatility was designed by forensics, incident response, and malware experts to focus on the types of tasks these analysts typically form. \\ We used it to analyze Arlo Camera data set that consisted of memory dump image fileNVRAM settings and the TAR archive of the folder /tmp/media/nand.
+
+
+\newpage
+\section{Forensic Analysis of Data}
+
+
+\subsection{Pinkman's Samsung}
+\textbf{Obtained result by using Autopsy:}\\
+ The Samsung smart phone data was a compressed file which we extracted it with WinRAR application and found four files including “blk0\_{sda.bin}”, “blk16\_sdb.bin”, “blk32\_sdc.bin” and “procdata.zip”. 
+
+\begin{itemize}
+
+\item blk0\_sda.bin: This is the largest file in image containing the all user and applications data.
+\item blk16\_sdb.bin: In Autopsy nothing can be found from this file.
+\item blk32\_sdc.bin: In Autopsy nothing can be found from this file.
+\item procdata.zip: Contains some information about device hardware like phone model, CPU and disk information, some information about file systems, mounting volume and partitions, etc. 
+ \end{itemize}
+ 
+ The “blk0\_sda.bin” file which was known as an image file in Autopsy, and when we introduced this file as a data source to the application we could gain access to the volumes of the phone and see different file types including images, videos, audios, data bases, archives, etc.
+There were twenty volumes, two unallocated volumes and 18 other volumes which their names are mentioned in Table 1.
+
+
+\begin{table}[h]
+  \centering
+    \begin{tabular}{|c|c|c|c|c|c|} 
+      \hline
+BOTA0		& BOTA1		& EFS		& PARAM		& BOOT		& CACHE\\
+ \hline
+RECOVERY	& OTA		& RADIO		& TOMBSTONES	& DNT		& HIDDEN\\
+  \hline
+PERSISTENT	& STEADY		& PERSDATA	& SBFS		& SYSTEM		& USERDATA\\
+  \hline
+    \end{tabular}
+     \label{tab:table11}
+     \caption{Volumes Detected in the ‘blk0\_sda.bin’ File}
+\end{table}
+
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=1.00\textwidth]{autopsy.jpg}
+	\caption{Samsung Data Exploring using Autopsy}
+	\label{fig:autopsy}
+\end{figure}
+
+By browsing the stored data in these volumes, we could find some useful information in different types including media files (images, screenshots, videos) and databases containing the data of management applications installed on the smart phone related to devices in the lab. 
+The extracted traces can be categorized in three categories:
+\begin{itemize}
+\item Databases:\\
+IoT devices in lab have some applications for managing them installed on the phone and they have some databases, and we could find them in the below mentioned paths. As shown in Table 2.\\
+\begin{table}[h]
+
+   
+\begin{tabular}{|c|c|m{6cm}|}
+
+\hline
+Device & Database & Path  \\
+\hline
+ iSmartAlarm & iSmartAlarm.DB & /data/iSA.common/databases/\\
+\hline                    
+ Wink Hub & persistenceDB & /data/com.quirky.android.wink.wink /databases/\\
+\hline
+Nest Protect/Camera & frame\_database & /data/com.nest.android/cache /f315c6e2b5434a5381f1f5be6f73b4b3/ \\
+\hline 
+Nest Protect/Camera & cache & /data/data/com.nest.android/databases\\
+\hline
+ Arlo & default.realm & /data/com.netgear.android/files/\\
+\hline
+Amazon echo & map\_data\_storage\_v2.db	& 	/data/com.amazon.dee.app/databases/\\
+\hline 
+\end{tabular}
+ \caption{Extracted DBs from Smart Phone}
+    \label{tab:DB}
+\end{table}
+
+\item Files:\\
+In addition to data bases there are some other format of files like XML or JSON, etc. which may contain some information which we could extract them from the application folder on the smart phone. As shown in Table 3.\\
+
+
+   
+\begin{table}[h]
+   
+\begin{tabular}{|c|m{5cm}|m{6.3cm}|}
+\hline
+Device & File & Path\\
+\hline
+iSmartAlarm & iSmartAlarmData.xml & 	/USERDATA/data/iSA.common
+/shared\_prefs/\\
+\hline
+Wink Hub & wink\_local\_pref\_470654.xml & 	/USERDATA/data/
+com.quirky.android.wink.wink
+/shared\_prefs/\\
+\hline
+Wink Hub & user.xml & /USERDATA/data/
+com.quirky.android.wink.wink
+/shared\_prefs/\\
+\hline
+Wink Hub & com.quirky.android.wink.wink
+\_preferences.xml	& /USERDATA/data
+/com.quirky.android.wink.wink
+/shared\_prefs/\\
+\hline
+Nest Protect/Camera	& cache-1332523362.json & /USERDATA/data/com.nest.android
+/cache/cache/\\
+\hline
+Nest Protect/Camera	& com.nest.android.preferences.xml & /USERDATA/data/com.nest.android
+/shared\_prefs/\\
+\hline
+Nest Protect/Camera	& cache-1503821048.json & /USERDATA/data/
+com.nest.android/cache/cache/\\
+\hline
+arlo & Phoenix.xml & /USERDATA/data/com.netgear.android
+/shared\_prefs/\\
+\hline
+QBee Camera & com.vestiacom.qbeecamera
+\_preferences.xml & /USERDATA /data/
+com.vestiacom. qbeecamera/shared\_prefs\\
+\hline
+Nest Protect/Camera	& cache-1332523362.json & /USERDATA/data/com.nest.android
+/cache/cache/cache-1332523362.json\\
+\hline
+Amazon echo & service.identity.xml & /USERDATA/data/com.amazon.dee.app
+/shared\_prefs/\\
+\hline
+
+\end{tabular}
+ \caption{Extracted Files from Smart Phone}
+   \label{tab:my_label}
+\end{table}
+
+\item Media:
+The third type of information which was retrieved from the smart phone was the media including both images and videos.\\
+\begin{table}[h]
+\begin{tabular}{|c|c|m{6.3cm}|}							 
+\hline
+Media owner & Media & path\\
+\hline
+User & Photographs & /USERDATA/media/0/DCIM/Camera\\
+\hline
+User & Screenshots & /media/0/DCIM/Screenshots\\
+\hline
+Nest Cam and Arlo Pro	& JPEG image caches	& /USERDATA/data/
+com.quirky.android.wink.wink/cache/
+image\_manager\_disk\_cache/\\
+\hline
+Nest Cam & Cached pictures & /USERDATA/data/
+com.nest.android/cache/dcnetwork\\
+\hline
+Arlo & JPEG image caches & /USERDATA/data/
+com.netgear.android/cache/http/\\
+\hline
+\end{tabular}
+ \caption{Extracted Media from Smart Phone}
+   \label{tab:my_label}
+\end{table}
+\end{itemize}
+\newpage
+\textbf{Obtained evidences:}\\
+Finding from Databases and Files would be analyzed in each device section in following. In media part we could find some pictures taken by the user which were related to IoT devices and could give us some information about those devices like their MAC address or serial numbers. These photographs have been stored in ‘USERDATA/media/0/DCIM/Camera’ path as mentioned in Table 4 and gave us the device specification as mentioned below.\\
+
+
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|}							 
+\hline
+Pic number	& Device &	Info type &	Info\\
+\hline
+20180326\_164922.jpg & Arlo Base Station & MAC Address & 08:02:8E:FF:75:4F\\
+\hline
+20180326\_164922.jpg & Arlo Base Station & Serial Number & 4RD37B75A1EC9\\
+\hline
+20180410\_091838.jpg & Wink Hub & MAC Address	& B4:79:A7:25:02:FA\\
+\hline
+20180410\_091838.jpg & Wink Hub & Serial Number & 16170011WZD1\\
+\hline
+20180410\_091924.jpg & Nest Protect & Network Name & NEST-E345\\
+\hline
+20180410\_091924.jpg & Nest Protect & Serial Number & 06CA01AC331600CA\\
+\hline
+20180410\_092015.jpg & iSmartAlarm Base Station & Model Name & iPU3G\\
+\hline
+20180410\_092015.jpg & iSmartAlarm Base Station & MAC Address & 00:4D:32:09:D9:E4\\
+\hline
+20180410\_092059.jpg & iSmartAlarm Motion Sensor & Model Name & PIR3G\\
+\hline
+20180410\_092059.jpg & iSmartAlarm Motion Sensor & Serial Number & 141605015143012\\
+\hline
+20180410\_092120.jpg & Nest Cam & Model Name & A0005\\
+\hline
+20180410\_092120.jpg & Nest Cam & MAC Address & 18:B4:30:61:C9:EF\\
+\hline
+\end{tabular}
+ \caption{Obtained Devices Information from Images in Phone}
+   \label{tab:my_pari1}
+\end{table}
+
+There were also some screenshots taken from the application which gave us some information about other devices as Table \ref{tab:my_pari1}  and \ref{tab:mssdfs} illustrate. 
+\begin{table}[H]
+\begin{tabular}{|c|c|c|c|}							 
+\hline
+Picture Name	& Device &	Information Type &	Info\\
+\hline
+Screenshot\_20180502-132904.png & QBee camera & MAC Address & D8:FB:5E:E1:01:92 \\
+\hline
+\end{tabular}
+ \caption{Obtained Devices Information from Screenshots in Phone}
+   \label{tab:mssdfs}
+\end{table}
+
+\newpage
+\subsection{iSmartAlarm Base Station}
+iSmartAlarm is a smart home security device do-it-yourself (DIY), operated with a user's smartphone. iSmartAlarm designs and produces the device and appliances.\cite{pari_4}\\
+This systems consists of a CubeOne which is called the brain of the system by the company and customers can add different number of Contact Sensors, Motion Sensor or Remote Tags.Contact Sensors can be placed (battery-operated and attached with double-sided tape) at door or window to make customer sure know when someone enters or leaves.\cite{pari_5}\\   
+
+\textbf{Obtained result by using Binwalker in Memory Image:}\\
+There are two memory image files, 'ismart\_00.img' and 'ismart\_80.img', the two files have the same SHA256 hash value and the 'Compare Files' function in 010 Editor results in all bytes being identical when compared on byte-by-byte basis, they are same file as Figure \ref{fig:ab1} shows. Therefore, the analysis was conducted for ‘ismart\_00.img’ only. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{Img/Ab1.JPG}
+    \caption{Images Hash Values Comparison}
+    \label{fig:ab1}
+\end{figure}
+\newpage
+The result of executing the memory image using the tool is summarized in the following table.
+\begin{center}
+
+\begin{tabular}{ | m{9cm} | m{4cm}| } 
+
+\hline
+PATH & FINDINGS \\ 
+\hline
+etc\_ro/rcS & gateway : 192.168.1.1,
+ethernet : 192.168.1.68
+ \\ 
+\hline
+etc\_ro/Wireless/RT2860AP/RT2860\_default\_vlan
+etc\_ro/Wireless/RT2860AP/RT2860\_default\_novlan
+ & HostName:ralink 
+Login:admin 
+Password:admin 
+wan\_ip addr:10.10.10.254 
+wan\_netmask:255.255.255.0 
+wan\_gateway:10.10.10.253 
+ \\ 
+\hline
+sbin/iSmartAlarm.cer & Certificate file
+ \\ 
+\hline
+sbin/log\_pubkey.pem & Public key file
+ \\ 
+\hline
+sbin/logpubkey.pem & Public key file
+ \\ 
+\hline
+usr/share/default\_config & IP Address:192.168.1.68
+subnetmark:255.255.255.0
+IP Gateway:192.168.1.1
+IP DDns:202.99.96.68
+
+ \\ 
+\hline
+
+\end{tabular}
+\end{center}\leavevmode\newline
+\textbf{Diagnostics log:}
+\\
+There is Diagnostics log file named ‘server\_stream’. the file type is unknown and seemed it’s a custom format file used in iSmartAlarm devices and contains the records between the server and device. By using strings, a tool in Linux we extracted all the string records as Figure \ref{fig:ab3} shows.
+Sensor Log contains a record of contact sensor and motion sensor. Event classification for each sensor is available in ‘Data Type’ field. When an event occurs, it is stored in the log as ‘ALARMDOOR’ (contact sensor) and ‘ALARMPIR’ (motion sensor), respectively. Value in the ‘Data’ field can be general text or JSON format data. For general text, it is simply used to record the current event, and JSON data is used to send POST request to the cloud service of iSmartAlarm.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{Img/ab3.JPG}
+    \caption{Communication Records Between Server and Alarm}
+    \label{fig:ab3}
+\end{figure}
+\newpage
+The following Table \ref{tab:'ALARMDOOR’ and ‘ALARMPIR’ } shows the description of the ‘Data’ field in records with ALARMDOOR and ALARMPIR data type.
+
+\begin{table}[h]
+\begin{tabular}{|c|c| m{4cm}|}							 
+\hline
+Data Type	& Event & Value \\
+\hline
+ALARMDOOR (Contact Sensor) & F1: Door Open, 
+F2: Door Closed
+ & F1: door is open, and send to cloud, F2: door is closed, and send to cloud \\
+\hline
+ALARMPIR (Motion Sensor) & Motion Detected & pir is triggered, and send to cloud \\
+\hline
+
+\end{tabular}
+ \caption{ALARMDOOR and ALARMPIR}
+   \label{tab:'ALARMDOOR’ and ‘ALARMPIR’ }
+\end{table}
+
+The following Table \ref{tab:Diagnostics Log} summarizes only the relevant information on 2018-05-17, the day of the incident. It shows Sensor ID, Device ID, alarm for door, Siren operation, Message and what mode was used.
+\begin{table}[h]
+\begin{tabular}{|c|c| m{10cm}|}							 
+\hline
+Time	& SensorID & Description \\
+\hline
+09:44:53 &000A8540 & one sensor trigger, door is open and send to cloud.
+ \\
+\hline
+09:45:22 & 0006B4E5 & set status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+09:47:18 &000A8540  & set status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+10:09:57 &000A8540  & set status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+10:22:27 & 000A9474 & set status to disarm, disarm and change the LED to white breathe.
+ \\
+\hline
+ 10:34:15 &000A8540  & set status to home and door is closed.
+ \\
+\hline
+10:34:19 & 000A9474 & the current alarm sensor is disable in child process, disarm and change the LED to white breathe.
+ \\
+\hline
+10:34:31 & 004D3209D9E4 & receive the command to stop all the resend and alarm command.
+ \\
+\hline
+10:34:36 & 000A8540 & door is open and all the siren need doorbell.
+ \\
+\hline
+10:37:52 & 004D3209D9E4 & receive the command to stop all the resend and alarm command.
+
+ \\
+\hline
+
+\end{tabular}
+ \caption{Diagnostics Log}
+   \label{tab:Diagnostics Log}
+\end{table}
+
+
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
+There are some snapshots found in the smartphone which were taken from the iSmartAlarm application and shows that the application can shows the status of “The Cube”, Sensors or Remote tags. As shown in Figure \ref{fig:pp1} and Figure \ref{fig:pp2}, which are found in the appendix.
+
+
+
+Like other IoT devices this solution has an application installed on the smart phone which stored data on databases and some XML files like "iSmartAlarm.xml" which contains the ID and Password of the user in clear text.. As shown in Figure \ref{fig:pp3}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10cm]{Img/xml.jpg}
+    \caption{ID and Password Stored in iSmartAlarm.xml File}
+    \label{fig:pp3}
+\end{figure}
+
+\textbf{Database:}\\
+iSmartAlarm database got extracted form ‘/data/iSA.common/databases/’ and then browsed by using DB Browser. According to manual of this device and regarding the status found in the TB\_IPUDiary table in this database there are four different modes for the iSmartAlarm system including, Arm, Disarm, Panic and Home.\\
+
+\textbf{Arm:}\\
+All devices are armed by either Remote Tag or through the App. After the “Arm” is pushed, it takes 90 seconds to allow user(s) to walk out of the premises before the iSmartAlarm system takes effect. \cite{pari_9}\\
+
+\textbf{Disarm:}\\
+All devices are disarmed by either Remote Tag or through the App. It allows up to 60 seconds to disarm the system before the siren begins to go off.\cite{pari_9}\\
+
+\textbf{Home:} \\
+The contact sensors are armed, and the motion detector is disarmed. After the “Home” is enabled (turned on), it takes 90 seconds to allow user to walk out of the premise before the iSmartAlarm system takes effect. \cite{pari_9}\\
+
+\textbf{Panic:}\\
+ A siren is sounded (located in the CubeOne™) at 100dB. \cite{pari_9}\\
+
+In the TB\_IPUDiary table we found a name by ‘pandadodu’ which was the operator who deactivated the alarm system shortly before the man entered the tableting room at 10:34 on the day of the incident as Figure \ref{fig:ISMD} shows. The nickname 'pandadodu' is probably a combination of the first and last names of him which is D. Pandana.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=11cm]{Img/iSmartAlarm.JPG}
+    \caption{Evidence Found in iSmartDatabase Database}
+    \label{fig:ISMD}
+\end{figure}
+
+\newpage
+\subsection{Arlo Base Station}
+
+Arlo Technologies is a company known for home automation, producing wireless surveillance cameras. Before its initial public offering on the New York Stock Exchange in August 2018, Arlo had been considered a brand by Netgear.\\
+
+\textbf{Obtained result by using Volatility:}\\
+The following Figure \ref{fig:VD} shows the result of getting the information of the image file and we can see here that the image file is not the standard memory dump file and can’t be recognized by Volatility version 2.6.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{Img/Abb2.JPG}
+    \caption{Volatility Output }
+    \label{fig:VD}
+\end{figure}
+
+Therefore we decided to open it with Hex Editor Neo to see the inside, At offset 0x180FCCC, we found a command line string, that contains the name of the memory image file and seems to be used for physical memory acquisition, as shown in Figure \ref{fig:INA}.  The command could be executed in active system by shell interface. Terminal protocol like telnet or SSH or serial interface approached from UART port.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{Img/abb3.JPG}
+    \caption{Image Name Appearance }
+    \label{fig:INA}
+\end{figure}
+
+The memory image seems to be the concatenation of the flash memory and the RAM and many bits of the image seem to be flipped by unknown reason also most area are null-filled or 0xFF-filled have irregularly set bits or unset bits.  We couldn’t find any malicious process which attached in device’s memory.\\\\
+\textbf{NAND TAR Archive:}\\
+The file ‘arlo\_nand.tar.gz’ contains '/tmp/media/nand' directory of the base station’s active file system. Most are JSON files which contain information about policies, configuration and camera device information and no significant information related to the incident was found in the archive.\\
+\textbf{Nvram.log:}\\
+This file shows settings of the base station saved in NVRAM and is acquired from the output of command ‘nvram show’ executed by active system and contains various items related to network, user, system parameter, etc., the items are in the form of ‘[key]=[value]’. As Figure \ref{fig:nvram.log} shows.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/abb4.JPG}
+    \caption{The Nvram.log }
+    \label{fig:nvram.log}
+\end{figure}
+
+\newpage
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
+
+\textbf{Databases:}\\
+The realm.default is the Arlo database which was on the smart phone in path USERDATA/data/com.netgear.android/files/.\\
+
+\textbf{Files:}\\
+The Phoenix.xml which has been found in the /shared\_prefs/ directory contains some information line User Id and the email of the user. As shown in Figure \ref{fig:pa}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/phoenix.jpg}
+    \caption{File Content of phoenix.xml}
+    \label{fig:pa}
+\end{figure}
+\textbf{Obtained result by using Realm Studio:}\\
+This extracts the class of database which contains the record about some camera devices. We extracted records of Database Model Devices Data and  from the Arlo devices. The following Tables \ref{tab:Arlo Base Station}, \ref{tab:Arlo Siren} and \ref{tab:Arlo Pro} describes Arlo Base Station, Siren and Pro.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}							 
+\hline
+Device ID & RD3B75A1EC9 \\
+\hline
+Device type & 	Base station\\ 
+\hline
+Device name & Superlab GW\\
+\hline
+Firmware version & 	1.10.0.4\_20963\\
+\hline
+Modelled & VMB4000\\
+\hline
+Date created & 1526289276194(2018-05-15 09:14:36.194 UTC\\
+\hline
+Properties:hwVersion & 	VMB4000r3 \\
+\hline
+ Connectivity:Type & Ethernet\\
+\hline
+\end{tabular}
+ \caption{Arlo Base Station}
+   \label{tab:Arlo Base Station}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}							 
+\hline
+Device ID & 4RD37B75A1EC9 \\
+\hline
+Device type & 	Siren\\
+\hline
+Device name & Superlab GW\\
+\hline
+Modelled &	VMB4000\-SIREN\\
+\hline
+Date created & Date created	1526289276189(2018-05-15 09:14:36. 189 UTC\\
+\hline
+\end{tabular}
+ \caption{Arlo Siren}
+   \label{tab:Arlo Siren}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}							 
+\hline
+Device ID & 59U1BBB8B46 \\
+\hline
+Device type & 		Camera \\
+\hline
+Device name & Kitchen’s Camera \\
+\hline
+Parent ID & 4RD37B75A1EC9\\
+\hline
+Modelled & VMC4030\\
+\hline
+Date created & 1521034297853(2018-03-14 13:31:37. 853 UTC\\
+\hline
+Properties:hwVersion & 	H11 \\
+\hline
+\end{tabular}
+ \caption{Arlo Pro}
+   \label{tab:Arlo Pro}
+\end{table}
+
+
+\newpage
+\subsection{QBee}
+The QBee Camera lets users watch their phone live. When the motion is detected, users can get an alert, watch real-time footage, and sound the built-in siren of the QBee Camera. The QBee Camera reads out the ambient temperature, humidity, light and noise levels with its integrated sensors. \cite{pari_6}\\
+
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
+
+In the /USERDATA/data/com.vestiacom.qbeecamera/shared\_prefs path we can find the com.vestiacom.qbeecamera\_preferences.xml file which contains some encrypted information.\\
+
+QBee cameras are known to have several vulnerabilities. We have experimented directly with the vulnerability CVE-2018-16223 \cite{Gh_6}, which Insecure Cryptographic Storage of credentials in com.vestiacom.qbeecamera\_preferences.xml in the QBee Cam application through 1.0.5 for Android allows an attacker to retrieve the username and password in Figure \ref{fig:Encrypted QBee Account Information}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/Gh1.JPG}
+    \caption{Encrypted QBee Account Information}
+    \label{fig:Encrypted QBee Account Information}
+\end{figure}
+
+In order to protect user credentials, the application uses the Secure Preferences library to enhance the confidentiality of the storage with the Shared Preferences format. But because of the customization of the library, the data used for encryption can be obtained from the application source. This can be confirmed directly by decompiling the APK by the tools that we’ve mentioned in Figure \ref{fig:Qbee Application APK File}, Figure \ref{fig:Decompile APK with Ghidra and String Search Feature Looking for Password and References} and Figure \ref{fig:Decompile APK with Jadx and String Search Feature Looking for Password and References}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/Gh2.JPG}
+    \caption{Qbee Application APK File}
+    \label{fig:Qbee Application APK File}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{Img/Gh3.JPG}
+    \caption{Decompile APK with Ghidra and String Search Feature Looking for Password and References}
+    \label{fig:Decompile APK with Ghidra and String Search Feature Looking for Password and References}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/Gh4.JPG}
+    \caption{Decompile APK with Jadx and String Search Feature Looking for Password and References}
+    \label{fig:Decompile APK with Jadx and String Search Feature Looking for Password and References}
+\end{figure}
+
+\textbf{Three steps of key generation algorithm:}\\
+First Getting a “preference key” in Shared preference file (first string value) then divide it into half and put “a!k@ES2,g86AX&D8vn2]” string between them and finally hashing the result with SHA256 hash algorithm, as it's shown in Figure \ref{fig:Key Generation Method in ‘QBee Cam’ Application}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{Img/gh5.JPG}
+    \caption{Key Generation Method in ‘QBee Cam’ Application}
+    \label{fig:Key Generation Method in ‘QBee Cam’ Application}
+\end{figure}
+
+\textbf{Decryption process:}\\
+Encrypted data in Shared preference file need to be decoded using Base64. Then decoded data and the key generated from previous algorithm are used as input parameters into AES-256-ECB to decrypt username and password. As shown in Figure \ref{fig:Decrypted account information} decrypted QBee camera setting information was obtained by our own experiments. The username of the QBee camera is “JPinkman” and the password is “Esc\_ioT\_2018”.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/gh6.JPG}
+    \caption{Decrypted Account Information}
+    \label{fig:Decrypted account information}
+\end{figure}
+
+It was possible to access QBee cloud storage with this ID and password, password, but there was no record of the incident. The following figure shows the cloud storage accessed with the Pinkman’s user account in Figure \ref{fig: QBee Cam application access with the Pinkman’s user account}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/gh7.JPG}
+    \caption{QBee Cam Application Access with Pinkman’s User Account}
+    \label{fig: QBee Cam application access with the Pinkman’s user account}
+\end{figure}
+
+\subsection{Wink Hub}
+The Wink Hub allows your vast range of smart products to speak the same wireless language, so you can conveniently monitor them from the Wink app and customise their interaction. \cite{pari_7}\\
+
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
+
+\textbf{Databases:}\\
+Persistence DB in ‘/data/com.quirky.android.wink.wink/databases/’ directory belong to Wink Hub and has two table which ‘Elements’ tables contains data about the items and events related to Wink Hub and in JSON format.\\
+
+\textbf{Files:}\\
+The ‘wink\_local\_pref\_470654.xml’ , ‘user.xml’ and ‘com.quirky.android.wink.wink\_preferences.xml’ files in path ‘/USERDATA /data/com.quirky.android.wink.wink/shared\_prefs/’ path respectively contains some information about devices connected to Hub and mobile ID and gmail address.\\
+
+
+\subsection{Amazon Echo}
+
+Amazon Echo is a hands-free, voice-controlled speaker. To play music, ask questions, make calls, send and receive messages, provide information, news, sports scores, weather, and more, Echo connects to the Alexa Voice Service. Amazon echo is able to use user voice to control compatible smart home devices  such as flipping on the lamp, turning on the coffee maker, or dimming the lights. Echo works with lights, locks, switches, thermostats, and more from WeMo, Philips Hue, Ecobee, and Wink.\cite{pari_8}\\
+
+\textbf{Obtained result by using Autopsy and DB Browser:}\\
+
+\textbf{Databases:}\\
+map\_data\_storage\_v2.db database located in the ‘USERDATA/data/com.amazon.dee.app/databases/’ path contains an “account” table containing the lab owner account record. As Figure \ref{fig:p4} illustrates.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/amazon Account.jpg}
+    \caption{Database Content of map\_data\_storage\_v2.db}
+    \label{fig:p4}
+\end{figure}
+\newpage
+\textbf{Files:}\\
+
+The username and the email of owner were found in the service.identity.xml file in ‘/USERDATA /data/com.amazon.dee.app/shared\_prefs/’ directory. As Figure \ref{fig:p1} illustrates.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{Img/amazon AccountXML.jpg}
+    \caption{File Content of service.identity.xml}
+    \label{fig:p1}
+\end{figure}
+
+In PKStorage DB Browser by DB Browser changing the mode of the iSmartAlarm system by the Jessie voice commands were found as Figure \ref{fig:p2} and Figure \ref{fig:p3} illustrate.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{Img/alexa.jpg}
+    \caption{Browsing PKStorage database by DB Browser}
+    \label{fig:p2}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{Img/alexa2.jpg}
+    \caption{PKStorage Database Content}
+    \label{fig:p3}
+\end{figure}
+\newpage
+\textbf{Obtained result by using JSON:}\\
+To analyse the JSON log we used our tools to be able to extract some useful information such as timestamp, sourceDevices, activityItemData, UUID of the device. Figure \ref{fig:JV} show the same JSON logs using online JSON viewer. The log is placed in the appendix Figure  \ref{fig:Amazon Echo JSON Log Details}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{Img/mery2.JPG}
+    \caption{Online JSON Viewer Log Details}
+    \label{fig:JV}
+\end{figure}
+
+In Figure \ref{fig:Timeline of JSon Log} we can see the timeline of the same JSON log.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/mery3.JPG}
+    \caption{Timeline of JSON Log }
+    \label{fig:Timeline of JSon Log}
+\end{figure}
+
+\subsection{Nest Camera and Nest Protect}
+
+The security camera Nest Cam Indoor is a camera for people to keep an eye on what matters, with 24/7 live streaming, a magnetic stand, individual notifications with Nest Aware and one app for all Nest products which make having access from anywhere. \cite{pari_10}
+\\
+Nest Protect is designed to detect carbon monoxide and smoke in a residential place.  It has several sensors to help it understand what's going on in the built place and a photoelectrical sensor to detect sluggish, smoldering fires. Nest Protect can be used as single or multiple alarm stations. \cite{pari_11}\\
+
+\textbf{Obtained result by using Autopsy:}\\
+In com.nest.android.preferences.xml file in '/data/com.nest.android/shared\_prefs/' p=directory user email was retrieved. As Figure \ref{fig:p10} illustrates.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/nest.jpg}
+    \caption{File Content of com.nest.android.preferences.xml}
+    \label{fig:p10}
+\end{figure}
+
+\subsection{Network}
+In this section, we captured the network traffic using Wireshark and network minor the we parse the data specifically according to the behaviour of each device on the network. We looked for the IP addresses with the most interactions between each other and the kind of Layer4 and Layer3 communications used. 
+\\
+ We created a table of information for the IP addresses, their corresponding MAC addresses. Using the Statistics Option  we took note of the total number of packets to and from each IP address (transmitted and received) and the total number of bytes corresponding to the MAC address.
+We noticed that when checking the number of total packets received using the IP address instead of the MAC address, the packets were short by one or two packets. Therefore, the Total Number of Packets in Table \ref{tab:Device Information} are deduced from the Wireshark analysis from the MAC address. The next Figure \ref{fig:wireshark1} shows the number of packets from the statistical analysis of the IP addresses. 
+
+\begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|}							 
+\hline
+
+Device Name	& Device MAC Address &	IP Address & Number of Packets & Bytes\\
+\hline
+
+Pinkman’s  SamsungE\_73:e3:78 & 
+AC:5F:3E:73:E3:78 & 10.20.30.21 & 129 & 18 \\
+\hline
+Router - Rasberr\_0e:3b:45 & B8:27:EB:0E:3B:45 & 10.20.30.1 & 4237 & 1642\\
+\hline
+QBeeCamera & D8:FB:5E:E:1:01:92 & 10.20.30.15	& 115 & 14\\
+\hline
+Nest Cam – NestLabs\_61:c9:ef & I8:B4:30:61:C9:EF & 10.20.30.13 & 3,924 & 1593\\
+\hline
+Amazon Echo &  74:75:48:96:23:24 &  10.20.30.23 & 34 &  4977\\
+\hline
+Nest Labs & 18:B4:30:99:9F:85 & 10.20.30.19 & 6 & 884\\
+\hline
+\end{tabular}
+ \caption{Device Information}
+   \label{tab:Device Information}
+\end{table}
+\textbf{Based on Table \ref{tab:Device Information} - Device Information, the following information can be deduced:} 
+\begin{itemize}
+\itemsep-0.6em
+\item The Router had the most number of packets. It is a reasonable observation being that there are several devices connected to the WiFi device, especially IoT devices, as seen in the yellow highlights.
+\item The Amazon Echo device has an outrageous amount of total bytes (4977) comparing it to its total number of packets (34).
+\item Most of the communication IP addresses) correspondence with the router are IP addresses within the 10.20.30.0/24 subnet. This means that the devices are within the internal network.
+\item The Nest Cam NestLabs device had the second most number of packets.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/wireshark.JPG}
+    \caption{File Content of com.nest.android.preferences.xml}
+    \label{fig:wireshark1}
+\end{figure}
+
+\textbf{Overall analysis of the DFRWS police.pcap file using Network Miner:}
+\begin{itemize}
+\item There are a total of 29 hosts active on the network at the time of this traffic capture.
+\item Two files were found. Filenames google-analytics.com.cer and Google Internet Authority .cer. They both had the same source host [216.58.205.174] and destination host [10.20.30.21] using TLS certificate protocol. 
+\item There were no images found on this pcap file.
+\item No messages (in cleartext) were found.
+\item No credentials were found.
+\item No signature-based anomalies (according to NetworkMiner) were found.
+\item 17 DNS queries were found.
+\item There are 13 sessions (most of which are SSL) in this packet, 10 of which are from Pinkman’s Samsung Phone.
+\end{itemize}
+
+The following Figure \ref{fig:Network Miner’s analysis of Sessions} illustrates the network miner analysis of the sessions captured from the network.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/Networkminer.JPG}
+    \caption{Network Miner’s Analysis of Sessions}
+    \label{fig:Network Miner’s analysis of Sessions}
+\end{figure}
+
+
+\section{Forensic Lucid}
+\subsection{Encode of Data}
+ We created a report module for Autopsy Forensic Tool which is useful for encoding digital evidences in Forensic Lucid. The module was integrated in Autopsy to generate a report for our case. Autopsy is written in Java and provides an extension mechanism called modules. A module can be considered as a plugin to externally enhance the target application \cite{Gh_7}. Autopsy is comprised of the following modules and reports \cite{Gh_8}:
+
+\begin{itemize}
+\item Ingest Modules: These modules are run when a new data source (such as a disk image) is added to a case (and can be re-run afterwards too). 
+\item Report Modules: These modules are (typically) run after the user has reviewed results and tagged files. Their intention is to create an output report of the results, but they can also be used to perform analysis. 
+\item Content Viewers: These modules are graphical and focus on displaying a specific file in some unique way. These are the modules in the lower right of the interface. The platform comes with viewers to view the file in hexadecimal, extract the strings from the file, and view images and movies.
+\item Result Viewers: These modules show information about a set of files. These modules are in the upper right of the interface. The platform comes with viewers to view the set of files in a table and thumbnails. 
+\end{itemize}
+\newpage
+According to the developer’s guide \cite{Gh_8} we can write just ingest and report modules in Python language for the rest it must be java.\\Every Python module in Autopsy gets its own folder. This reduces naming collisions between modules. By launching Autopsy and choose the Tools Python Plugins menu item.\\ That will open a folder in AppData folder, such as: \\ C: Users\_JDoe\_AppData\_Roaming\_Autopsy\_pythonc\_modules. \cite{Gh_9} \\ 
+We made a folder inside of there to store our module in Figure \ref{fig:Autopsy Python Module Folder} and Figure \ref{fig:Python Report Module Folder and Files}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{Img/gg1.JPG}
+    \caption{Autopsy Python Module Folder}
+    \label{fig:Autopsy Python Module Folder}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{Img/gg2.JPG}
+    \caption{Python Report Module Folder and Files}
+    \label{fig:Python Report Module Folder and Files}
+\end{figure}
+\newpage
+\subsection{Creating a ForensicLucid Report Module for Autopsy}
+To create a report module, start off by creating a new Java or Python (Jython) class and implementing (Java) or inheriting (Jython) from org.sleuthkit.autopsy.report.GeneralReportModule. It needs to override multiple methods including the following \cite{Gh_10}:
+\begin{itemize}
+\item org.sleuthkit.autopsy.report.ReportModule.getName()
+\item org.sleuthkit.autopsy.report.ReportModule.getDescription()
+\item org.sleuthkit.autopsy.report.ReportModule.getRelativeFilePath()
+\item org.sleuthkit.autopsy.report.GeneralReportModule.generateReport (String reportPath, ReportProgressPanel progressPanel)
+\end{itemize}
+
+For general report modules, Autopsy will simply call the generateReport(String reportPath, ReportProgressPanel progressPanel) method and leave it up to the module to acquire and report data in its desired format. The only requirements are that the module saves to the given report path and updates the org.sleuthkit.autopsy.report.ReportProgressPanel as the report progresses. \cite{Gh_10} \\
+We started by one python module files from the autopsy GitHub source (reportmodule.py) \cite{Gh_11} as a template and build our module. 
+Our report generate list of all .jpg files from two days before the date of incident (date of incident is 17 may 2018) and encode output to Forensic Lucid observation format \cite{Gh_12}\cite{Gh_13}, refer to the appendix for the Python code.
+\begin{itemize}
+\item First of all we define getName(), getDescription(),getRelativeFilePath().
+\item Define a main function generateReport().
+\item Access to the case by calling Case.getCurrentCase() and getSleuthkitCase(). 
+\item Open the report file.
+\item Query for the files. In our case, we want all the files, but can skip the directories by calling SleuthkitCase.findAllFilesWhere().
+\item Loop through the file list and print out, just .jpg files which created time is greater than two days before incident.
+\end{itemize}
+
+We run the report from Generate Report menu in autopsy in Figure \ref{fig:Report Module in Select Report Dialog} and Figure \ref{fig:Running Report Module} the output of the report is in Figure \ref{fig:Output in Forensic Lucid} and we compiled it to gipsy in Figure \ref{fig:Compile the Result to Gipsy File}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{Img/gg5.JPG}
+    \caption{Report Module in Select Report Dialog}
+    \label{fig:Report Module in Select Report Dialog}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{Img/gg6.JPG}
+    \caption{Running Report Module}
+    \label{fig:Running Report Module}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{Img/gg7.JPG}
+    \caption{Output in Forensic Lucid}
+    \label{fig:Output in Forensic Lucid}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{Img/gg8.JPG}
+    \caption{Compile the Result to Gipsy File}
+    \label{fig:Compile the Result to Gipsy File}
+\end{figure}
+
+\subsection{Creating a ForensicLucid Output Module for DB Browser}
+SQLite has the ability to load extensions (including new application-defined SQL functions, collating sequences, virtual tables, and VFSes) at run-time. This feature allows the code for extensions to be developed and tested separately from the application and then loaded on an as-needed basis. \cite{Abc}
+We created a shared dll (dynamic link library) extension for DB Browser for SQLite Tool which is useful for encoding digital evidences in Forensic Lucid. As we know the DB Browser for SQLite uses SQLite engine to work with databases therefor a SQLite extension can load by user and run in SQL command window. 
+The extension must be written by C programming language and export the functions which called by user. Here we used Microsoft Visual Studio 2019 C++ Compiler and named our function ForensicLucid. It takes one parameter as string value which is the name of the table to generate the Lucid syntax. 
+For loading the extension first we have to select and open the database file, then from the Tools menu select Load Extension and choose the extension file. Figure \ref{fig:Select Database File} to \ref{fig:Extension Loaded Successfully}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{Img/ex1.JPG}
+    \caption{Select Database File}
+    \label{fig:Select Database File}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{Img/ex2.JPG}
+    \caption{Load Extension menu }
+    \label{fig:Load Extension menu}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{Img/ex3.JPG}
+    \caption{Select the Extension File}
+    \label{fig:Select the Extension File}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4cm]{Img/ex4.JPG}
+    \caption{Extension Loaded Successfully}
+    \label{fig:Extension Loaded Successfully}
+\end{figure}
+
+
+
+Then we run the function by select ForensicLucid() and pass the name of table to it. as Figure \ref{fig:Run the Extension Function by using SQL Command} illustrates. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{Img/ex5.JPG}
+    \caption{Run the Extension Function by using SQL Command}
+    \label{fig:Run the Extension Function by using SQL Command}
+\end{figure}
+
+
+\newpage
+The following Figure \ref{fig:Extension Output} shows the output of the extension based on ForensicLucid.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{Img/ex6.JPG}
+    \caption{Extension Output}
+    \label{fig:Extension Output}
+\end{figure}
+
+
+
+\subsection{Observation Sequence Encoding and State Machine}
+One of the asked questions in the challenge was about the probability if being involved someone from inside in this raid and according to the evidences the answer is that Dr. Pandana could be the one who was involved. Because logs in the "TB\_IPUDiary" table of iSmartAlarm table shows that Dr. Pandana was the one who changed the mode of alarm to Disarm before the time that door was opened by raider, which its log was obtained from "server\_stream" file of iSmartAlarm. 
+For working on this part, we have a set of observation sequences from the database and another set of observation sequences from the "server\_stream" file and the statemachine for the iSmartAlarm system. The observation sequences can be found in the appendix. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=12cm]{Img/iSmartAlarm State Machine.jpg}
+    \caption{iSmartAlarm State Machine}
+    \label{fig:iSmartAlarm State Machine}
+\end{figure}
+
+\newpage
+\section{Conclusion}
+\label{sect:conclusion} In conclusion, the team was able to fulfill the project requirements and challenges. This report illustrates how to solve the DFRWS-2018 challenge by presenting the tools used, the forensic analysis of the data gathered from the IoT devices found in Jessie Pinkman's drug lab and finally the forensic lucid encoding, decoding and modeling of the evidence. \\ To sum it up, the following are the answers for the questions asked at the beginning of the challenge.
+\begin{itemize}
+\item A1: When we look at what happened on the day of the incident, it can be assumed that the raid
+occurred between 10:34:52, the time that the tableting room was empty, and 10:36:06
+when Nest Protect sensed the smoke. Therefore, we assume it will be approximately 10:35. 
+\item A2: Yes D. Pandana could have, because the operator ‘pandadodu’ deactivated
+the alarm system shortly before the man entered the tableting room at 10:34 on the day
+of the incident. The nickname 'pandadodu' is probably a combination of the first and last
+names of him.
+\item A3: A vulnerability of the camera could be used to disable the camera without
+permission. Based on A2, D. Pandana could have been the one who disabled it, since he admitted of having access to the network. He could have sniffed the network, to exploit the vulnerability and to make the camera disabled.
+\end{itemize}
+
+
+\newpage
+\section{Appendix}
+
+\subsection{Figures}
+The follow are the figures that support our report.
+\subsubsection{Kibana Data visualisation}
+The following Figure \ref{fig:Kibana Data visualisation}, shows the timeline activities of the data taken from the applications.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Img/TimeLion.jpg}
+    \caption{Kibana Data Visualisation}
+    \label{fig:Kibana Data visualisation}
+\end{figure}
+\subsubsection{Databases}
+The following Figure \ref{fig:Amazon Database}, shows Jessie Pinkman's Amazon ID, this ID can be used to track Jessie's activities.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.52\textwidth]{Img/JPID.JPG}
+    \caption{Amazon Database}
+    \label{fig:Amazon Database}
+\end{figure}
+\newpage
+\subsubsection{QBee}
+The following Figure \ref{fig:QBee Network}, shows that on QBee Camera, the TCP 15700 port was opened from which the GET/verify HTTP request was sent. Addition to that, the highest number of packets were sent between QBee and the router. And the second highest was between QBee and Pinkman’s Samsung Phone.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Img/Minor2.JPG}
+    \caption{QBee Network}
+    \label{fig:QBee Network}
+\end{figure}
+\newpage
+\subsubsection{Amazon Echo JSON Log}
+The following Figure \ref{fig:Amazon Echo JSON Log Details} illustrates Amazon echo log.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.90\textwidth]{Img/Mery1.JPG}
+    \caption{Amazon Echo JSON Log Details}
+    \label{fig:Amazon Echo JSON Log Details}
+\end{figure}
+
+\subsubsection{Realm Studio Database Records}
+The following Figure \ref{fig:Arlo Database Records} illustrates the database records found in Arlo.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{Img/sss.JPG}
+    \caption{Arlo Database Records}
+    \label{fig:Arlo Database Records}
+\end{figure}
+\newpage
+
+\subsubsection{iSmartAlarm Screenshots}
+The following Figure \ref{fig:pp1} and Figure \ref{fig:pp2} show the screenshots of iSmartApplication.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=4.5cm]{Img/Screenshot20180330203354.png}
+    \caption{iSmartAlarm Screenshot}
+    \label{fig:pp1}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=4.5cm]{Img/Screenshot20180330203515.png}
+    \caption{iSmartAlarm Sensors' Status}
+    \label{fig:pp2}
+\end{figure}
+
+\newpage
+
+\subsection{Codes}
+The followings are the codes used during the project implementation.
+\subsubsection{Forensic Lucid First Observation}
+\lstset{language=Lucid}
+\lstset{frame=lines}
+\lstset{caption={Contact Sensor Lucid Encoding}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+observation sequence sensor =
+	{
+		sensor_o_1 ,
+		sensor_o_2 ,
+		sensor_o_3 ,
+		// ...
+		sensor_o_22
+	};			    
+observation sensor_o_1	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526290387832", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_2	= ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526291071976", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_3	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526375425600", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_4	= ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526377143115", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_5	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526388088946", IsAlarm :"1", fileGroup :"0", ProfileId :"0",
+	ModeId :"0", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_6	= ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526389497550", IsAlarm :"1", fileGroup :"0", ProfileId :"1",
+	ModeId :"1", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_7	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526389499217", IsAlarm :"1", fileGroup :"0", ProfileId :"1",
+	ModeId :"1", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_8	= ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526389865350", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_9	= ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526389866297", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_10 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526389866825", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_11 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526477537403", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_12 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526477635447", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_13 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526477685719", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_14 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526478437139", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_15 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526478439855", IsAlarm :"1", fileGroup :"0", ProfileId :"1",
+	ModeId :"1", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_16 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526478730823", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_17 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526543093343", IsAlarm :"1", fileGroup :"0", ProfileId :"0",
+	ModeId :"0", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_18 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526543238967", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_19 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526544592771", IsAlarm :"1", fileGroup :"0", ProfileId :"0",
+	ModeId :"0", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_20 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526544592771", IsAlarm :"1", fileGroup :"0", ProfileId :"0",
+	ModeId :"0", DetectAlarm :"1"], 1, 0, 1.0);
+observation sensor_o_21 = ([ SensorID:"000A8540", MessageType :"1",
+	TS :"1526546055471", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+observation sensor_o_22 = ([ SensorID:"000A8540", MessageType :"0",
+	TS :"1526546076051", IsAlarm :"1", fileGroup :"0", ProfileId :"2",
+	ModeId :"2", DetectAlarm :"0"], 1, 0, 1.0);
+
+\end{lstlisting}
+
+
+\subsubsection{Forensic Lucid Second Observation}
+\lstset{language=Lucid}
+\lstset{frame=lines}
+\lstset{caption={iSmartAlarm Lucid Encoding}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+observation sequence ismartalarm =
+	{	
+		alarm_o_1 ,
+		alarm_o_2 ,
+		alarm_o_3 ,
+		// ...
+		alaram_o_22
+	};
+observation ismartalarm_o_1	 = ([ time: "1526389427", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2",
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_2	 = ([ time: "1526389483", IPUID: "004D3209D9E4",
+	logType: "2", operator: "pandadodu", profileid: "1", 
+	profileName: "HOME], 1, 0, 1.0);
+observation ismartalarm_o_3	 = ([ time: "1526389527", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_4	 = ([ time: "1526478434", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "3", 
+	profileName: "PANIC], 1, 0, 1.0);
+observation ismartalarm_o_5	 = ([ time: "1526478435", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "3", 
+	profileName: "PANIC], 1, 0, 1.0);
+observation ismartalarm_o_6	 = ([ time: "1526478438", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "1", 
+	profileName: "HOME], 1, 0, 1.0);
+observation ismartalarm_o_7	 = ([ time: "1526478453", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_8	 = ([ time: "1526478460", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_9	 = ([ time: "1526478790", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "1",
+	profileName: "HOME], 1, 0, 1.0);
+observation ismartalarm_o_10 = ([ time: "1526478811", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "0", 
+	profileName: "ARM], 1, 0, 1.0);
+observation ismartalarm_o_11 = ([ time: "1526478907", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_12 = ([ time: "1526478911", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_13 = ([ time: "1526478917", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_14 = ([ time: "1526478927", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "0",
+	profileName: "ARM], 1, 0, 1.0);
+observation ismartalarm_o_15 = ([ time: "1526543122", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss " profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_16 = ([ time: "1526543270", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "0", 
+	profileName: "ARM], 1, 0, 1.0);
+observation ismartalarm_o_17 = ([ time: "1526544597", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_18 = ([ time: "1526545342", IPUID: "004D3209D9E4",
+	logType: "2", operator: "JPinkman", profileid: "0", 
+	profileName: "ARM], 1, 0, 1.0);
+observation ismartalarm_o_19 = ([ time: "1526545350", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_20 = ([ time: "1526546057", IPUID: "004D3209D9E4",
+	logType: "2", operator: "TheBoss" profileid: "1",
+	profileName: "HOME], 1, 0, 1.0);
+observation ismartalarm_o_21 = ([ time: "1526546071", IPUID: "004D3209D9E4",
+	logType: "2", operator: "pandadodu", profileid: "2",
+	profileName: "DISARM], 1, 0, 1.0);
+observation ismartalarm_o_22 = ([ time: "1526546272", IPUID: "004D3209D9E4",
+	logType: "2", operator: "pandadodu", profileid: "2", 
+	profileName: "DISARM], 1, 0, 1.0);
+// ...
+
+\end{lstlisting}
+
+
+\subsubsection{DB Browser DLL Extension for SQLite to Generate Forensic Lucid from Tables}
+\lstset{language=c}
+\lstset{frame=lines}
+\lstset{caption={DLL Extensions}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+#include <stdio.h>
+#include <assert.h>
+#include "sqlite3ext.h"
+#define MAX_SYNTAX_SIZE 1024
+
+
+#pragma warning(disable : 4996)
+
+
+SQLITE_EXTENSION_INIT1;
+
+#include <stdlib.h>
+ 
+void freeResult(void* ptr)
+{
+	if (ptr != NULL)
+		free(ptr);
+	return;
+}
+
+  
+char* strAppendPointer(char* original, char* add)
+{
+	char* str3 = (char*)malloc(1 + strlen(original) + strlen(add));
+	strcpy(str3, original);
+	strcat(str3, add);
+	return str3;
+
+}
+
+
+static void Flucidencoder(sqlite3_context* context, int argc, sqlite3_value** argv) {
+	 
+	assert(argc == 1);
+
+	sqlite3* db = sqlite3_context_db_handle(context);
+
+	const char* sql = "Select * from ";
+	const char* tablename = sqlite3_value_text(argv[0]);
+	char observation_buffer[10*MAX_SYNTAX_SIZE] = "observation sequence ";
+	 
+	strcat(observation_buffer, tablename);
+	strcat(observation_buffer, " { ");
+	 
+	char* query = strAppendPointer(sql, tablename);
+	
+	 sqlite3_stmt* stmt;
+	   
+	 if (sqlite3_prepare_v2(db, query, strnlen(query), &stmt, NULL) == SQLITE_OK)
+	 {
+
+		int colcount= sqlite3_column_count(stmt);
+		char temp[250];
+		int idx = 1;
+		char observation_buffer2[500];
+		char* observation_buffer3 = "";
+
+		while (sqlite3_step(stmt) == SQLITE_ROW)
+		{
+			 
+		 sprintf(temp, "%s%d%s", "\r\nItem_O_", idx, ",");
+		strcat(observation_buffer, temp);
+		sprintf(observation_buffer2, "%s%d%s", "observation Item_O_", idx,"= ([");
+
+	for (int i = 0; i < colcount; i++)
+			{
+		char* name = sqlite3_column_name(stmt, i);
+		strcat(observation_buffer2, " ");
+		strcat(observation_buffer2, name);
+		strcat(observation_buffer2, ":");
+		char* value = sqlite3_column_text(stmt, i);
+		strcat(observation_buffer2, " ");
+		strcat(observation_buffer2, "\"");
+		strcat(observation_buffer2, value);	
+		strcat(observation_buffer2, "\"");
+		strcat(observation_buffer2, ",");
+
+			}
+			 
+	observation_buffer2[strlen(observation_buffer2) - 1] = '\0';
+	strcat(observation_buffer2, " ], 1, 0, 1.0);\r\n"); 
+			 
+			idx++; 
+			 
+	observation_buffer3= strAppendPointer(observation_buffer3, observation_buffer2);
+			 
+		}
+
+		observation_buffer[strlen(observation_buffer) - 1] = '\0';
+
+		strcat(observation_buffer, " \r\n };\r\n");
+		strcat(observation_buffer, observation_buffer3);
+
+	}
+	 else
+	 {
+
+		 sprintf(observation_buffer, "%s", sqlite3_errmsg(db));
+	 }
+	 sqlite3_finalize(stmt); 
+
+	
+	 char* result = malloc(strlen(observation_buffer) + 1);
+	 strcpy(result, observation_buffer);
+	  
+	 sqlite3_result_text(context, result, strlen(result), &freeResult);
+
+}
+
+
+#ifdef _WIN32
+__declspec(dllexport)
+#endif
+
+int sqlite3_extension_init(sqlite3* db, char** error, const sqlite3_api_routines* api)
+{
+	SQLITE_EXTENSION_INIT2(api);
+
+	sqlite3_create_function(db, "ForensicLucid", 1 , SQLITE_ANY,
+	NULL, Flucidencoder, NULL, NULL);
+
+	return SQLITE_OK;
+}
+\end{lstlisting}
+
+
+\newpage
+\subsubsection{Report Model Code}
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Report Model Code}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+from java.util import Date
+from java.text import SimpleDateFormat
+from org.sleuthkit.autopsy.casemodule import Case
+from org.sleuthkit.autopsy.report import GeneralReportModuleAdapter
+from org.sleuthkit.datamodel import TskData
+
+class ForensicLucidReportModule(GeneralReportModuleAdapter):
+    def getName(self):
+        return "Forensic Lucid 6610 Report"
+    def getDescription(self):
+        return "Generate list of all .jpg files from two days before the date of incident 
+        (date of incident is 17 May 2018) and encode output to Forensic Lucid observation format "
+    def getRelativeFilePath(self):
+        return "ForensicLucidReport.txt"
+    def generateReport(self, baseReportDir, progressBar):
+    
+progressBar.setIndeterminate(False)
+progressBar.start()
+     
+autopsyCase = Case.getCurrentCase()
+sleuthkitCase = autopsyCase.getSleuthkitCase()
+            
+#calculate miliseconds of specific date before incident 
+ sdf = SimpleDateFormat("dd-M-yyyy hh:mm:ss")
+ date2018=sdf.parse("15-05-2018 00:00:00")
+crtime2018=date2018.getTime()/ 1000
+
+
+report = open(baseReportDir + '\\' + self.getRelativeFilePath(), 'w')
+            
+#find all jpg file type
+allfiles = sleuthkitCase.findAllFilesWhere
+("NOT meta_type = " +str(TskData.TSK_FS_META_TYPE_ENUM.TSK_FS_META_TYPE_DIR.getValue()))
+            
+            progressBar.setMaximumProgress(allfiles.size())
+            report.write( "Autopsy_FronsicLucid_6610\n") 
+            report.write( "where\n")
+            report.write( "observation sequence jpg_files =\n{\n")
+            index=1
+            #write forensic lucid format of observations
+            for tmpfile in allfiles:
+                if tmpfile.getNameExtension()=="jpg" and tmpfile.getCrtime()>crtime2018:
+                    if index!=1:
+                        report.write(",") 
+                    report.write("file_o_"+str(index)+"\n") 
+                    index+=1
+                    
+            report.write("};\n")
+            index=1
+for tmpfile in allfiles:
+if tmpfile.getNameExtension()=="jpg" and tmpfile.getCrtime()>crtime2018:
+ md5 = tmpfile.getMd5Hash()
+if md5 is None:
+ md5 = ""
+report.write("observation file_o_"+str(index)+"=(\n[Filename:\""
++  tmpfile.getName()+"\",\nDateTime:\""
++tmpfile.getCrtimeAsDate()+
+"\",\nLastAccessed:\""
++tmpfile.getAtimeAsDate()+"\",\nPath:\""+
+ tmpfile.getParentPath()+"\",\nMD5Hash:\""+md5+"\"],\n1,0,1.0\n);\n") 	
+index+=1
+progressBar.increment()
+                   
+report.write("end")
+            
+            
+Case.getCurrentCase().addReport(report.name, "ForensicLucidReport.txt", "Forensic Lucid Report");
+report.close()
+ progressBar.complete()
+\end{lstlisting}
+
+
+
+
+\subsubsection{Alexa CIFT Database Tool Parser}
+
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Alexa CIFT Database Tool Parser}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+from argparse import ArgumentParser
+from datetime import datetime, timezone
+
+from utils.logging.log import Log
+from utils.database.misc import dict_factory
+from utils.time import to_datetime
+from utils.elastic import Elastic
+
+import time
+import sqlite3
+import os
+
+
+class CIFTDatabaseParser(object):
+    """Parser for parse information from cift database."""
+
+    def __init__(self, database, timezone):
+        self.database = database
+        self.timezone = timezone
+
+    def parse(self):
+        """Parse timeline from database."""
+        Log.debug("Extracting activities from database...")
+
+        with sqlite3.connect(self.database) as con:
+            con.row_factory = dict_factory
+            cur = con.cursor()
+
+            cur.execute("SELECT * FROM TIMELINE")
+            activities = cur.fetchall()
+
+        documents = []
+
+        for activity in activities:
+            documents.append({
+                'time': self.convert_time(activity['date'], activity['time']),
+                'user': activity['user'],
+                'short': activity['short'],
+                'desc': activity['desc'],
+                'notes': activity['notes']
+            })
+
+        Log.info("Successfully parsed data from database.")
+
+        self.save(documents)
+
+    def save(self, documents):
+        with Elastic(index='alexa', doc_type='activity') as elastic:
+            elastic.upload(documents, 'time')
+
+        Log.info("Successfully uploaded data into elasticsearch.")
+
+    def convert_time(self, date, _time):
+        """Convert splited time into datetime."""
+dtime = datetime.strptime(f"{date} {_time} {self.timezone}", "%Y-%m-%d %H:%M:%S.%f %Z%z")
+        
+        # check timestamp is 0
+        if dtime.timestamp() <= 0:
+            return to_datetime(0)
+
+        return dtime.astimezone(timezone.utc)\
+                    .replace(tzinfo=None)
+
+    def __del__(self):
+        del self
+
+
+def main(args):
+    """Main method for parsing activities."""
+    if not os.path.exists(args.database):
+        Log.error("cift_amazon_alexa.db file not found.", trace_exc=False)
+        return
+
+    cdp = CIFTDatabaseParser(args.database, args.timezone)
+    cdp.parse()
+    del cdp
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(description="Amazon Alexa CIFT database parser v1.0")
+    parser.add_argument("-d", "--database", dest="database", type=str, required=True,
+                        help="cift_amazon_alexa.db database file path")
+    parser.add_argument("-t", "--timezone", dest="timezone", type=str, required=True,
+                        help="Timezone which used at Amazon Alexa. ex) UTC+2 -> UTC+0200")
+
+    args = parser.parse_args()
+    main(args)
+
+\end{lstlisting}
+
+
+    
+\subsubsection{iSmartAlarm Dairy Parser}
+
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={iSmartAlarm Dairy Parser}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+from argparse import ArgumentParser
+
+from utils.logging.log import Log
+from utils.database.misc import dict_factory
+from utils.elastic import Elastic
+from utils.time import to_datetime
+
+import sqlite3
+import os
+
+
+class DairyParser(object):
+    """Parser for generating timeline from iSmartAlarm Application."""
+
+    def __init__(self, database):
+        self.database = database  # iSmartAlarm database
+
+    def parse(self):
+        """Parse dairies from database."""
+        Log.debug("Extracting diaries from database...")
+
+        tables = {
+            'CameraDairy': {
+                'name': 'TB_CameraDairy',
+            },
+            'IPUDairy': {
+                'name': 'TB_IPUDairy',
+            },
+            'ISC3Dairy': {
+                'name': 'TB_ISC3Dairy',
+            },
+            'SensorDairy': {
+                'name': 'TB_SensorDairy',
+            }
+        }
+
+        # get dairies from database
+        with sqlite3.connect(self.database) as con:
+            con.row_factory = dict_factory
+            cur = con.cursor()
+
+            for key in tables.keys():
+                name = tables[key]['name']
+                cur.execute(f"SELECT * FROM {name}")
+                tables[key]['data'] = cur.fetchall()
+
+        Log.debug("Successfully parsed data from database.")
+
+        self.save(tables)
+
+    def save(self, tables):
+        """Save history into elasticsearch."""
+        for key in tables.keys():
+            data = tables[key]['data']
+            if data:
+                for i in range(len(data)):
+                    data[i]['date'] = to_datetime(data[i]['date'])
+
+                with Elastic(index=key.lower(), doc_type=key.lower()) as elastic:
+                    elastic.upload(data, 'date')
+                
+                Log.info(f"Successfully uploaded {key} data into elasticsearch.")
+
+    def __del__(self):
+        del self
+
+
+def main(args):
+    """Main method for parsing dairies."""
+    if not os.path.exists(args.database):
+        Log.error("iSmartAlarm.DB file not found.", trace_exc=False)
+        return
+
+    dp = DairyParser(args.database)
+    dp.parse()
+    del dp
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(description="iSmartAlarm dairy parser v1.0")
+    parser.add_argument("-d", "--database", dest="database", type=str, required=True,
+                        help="iSmartAlarm.DB database file path")
+
+    args = parser.parse_args()
+    main(args)
+
+
+\end{lstlisting}
+
+\subsubsection{Nest Video Recovery Tool}
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Nest Video Recovery Tool}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+from argparse import ArgumentParser
+from datetime import datetime
+from pathlib import Path
+
+from utils.logging.log import Log
+from utils.elastic import Elastic
+from utils.time import to_datetime
+
+import sqlite3
+import os
+
+
+class VideoExtractor(object):
+    """Extractor for recovering video frame from Nest Application."""
+
+    def __init__(self, database, output):
+        self.database = database
+        self.rawvideos = []  # video file list for convert and merge file
+        self.videotimes = {}  # video recording time
+        self.output = output  # video and log output directory
+
+        # make directory when directory does not exist
+        if not os.path.exists(output):
+            os.mkdir(output)
+
+    def _gen_filename(self, timestamp):
+        return datetime.strftime(
+            datetime.utcfromtimestamp(timestamp / 1000 + 7200), "%Y-%m-%d_%H:%M:%S")
+
+    def extract(self, merge, frame, add_timeline):
+        """Extract frames from database."""
+        Log.debug("Extracting videos from database...")
+
+        if frame:
+with sqlite3.connect(self.database) as con:
+cur = con.cursor()
+cur.execute("SELECT frame_time, 
+gop_start_rowid, sps_bytes, pps_bytes, frame_bytes, chunk_complete FROM frame_raw_data_table")
+rows = cur.fetchall()
+sps_bytes = None
+pps_bytes = None
+videobuf = None
+count = 0
+
+            timestamps_by_video = {}
+            frames_by_video = {}
+
+            for frame in rows:
+frame_time, gop_start_rowid, _sps_bytes, _pps_bytes, frame_bytes, chunk_complete = frame
+
+                if gop_start_rowid == -1:
+                    # set new sps and pps bytes
+                    sps_bytes = _sps_bytes
+                    pps_bytes = _pps_bytes
+                    videobuf = pps_bytes + sps_bytes + frame_bytes
+                    timestamps_by_video[count] = [frame_time]
+                else:
+                    videobuf = videobuf + frame_bytes
+                    timestamps_by_video[count].append(frame_time)
+
+                if chunk_complete == 1:
+                    frames_by_video[count] = videobuf
+                    sps_bytes = None
+                    pps_bytes = None
+                    videobuf = None
+                    count += 1
+
+            if videobuf:
+                frames_by_video[count] = videobuf
+
+            for key in frames_by_video.keys():
+                # save h264 file
+                with open(os.path.join(self.output, f'{key}.h264'), 'wb') as f:
+                    f.write(frames_by_video[key])
+
+                i = 0
+    for timestamp in timestamps_by_video[key]:
+os.system(f'ffmpeg -i {self.output}/{key}.h264 -c:v libx264 -filter:v "select=gte(n\,{i})"
+-frames:v 1 -f h264 {self.output}/{key}_{i}.h264')
+os.system(f'ffmpeg -i {self.output}/{key}_{i}.h264 -frames:v 1 -f 
+image2 {self.output}/{self._gen_filename(timestamp)}.png')
+os.remove(f'{self.output}/{key}_{i}.h264')
+                    i += 1
+
+                os.remove(f'{self.output}/{key}.h264')
+            Log.info(f"Successfully saved image by frame.")
+
+        else:
+            with sqlite3.connect(self.database) as con:
+                cur = con.cursor()
+                cur.execute("SELECT * FROM frame_raw_data_table")
+                rows = cur.fetchall()
+
+            videobuf = ""  # temporary buffer for constructing video
+            videoname = ""  # name of video file
+            count = 0  # video file counter
+
+            for row in rows:
+                if row[4]:
+                    if videoname:
+                        with open(videoname, "wb") as f:
+                            f.write(videobuf)
+                        self.rawvideos.append(videoname)
+
+                    videobuf = row[5]
+                    videobuf += row[4]
+                    videobuf += row[6]
+
+                    videoname = os.path.join(self.output, f"{count}.tmp")
+                    self.videotimes[videoname] = [row[0]]
+
+                    count += 1
+                else:
+                    videobuf = videobuf + row[6]
+
+                    if row[0] not in self.videotimes[videoname]:
+                        self.videotimes[videoname].append(row[0])
+
+            if videobuf:
+                with open(videoname, "wb") as f:
+                    f.write(videobuf)
+                self.rawvideos.append(videoname)
+
+            Log.info(f"Successfully extrated {count} video files.")
+
+            self.save(merge)
+
+            documents = []
+
+            for filename in self.videotimes.keys():
+                runtime = self.videotimes[filename]
+                start, end = to_datetime(runtime[0]), to_datetime(runtime[-1])
+                filename = os.path.basename(filename).replace('tmp', 'mp4')
+
+                documents.append({
+                    'start_time': start,
+                    'end_time': end,
+                    'filename': filename
+                })
+
+            # write history as file
+            with open(os.path.join(self.output, 'video_list.txt'), 'w') as f:
+                for document in documents:
+f.write(f"{document['filename']}: {document['start_time']} - {document['end_time']}\n")
+
+            # upload to elasticsearch for add timeline
+            if add_timeline:
+                with Elastic(index='nest', doc_type='video') as elastic:
+                    elastic.upload(documents, 'start_time')
+
+    def save(self, merge, frame):
+        """Convert and save into playable video."""
+        Log.info("Converting video file codec format...")
+
+        for video in self.rawvideos:
+            os.system(f"ffmpeg -f h264 -r 10 -i {video} -c copy {video.split('.')[0]}.mp4")
+
+            # remove original file
+            if os.path.exists(video):
+                os.remove(video)
+
+        Log.info("Successfully convert the video file codec.")
+
+        if merge:
+            Log.info("Merging videos..")
+
+            videos = '|'.join([video.split('.')[0] + ".mp4" for video in self.rawvideos])
+            os.system(f"ffmpeg -f concat -i \"concat:{videos}\" -c copy video.mp4")
+
+            for video in self.rawvideos:
+                os.remove(f"{video.split('.')[0]}.mp4")
+
+            Log.info(f"Successfully merged {len(self.rawvideos)} videos.")
+
+    def __del__(self):
+        del self
+
+def main(args):
+    """Main method for recovering video."""
+    # if frame_database file not found
+    if not os.path.exists(args.database):
+        Log.error("frame_database file not found.", trace_exc=False)
+        return
+
+    ve = VideoExtractor(args.database, args.output)
+    ve.extract(args.merge, args.frame, args.add_timeline)
+    del ve
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser(description="Nest video recovery tool v1.0")
+    parser.add_argument("-d", "--database", dest="database", type=str, required=True,
+                        help="frame_database file path")
+    parser.add_argument("-o", "--output", dest="output", type=str, default="output",
+                        help="extracted video output file directory")
+    parser.add_argument("-m", "--merge", dest="merge", type=bool, default=False,
+                        help="merge all frames extracted from database")
+    parser.add_argument("-a", "--add-timeline", dest="add_timeline", type=bool, default=False,
+                        help="Add recording history at timeline with filename")
+    parser.add_argument("-f", "--frame", dest="frame", type=bool, default=False,
+                        help="Save by frame as a image")
+
+    args = parser.parse_args()
+    main(args)
+
+
+\end{lstlisting}
+
+\subsubsection{Server Stream Parser}
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Server Stream Parser}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+from argparse import ArgumentParser
+from collections import namedtuple
+
+from utils.elastic import Elastic
+from utils.logging.log import Log
+from utils.time import to_datetime
+
+import os
+import json
+import struct
+import sys
+
+class ISADiagnoticsStreamParser:
+    def __init__(self, diagnotics_stream):
+        try:
+            with open(diagnotics_stream, 'rb') as f:
+                self.stream = f.read()
+        except:
+            #alert error. need logging.
+            sys.exit(-1)
+
+    def get_unstructured_log(self):
+        self.unstructured_stream_parser(self.stream[0x60000:0xE0000])
+        return self.unstructured_log
+
+    def get_sensor_log(self):
+        self.sensor_log_stream_parser(self.stream[0xE0000:])
+        return self.sensor_log
+
+    def sensor_log_stream_parser(self, stream):
+        self.sensor_log = []
+        stream = stream.replace(b'\x00', b'')
+        stream = stream.split(b'$@')
+        for s in stream:
+            if not s:
+                continue
+            _, sign, desc = s.split(b"::")
+            if sign == b'ALARMDOOR' or sign == b'ALARMPIR':
+                try:
+                    data = json.loads(desc)
+                    log = self.__sensor_log_repackager(data)
+                    self.sensor_log.append(log)
+                except:
+                    pass
+
+    def unstructured_stream_parser(self, stream):
+        self.index = 0
+        self.unstructured_log = []
+        while True:
+            self.log = dict()
+            sign = stream.find(b'\x24\x40')
+            if sign != -1:
+                size = struct.unpack("<L", stream[sign+0x2:sign+0x6])[0]
+                parsed_data = stream[sign+0xA:sign+0xA+size]
+                parsed_data = parsed_data.split(b'::')
+                stream = stream[sign+0xA+size:]
+            else:
+                break
+            self.log.update({
+                'idx': self.index,
+                'tag1': parsed_data[1][:2].decode(),
+                'tag2': parsed_data[1][2:].decode(),
+                'size': len(parsed_data[2])
+            })
+            if len(parsed_data[2]) < 16:
+                self.__general_parse(parsed_data[2])
+            else:
+                self.__isa_parse(parsed_data[2])
+            self.__classifier()
+            self.unstructured_log.append(self.log)
+            self.index += 1
+
+    def __sensor_log_repackager(self, log_data):
+        """
+            000A8540: Contact Sensor
+            0006B4E5: PIR Sensor
+        """
+        sensors = {
+            '000A8540': 'Contact',
+            '0006B4E5': 'PIR',
+        }
+        dt_ = to_datetime(log_data['TS'])
+        package = {
+            'datetime': dt_,
+            'sensor': sensors[log_data['SensorID']],
+            'sensor_id': log_data['SensorID'],
+            'event': False,
+            'siren': False,
+            'is_detected': False,
+        }
+        if log_data['MessageType'] == '0':
+            package.update({'event':True})
+        if log_data['MessageType'] == '0' and log_data['ModeId'] == '2':
+            package.update({'siren':True})
+        if log_data['DetectAlarm'] == '1':
+            package.update({'is_detected':True})
+        return package
+
+    def __unpack_to_update(self, data, labels, unpack_tags):
+        pseudo_tag = namedtuple('pseudo_tag', labels)
+        structured = pseudo_tag(*struct.unpack(unpack_tags, data))._asdict()
+        self.log.update(structured)
+
+    def __isa_parse(self, data):
+        data_size = self.log['size'] - 16
+        self.__unpack_to_update(data, 'sign type1 type2 type3 data', '<4sLLL'+str(data_size)+'s')
+        if self.log['sign'].startswith(b'ISA'):
+            self.log.update({'desc': 'isa'})
+        else:
+            self.log.update({'desc': 'general'})
+
+        self.log.update({'sign': self.log['sign'].decode()})
+
+    def __general_parse(self, data):
+        if len(data) % 4 != 0:
+            self.log['desc'] = 'dummy'
+            return
+        self.__unpack_to_update(data, 'type1 type2', '<LL')
+        self.log['desc'] = 'general'
+
+    def __classifier(self):
+        if self.log['desc'] == 'isa':
+            types = [self.log[x] for x in ['type1', 'type2', 'type3']]
+            if types == [21, 1, 10]:
+                self.log.update({
+                    'data_type': 'datetime',
+                    'data': to_datetime(self.log['data'])
+                })
+            else:
+                self.log.update({'data_type':'raw'})
+
+
+def main(args):
+    if not os.path.exists(args.server_stream):
+        Log.error("server_stream file does not exist.")
+        return
+
+    Log.info("Start parsing iSmartAlarm diagnotics stream...")
+
+    isap = ISADiagnoticsStreamParser(args.server_stream)
+    unstructured_log = isap.get_unstructured_log()
+    sensor_log = isap.get_sensor_log()
+
+    with Elastic(index='unstructured_log', doc_type='unstructured_log') as elastic:
+        datetime_log = []
+
+        for log in unstructured_log:
+            if 'data_type' in log.keys():
+                if log['data_type'] == 'datetime':
+                    datetime_log.append(log)
+        elastic.upload(datetime_log, 'data')
+
+    with Elastic(index='sensor_log', doc_type='sensor_log') as elastic:
+        elastic.upload(sensor_log, 'datetime')
+
+    Log.info("Successfully upload server_stream data.")
+
+    del isap
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(description="iSmartAlarm diagnotics server stream parser")
+    parser.add_argument('-s', '--server-stream', type=str,
+        help='iSmartAlarm server_stream file path')
+
+    args = parser.parse_args()
+    main(args)
+
+
+\end{lstlisting}
+
+\subsubsection{Wink Activity Parser}
+
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Wink Activity Parser}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}
+
+from argparse import ArgumentParser
+
+from utils.logging.log import Log
+from utils.database.misc import dict_factory
+from utils.elastic import Elastic
+from utils.time import to_datetime
+
+import sqlite3
+import json
+import os
+
+
+class WinkActivityParser(object):
+    """Wink database activity parser."""
+
+    def __init__(self, database):
+        self.database = database
+
+    def parse(self):
+        """Parse activity from database."""
+        Log.debug("Extracting activities from database...")
+
+        with sqlite3.connect(self.database) as con:
+            con.row_factory = dict_factory
+            cur = con.cursor()
+
+            cur.execute("SELECT * FROM Elements WHERE Type='activity'")
+            data = cur.fetchall()
+
+        Log.debug("Successfully parsed activities from database.")
+
+        self.save(data)
+
+    def save(self, data):
+        """Save activity into elasticsearch."""
+        activities = [json.loads(activity['Json']) for activity in data]
+
+        for i in range(len(activities)):
+            activities[i]['created_at'] = to_datetime(activities[i]['created_at'])
+
+        with Elastic(index='wink', doc_type='activity') as elastic:
+            elastic.upload(activities, 'created_at')
+
+        Log.info("Successfully uploaded wink activity data into elasticsearch.")
+
+    def __del__(self):
+        del self
+
+
+def main(args):
+    """Main method for parsing dairies."""
+    if not os.path.exists(args.database):
+        Log.error("persistenceDB file not found.", trace_exc=False)
+        return
+
+    wap = WinkActivityParser(args.database)
+    wap.parse()
+    del wap
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(description="Wink Activity parser v1.0")
+    parser.add_argument("-d", "--database", dest="database", type=str, required=True,
+                        help="persistenceDB database file path")
+
+    args = parser.parse_args()
+    main(args)
+
+\end{lstlisting}
+\newpage
+\begin{thebibliography}{1}
+
+\bibitem{pari_1}
+"Autopsy" [Online]. Available: https://www.sleuthkit.org/autopsy/
+
+\bibitem{pari_2}
+"Autopsy Information" [Online]. Available: https://www.autopsy.com/about/
+
+\bibitem{pari_3}
+"Autopsy Provided Features " [Online]. Available: https://www.sleuthkit.org/autopsy/features
+
+\bibitem{pari_4}
+"iSmartAlarm" [online]. Available:  https://en.wikipedia.org/wiki/ISmartAlarmcite\_note-3
+
+\bibitem{pari_5}
+"Sensors" [online]. Available: https://www.ismartalarm.com/devicesl
+
+\bibitem{pari_6}
+"QBee FAQ" [online]. Available:  https://qbeecam.com/home.html\#qbee-app
+
+\bibitem{pari_7}
+"Wink Hub2" [online]. Available: https://www.wink.com/products/wink\-hub/
+
+\bibitem{pari_8}
+"What is eho?" [online]. Available:https://www.amazon.ca/Echo-2nd-Generation-speaker-Charcoal/dp/B0749ZSPN7
+
+\bibitem{pari_9}
+"iSmartAlarm owner manual" [online]. Available: https://images-na.ssl-images-amazon.com/images/I/B1-GfwNmEkS.pdf
+
+\bibitem{pari_10}
+"Nest Camera" [online]. Available: https://store.google.com/ca/product/nest\_cam
+
+\bibitem{pari_11}
+"Nest Smoke Detector" [online].
+https://nest.com/support/images/misc-assets/Nest-Protect-(Wired-120V)-User-s-Guide.pdf
+
+
+\bibitem{Ali_1}
+"Python" [Online]. Available: https://en.wikipedia.org/wiki/Python\_(programming\_language)
+
+\bibitem{Ali_2}
+"Jupytor Notebook" [Online]. Available: https://jupyter.org/
+
+\bibitem{Ali_3}
+"Parse Tools" [Online]. Available: https://github.com/philgeun/TapiocaPearlo
+
+\bibitem{Ali_4}
+"Kibana Definition" [Online]. Available: https://en.wikipedia.org/wiki/Kibana
+
+\bibitem{Ali_5}
+"Elastic" [Online]. Available: https://www.elastic.co/kibana
+
+\bibitem{Mery_1}
+"JASON " [Online]. Available: https://en.wikipedia.org/wiki/JSON
+\bibitem{Mery_2}
+"JASON Viewer" [Online]. Available:  http://jsonviewer.stack.hu/
+\bibitem{Mery_3}
+"Amazon Database" [Online]. Available:  https://drive.google.com/drive/folders/1aXX\_CMR2vY5Vw9f\_naQ0-8bxU\_WZp0Pp
+
+
+\bibitem{Gh_1}
+“Jadx-gui” [online]. Available: https://github.com/skylot/jadx
+\bibitem{Gh_2}
+”Reverse Engineering Android .apk using Jadx” [online]. Available:   http://nestedif.com/android-security/1-reverse-engineering-android-apk-using-jadx/
+\bibitem{Gh_3}
+“Ghidra” [online]. Available:  https://github.com/NationalSecurityAgency/ghidra
+\bibitem{Gh_4}
+“Intro to Reverse Engineering with Ghidra” [online]. Available:  https://medium.com/swlh/intro-to-reverse-engineering-45b38370384
+\bibitem{Gh_5}
+“Ghidra: Android APK” [online]. Available:  https://www.youtube.com/watch?v=At\_T6riSb9A
+\bibitem{Gh_6}
+“CVE-2018-16223 Detail” [online]. Available:  https://nvd.nist.gov/vuln/detail/CVE-2018-16223
+
+\bibitem{Ab_1}
+“Binwalk” [online]. Available: https://github.com/ReFirmLabs/binwalk 
+\bibitem{Ab_2}
+“Forensic Binwalk” [online]. Available: https://tools.kali.org/forensics/binwalk
+\bibitem{Ab_3}
+“Reverse Engineering Router Firmware With Binwalk” [online].\\ Available: https://embeddedbits.org/reverse-engineering-router-firmware-with-binwalk/
+\bibitem{Ab_4}
+“Firmware Security Analysis Extraction Tool” [online]. \\ Available: https://www.darknet.org.uk/2020/04/binwalk-firmware-security-analysis-extraction-tool/
+\bibitem{Ab_5}
+“Volatility” [online]. Available: https://github.com/volatilityfoundation/volatility/wiki
+\bibitem{sum_1}
+“Realm Studio” [online]. Available: https://docs.realm.io/sync/realm-studio
+
+\bibitem{Gh_7}
+Almutairi, Ahmed  Satari, Behzad  Rivas, Carlos  Stanciu, Cristian  Yamani, Mozhdeh  Zohoorsaadat, Zahra Mokhov, Serguei. (2020). Evaluation of Autopsy and Volatility for Cybercrime Investigation: A Forensic Lucid Case Study. International Journal of Digital Crime and Forensics.
+\bibitem{Gh_8}
+“Autopsy Module Development Overview” [online]. \\Available: 
+https://www.sleuthkit.org/autopsy/docs/apidocs/4.2/platform\_page.html
+\bibitem{Gh_9}
+“Autopsy Python Tutorial 1: Writing a File Ingest Module” [online]. \\Available: 
+http://sleuthkit.org/autopsy/docs/apidocs/4.14.0//mod\_python\_file\_ingest\_tutorial\_page.html
+\bibitem{Gh_10}
+“Autopsy Developing Report Modules” [online]. \\ Available: 
+http://sleuthkit.org/autopsy/docs/apidocs/4.14.0//mod\_report\_page.html
+\bibitem{Gh_11}
+“Autopsy Sample Python Module Files” [online]. Available: 
+https://github.com/sleuthkit/autopsy/tree/autopsy-3.1.3/pythonExamples
+\bibitem{Gh_12}
+“Autopsy Python Tutorial 3: Writing a Report Module” [online]. Available: 
+http://sleuthkit.org/autopsy/docs/apidocs/4.14.0//mod\_python\_report\_tutorial\_page.html
+\bibitem{Gh_13}
+“The Sleuth Kit Java Bindings Developer's Guide and API Reference” [online]. Available: 
+http://sleuthkit.org/sleuthkit/docs/jnidocs/4.3/index.html
+\bibitem{Abc}
+“SQLite” [online]. Available: 
+https://www.sqlite.org/loadext.html
+\end{thebibliography}
+
+\end{document}
